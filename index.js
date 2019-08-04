@@ -51,6 +51,14 @@ window.addEventListener('onclick', function(evt) {
     console.log('click')
 }, false);
 
+window.addEventListener('touchstart', function(){
+    jump = true
+})
+
+window.addEventListener('touchend', function(){
+    jump = false
+})
+
 
 dx = 3
 pdy = 0

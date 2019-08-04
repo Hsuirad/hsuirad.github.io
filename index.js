@@ -42,7 +42,7 @@ var rect = {
     height:window.innerHeight
 };
 //Binding the click event on the canvas
-canvas.addEventListener('click', function(evt) {
+window.addEventListener('click', function(evt) {
     var mousePos = getMousePos(canvas, evt);
 
     if (isInside(mousePos,rect)) {

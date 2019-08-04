@@ -107,6 +107,7 @@ let death = () => {
         delete pipes[i]   
     }
     newgame()
+    animate()
 }
 
 sources = ['piggy.png', 'piggy2.png', 'piggy3.png', 'dead.png']

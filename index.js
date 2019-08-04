@@ -188,12 +188,16 @@ function Pig(x, y){
 
 pipes = []
 
-for(let i = 1; i < 100; i++){
-    pipes.push(new Pipe(i * 400 + 200, Math.random() * canvas.height / 3 + canvas.height / 3, Math.random() * 100 + 150));
+function newgame(){
+    for(let i = 1; i < 100; i++){
+        pipes.push(new Pipe(i * 400 + 200, Math.random() * canvas.height / 3 + canvas.height / 3, Math.random() * 100 + 150));
+    }
+
+
+    let pig = new Pig(10, canvas.height / 3);
 }
 
-
-let pig = new Pig(10, canvas.height / 3);
+newgame()
 
 background = new Image();
 background.src = 'jungle.png';

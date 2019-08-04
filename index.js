@@ -108,6 +108,15 @@ let death = () => {
     }
     c.clearRect(0, 0, window.innerWidth, window.innerHeight)
     pig = new Pig(10, canvas.height / 3);
+    jump = false;
+    unpress = false;
+
+    distance = 0
+    dx = 3
+    pdy = 0
+    gravity = .005;
+    img = 0;
+
     animate()
 }
 

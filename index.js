@@ -104,9 +104,10 @@ let death = () => {
     dx = 0
     pdy = 0
     for(let i = 1; i < 100; i++){
-        delete pipes[i]   
+        pipes[i] = new Pipe(i * 400 + 200, Math.random() * canvas.height / 3 + canvas.height / 3, Math.random() * 100 + 150)
     }
-    newgame()
+    c.clearRect(0, 0, window.innerWidth, window.innerHeight)
+    pig = new Pig(10, canvas.height / 3);
     animate()
 }
 

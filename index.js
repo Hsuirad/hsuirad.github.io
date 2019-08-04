@@ -103,6 +103,11 @@ gravity = .005;
 let death = () => {
     dx = 0
     pdy = 0
+    for(let i = 1; i < 100; i++){
+        delete pipes[i]
+    }
+    delete pig
+    newgame()
 }
 
 sources = ['piggy.png', 'piggy2.png', 'piggy3.png', 'dead.png']

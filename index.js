@@ -107,7 +107,8 @@ let death = () => {
         pipes[i] = new Pipe(i * 400 + 200, Math.random() * canvas.height / 3 + canvas.height / 3, Math.random() * 100 + 150)
     }
     c.clearRect(0, 0, window.innerWidth, window.innerHeight)
-    pig = new Pig(10, canvas.height / 3);
+    pig.x = 0
+    pig.y = canvas.height / 3
     jump = false;
     unpress = false;
 
@@ -116,8 +117,6 @@ let death = () => {
     pdy = 0
     gravity = .005;
     img = 0;
-
-    animate()
 }
 
 sources = ['piggy.png', 'piggy2.png', 'piggy3.png', 'dead.png']

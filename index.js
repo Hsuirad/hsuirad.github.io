@@ -107,7 +107,7 @@ let death = () => {
         pipes[i - 1] = new Pipe(i * 400 + 200, Math.random() * canvas.height / 3 + canvas.height / 3, Math.random() * 100 + 150)
     }
     c.clearRect(0, 0, window.innerWidth, window.innerHeight)
-    pig.x = 0
+    pig.x = 10
     pig.y = canvas.height / 3
     jump = false;
     unpress = false;

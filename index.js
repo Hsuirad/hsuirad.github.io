@@ -48,6 +48,7 @@ window.addEventListener('click', function(evt) {
     if (isInside(mousePos,rect)) {
         jump = true;
     }
+    console.log('click')
 }, false);
 
 

@@ -191,9 +191,9 @@ function Pig(x, y){
     }
 }
 
-pipes = []
-
 function newgame(){
+    let pipes = []
+    
     for(let i = 1; i < 100; i++){
         pipes.push(new Pipe(i * 400 + 200, Math.random() * canvas.height / 3 + canvas.height / 3, Math.random() * 100 + 150));
     }

@@ -42,14 +42,9 @@ var rect = {
     height:window.innerHeight
 };
 //Binding the click event on the canvas
-window.addEventListener('click', function(evt) {
-    var mousePos = getMousePos(canvas, evt);
-
-    if (isInside(mousePos,rect)) {
-        jump = true;
-    }
-    console.log('click')
-}, false);
+window.addEventListener('onclick', function(evt) {
+    jump = true;
+});
 
 window.addEventListener('touchstart', function(){
     jump = true

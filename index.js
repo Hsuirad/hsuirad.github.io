@@ -55,11 +55,6 @@ window.addEventListener('touchstart', function(){
     jump = true
 })
 
-window.addEventListener('touchend', function(){
-    jump = false
-})
-
-
 dx = 3
 pdy = 0
 let drawsizeup;

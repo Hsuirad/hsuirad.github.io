@@ -100,12 +100,17 @@ function Pipe(x, y, space){
 
 gravity = .005;
 
+let fps = 18;
+
 let death = () => {
     dx = 0
     pdy = 0
     for(let i = 1; i < 100; i++){
         pipes[i - 1] = new Pipe(i * 400 + 200, Math.random() * canvas.height / 3 + canvas.height / 3, Math.random() * 100 + 150)
     }
+	clearInterval(test)
+	c.fillText(`You Scored: ${score}`, canvas.width / 2 - 150, canvas.height / 2);
+setTimeout(function(){
     c.clearRect(0, 0, window.innerWidth, window.innerHeight)
     pig.x = 10
     pig.y = canvas.height / 3
@@ -116,7 +121,8 @@ let death = () => {
     dx = 3
     pdy = 0
     gravity = .005;
-    img = 0;
+img = 0;
+test = setInterval(animate, fps);}, 2000);
 }
 
 sources = ['piggy.png', 'piggy2.png', 'piggy3.png', 'dead.png']
@@ -221,8 +227,8 @@ wdiff = canvas.width / background.width;
 
 function animate(){
     c.clearRect(0, 0, canvas.width, canvas.height)
-    requestAnimationFrame(animate);
     c.drawImage(background, 0, 0, canvas.width, canvas.height);
+	console.log('test')
 
     pipes.forEach(element => {
         element.update();
@@ -230,5 +236,4 @@ function animate(){
     pig.update();
     dx += 0.001;
 }
-
-animate();
+let test = setInterval(animate, fps);

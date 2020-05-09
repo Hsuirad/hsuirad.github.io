@@ -4,22 +4,25 @@ let c = canvas.getContext('2d');
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
-jump = false;
-unpress = false;
+let jump = false;
+let unpress = false;
+let pause = false;
 
-distance = 0
+let distance = 0
 
 window.addEventListener('keypress', function(event){
-    if(event.key = ' ' && unpress == true){
+    if(event.key == ' ' && unpress == true){
         jump = true;
         unpress = false;
     }
+    if(event.key == 'p') pause = true;
 })
 
 window.addEventListener('keyup', function(event){
-    if(event.key = " "){
+    if(event.key == " "){
         unpress = true;
     }
+    if(event.key == 'u') pause = false;
 })
 
 function getMousePos(canvas, event) {
@@ -54,11 +57,11 @@ dx = 3
 pdy = 0
 let drawsizeup;
 let trunk = new Image();
-trunk.src = 'treetunk.png'
+trunk.src = './pics/treetunk.png'
 let treedown = new Image();
-treedown.src = 'treecapdown.png';
+treedown.src = './pics/treecapdown.png';
 let treeup = new Image();
-treeup.src = 'treecap.png'
+treeup.src = './pics/treecap.png'
 
 function Pipe(x, y, space){
     this.x = x;
@@ -125,7 +128,7 @@ img = 0;
 test = setInterval(animate, fps);}, 2000);
 }
 
-sources = ['piggy.png', 'piggy2.png', 'piggy3.png', 'dead.png']
+sources = ['./pics/piggy.png', './pics/piggy2.png', './pics/piggy3.png', './pics/dead.png']
 
 images = [];
 
@@ -221,7 +224,7 @@ let newgame = () => {
 newgame();
 
 background = new Image();
-background.src = 'jungle.png';
+background.src = './pics/jungle.png';
 hdiff = canvas.height / background.height;
 wdiff = canvas.width / background.width;
 
@@ -233,7 +236,7 @@ function animate(){
     pipes.forEach(element => {
         element.update();
     });
-    pig.update();
+    pause?pig.draw():pig.update();
     dx += 0.001;
 }
 let test = setInterval(animate, fps);

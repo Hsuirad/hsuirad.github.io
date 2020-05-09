@@ -233,9 +233,9 @@ function animate(){
     c.drawImage(background, 0, 0, canvas.width, canvas.height);
 	console.log('test')
 
-    pipes.forEach(element => {
+    !pause?pipes.forEach(element => {
         element.update();
-    });
+    }):pipes.forEach(element => element.draw());
     pause?pig.draw():pig.update();
     dx += 0.001;
 }

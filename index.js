@@ -10,6 +10,12 @@ let pause = false;
 
 let distance = 0
 
+let pauseButton = document.getElementById('pause');
+let resumeButton = document.getElementById('resume');
+
+pauseButton.onclick = function(){pause = true};
+resumeButton.onclick = function(){pause =false};
+
 window.addEventListener('keypress', function(event){
     if(event.key == ' ' && unpress == true){
         jump = true;
@@ -112,7 +118,7 @@ let death = () => {
         pipes[i - 1] = new Pipe(i * 400 + 200, Math.random() * canvas.height / 3 + canvas.height / 3, Math.random() * 100 + 150)
     }
 	clearInterval(test)
-	c.fillText(`You Scored: ${score}`, canvas.width / 2 - 150, canvas.height / 2);
+	c.fillText(`You Scored: ${pig.score}`, canvas.width / 2 - 150, canvas.height / 2);
 setTimeout(function(){
     c.clearRect(0, 0, window.innerWidth, window.innerHeight)
     pig.x = 10
@@ -142,6 +148,7 @@ img = 0;
 function Pig(x, y){
     this.x = x;
     this.y = y;
+    this.score = 0;
 
     this.draw = () => {
         c.beginPath();
@@ -149,6 +156,12 @@ function Pig(x, y){
         //c.fillRect(this.x, this.y, 30, 30);
         c.drawImage(images[img], this.x, this.y);
         //c.fill();
+	c.beginPath();
+        c.font = '50px Verdana';
+        c.fillStyle = 'white'
+        c.fillText(`Score: ${this.score}`, canvas.width / 2 - 150, 50);
+
+
     }
 
     this.update = () => {
@@ -182,19 +195,14 @@ function Pig(x, y){
 
         pdy += gravity;
 
-        score = Math.floor((distance - 240) / 400)
+        this.score = Math.floor((distance - 240) / 400)
         if(distance < 840){
-            score = 0
+            this.score = 0
         }
         distance += dx;
 
-        c.beginPath();
-        c.font = '50px Verdana';
-        c.fillStyle = 'white'
-        c.fillText(`Score: ${score}`, canvas.width / 2 - 150, 50);
-
-        if(pipes[score].x <= this.x + 96 && this.x <= pipes[score].x + 40){
-            if(this.y <= (pipes[score].y - pipes[score].space / 2) || (this.y + 58) >= (pipes[score].y + pipes[score].space)){
+        if(pipes[this.score].x <= this.x + 96 && this.x <= pipes[this.score].x + 40){
+            if(this.y <= (pipes[this.score].y - pipes[this.score].space / 2) || (this.y + 58) >= (pipes[this.score].y + pipes[this.score].space)){
                 death();
             }
         }

@@ -96,7 +96,10 @@ for(let i = 0; i < Math.floor(canvas.height/scaleY); i++){
 cubes.forEach(e => e.forEach(i => i.draw()));
 
 let animate = () => {
-    if(!window.mobileAndTabletCheck()){
+    if(document.querySelector('nav div').classList.contains('show') == true){
+        offset = document.querySelector('nav').clientHeight;
+        canvas.height = document.getElementById("codething").clientHeight+offset
+    } else{
         offset = document.querySelector('nav').clientHeight;
         canvas.height = document.getElementById("codething").clientHeight+offset
     }

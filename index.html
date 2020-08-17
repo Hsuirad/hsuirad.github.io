@@ -24,61 +24,6 @@
                 margin: 0;
                 padding: 0;
             }
-            .loader{
-                display: none;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-            .loader span{
-                font-family: arial;
-                font-size: 24px;
-                color: rgba(255, 255, 255, 0.1);
-                display: inline-block;
-                transition: all .5s;
-                animation: animate 2s infinite;
-            }
-            .loader span:nth-child(1){
-                animation-delay: .1s;
-            }
-            .loader span:nth-child(2){
-                animation-delay: .2s;
-            }
-            .loader span:nth-child(3){
-                animation-delay: .3s;
-            }
-            .loader span:nth-child(4){
-                animation-delay: .4s;
-            }
-            .loader span:nth-child(5){
-                animation-delay: .5s;
-            }
-            .loader span:nth-child(6){
-                animation-delay: .6s;
-            }
-            .loader span:nth-child(7){
-                animation-delay: .7s;
-            }
-            .loader span:nth-child(8){
-                animation-delay: .8s;
-            }
-            @keyframes animate{
-                0%{
-                    color: rgba(255, 255, 255, 0.1);
-                    transform: translateY(0);
-                    margin-left:0;
-                }
-                25%{
-                    color: yellow;
-                    transform: translateY(-15px);
-                    margin-left: 10px;
-                }
-                100%{
-                    color: rgba(255, 255,255 0.1);
-                    transform: translateY(0);
-                }
-            }
             .jumbotron #thediv{
                 text-align: center;
                 margin-bottom: 1em;
@@ -86,7 +31,7 @@
             .jumbotron #thediv a{
                 color: black;
                 text-decoration: none;
-                margin-right: 2em;
+                margin: 0 1% 0 1%;
             }
             .jumbotron #thediv a:hover{
                 color: rgba(50, 50, 50);
@@ -275,15 +220,6 @@
             <p class="lead">I'm mostly active on GitHub and I respond to emails (<span style = "color:darkred">daligholi@gmail.com</span>) within the day, feel free to get in touch. (Last icon is my fiverr)</p>
             <hr class="my-4">
             
-        </div>
-        <div class = 'loader'>
-            <span>L</span>
-            <span>O</span>
-            <span>A</span>
-            <span>D</span>
-            <span>I</span>
-            <span>N</span>
-            <span>G</span>
         </div>
         <script>let canvas = document.getElementById('thecanvas'); let c = canvas.getContext('2d');</script>
         <script src = 'conway.js'></script>

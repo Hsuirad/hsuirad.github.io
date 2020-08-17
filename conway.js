@@ -48,7 +48,7 @@ class Cube{
     }
 
     draw = () => {
-        c.fillStyle = 'rgba(0, 150, 0, 0.8)'
+        c.fillStyle = 'rgba(0, 0, 0, 0.8)'
         this.filled?c.fillRect(this.x*scaleX, this.y*scaleY+offset, scaleX, scaleY):null;
     }
 

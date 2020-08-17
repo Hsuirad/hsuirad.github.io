@@ -1,0 +1,5 @@
+1. setup site like a resume, make pig game a js link
+
+2. maybe look into leaderboard for games (good luck with static github pages)
+
+259345490. fix EVERYTHING (but start with the pig game optimization)

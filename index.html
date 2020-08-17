@@ -196,7 +196,7 @@
             #codething{
                 width: 100%;
                 text-align:center;
-                padding: 5% 0 6rem 0;
+                padding: 4rem 0 6rem 0;
                 color: black;
                 background-color: rgba(255, 255, 255, 0.8);
                 filter:invert(100%);
@@ -245,126 +245,6 @@
             #css-s {
                 background-color: white;
             }
-
-            /* .cont{
-                background-color:rgba(0, 0, 0, 0.5);
-                box-sizing: border-box;
-                font-family: "Poppins", sans-serif;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 100vh;
-                position: relative;
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-            .cont .gamecard{
-                position: relative;
-                height: 250px;
-                background: #fff;
-                display: flex;
-                width: 45%;
-                margin: 1% 0;
-            }
-            .cont .gamecard .imgbox{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: #333;
-                z-index: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                overflow: hidden;
-                transition: 0.5s ease-in-out;
-            }
-            .cont .gamecard:hover .imgbox{
-                width: 150px;
-                height: 150px;
-                left: -75px;
-                top: calc(50% - 75px);
-                transition: 0.5s ease-in-out;
-                background: #ff0057;
-            }
-            .cont .gamecard .imgbox:before{
-                content: attr(data-text);
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                text-align: center;
-                font-size: 6em;
-                color: rgba(255, 255, 255, 0.05);
-                font-weight: 700;
-            }
-            .cont .gamecard .imgbox span{
-                max-width: 100px;
-                transition: 0.5s ease-in-out;
-            }
-            .cont .gamecard:hover .imgbox span{
-                max-width: 75px;
-            }
-            .cont .gamecard .content{
-                position: absolute;
-                right: 0;
-                width: calc(100% - 75px);
-                height: 100%;
-                padding: 20px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .cont .gamecard .content h3{
-                margin-bottom: 5px;
-                font-size: 24px;
-            }
-            .cont .gamecard .content a{
-                display: inline-block;
-                margin-top: 10px;
-                padding: 5px 10px;
-                background: #333;
-                text-decoration: none;
-                color: #fff;
-            }
-            @media (max-width: 922px){
-                .cont{
-                    width: 100%;
-                    flex-direction: column;
-                    align-items: center;
-                }
-                .cont .gamecard{
-                    width: 400px;
-                }
-            }
-            @media (max-width: 768px){
-                .cont .gamecard{
-                    max-width: 300px;
-                    flex-direction: column;
-                    height:auto;
-                }
-                .cont .gamecard .imgbox{
-                    position: relative;
-                }
-                .cont .gamecard .imgbox,
-                .cont .gamecard:hover .imgbox{
-                    width: 100%;
-                    height: 200px;
-                    left: 0;
-                }
-                .cont .gamecard .imgbox,
-                .cont .gamecard:hover .imgbox span{
-                    max-width: 100px;
-                }
-                .cont .gamecard .content{
-                    position: relative;
-                    width: 100%;
-                }
-            } */
         </style>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     </head>
@@ -394,9 +274,15 @@
                             Projects
                         </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Flappy Pig</a>
-                        <a class="dropdown-item" href="#">Conway's Game of Life</a>
-                        <a class="dropdown-item" href="#">Tetris???</a>
+                        <a class="dropdown-item" href="https://www.github.com/hsuirad/flappy-pig">Flappy Pig</a>
+                        <a class="dropdown-item" href="https://www.github.com/hsuirad/conways-game-of-life">Conway's Game of Life</a>
+                        <a class="dropdown-item" href="https://www.github.com/hsuirad/block-man">Pac-man</a>
+                        <a class="dropdown-item" href="https://www.github.com/hsuirad/mycalendar">Calendar App</a>
+                        <a class="dropdown-item" href="https://www.github.com/hsuirad/terminal-tetris">CLI Tetris</a>
+                        <a class="dropdown-item" href="https://www.github.com/hsuirad/car-game">Car game</a>
+                        <a class="dropdown-item" href="https://www.github.com/hsuirad/scarlet-letter-game">Scarlet Letter game</a>
+                        <a class="dropdown-item" href="https://www.github.com/hsuirad/loboferoz">Dinosaur game</a>
+                        <a class="dropdown-item" href="https://www.github.com/hsuirad/drawing-app">Drawing App</a>
                     </div>
                     </li>
                     <li class="nav-item">
@@ -406,7 +292,7 @@
                         <a class="nav-link" href="resume.pdf">Resume</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Toggle Light/Dark Mode</a>
+                        <a class="nav-link disabled" href="#">Toggle Light/Dark Mode (WIP)</a>
                     </li>
                 </ul>
             </div>
@@ -457,7 +343,7 @@
                     <ul class="list-group list-group-flush">
                     </ul>
                     <div class="card-body">
-                        <a href="#" onclick="changePages('drawing_app')" class="card-link">Link to game</a>
+                        <a href="#" onclick="changePages('drawing_app')" class="card-link">Link to demo</a>
                         <a href="https://www.github.com/hsuirad/drawing-app" class="card-link">Link to code</a>
                     </div>
                 </div>
@@ -557,56 +443,6 @@
             <hr class="my-4">
             <a class="btn btn-primary btn-lg" href="#" role="button">Back to top</a>
         </div>
-
-
-
-<!-- 
-        <div class = 'cont'>
-            <div class = 'gamecard'>
-                <div class = 'imgbox'>
-                    <span src = 'design.png' data-text = "Second">
-                        <i class = 'fa fa-gamepad'></i>
-                    </span>
-
-                </div>
-                <div class = 'content'>
-                    <div>
-                        <h3>Design</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                        <a href = "#">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class = 'gamecard'>
-                <div class = 'imgbox'>
-                    <span src = 'design.png' data-text = "Second">
-                        <i class = 'fa fa-gamepad'></i>
-                    </span>
-                </div>
-                <div class = 'content'>
-                    <div>
-                        <h3>Second</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                        <a href = "#">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class = 'gamecard'>
-                <div class = 'imgbox'>
-                    <span src = 'design.png' data-text = "Second">
-                        <i class = 'fa fa-gamepad'></i>
-                    </span>
-
-                </div>
-                <div class = 'content'>
-                    <div>
-                        <h3>Third</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                        <a href = "#">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <div class = 'loader'>
             <span>L</span>
             <span>O</span>
@@ -616,29 +452,6 @@
             <span>N</span>
             <span>G</span>
         </div>
-        <!-- <footer id = 'co' style='margin-top:10%;'>
-            <ul>
-                <li>
-                    <a href = "https://www.github.com/hsuirad">
-                        <i class = 'fa fa-github' aria-hidden = 'true'></i>
-                    </a>
-                </li>
-                <li>
-                    <a href = "https://www.linkedin.com/in/dariush-aligholizadeh-8a9094199/">
-                        <i class = 'fa fa-linkedin' aria-hidden = 'true'></i>
-                    </a>
-                </li>
-                <li>
-                    <a href = "mailto:daligholi@gmail.com">
-                        <i class = 'fa fa-envelope' aria-hidden = 'true'></i>
-                    </a>
-                </li>
-                <li>
-                    <a href = "https://www.instagram.com/d.aligholi/">
-                        <i class = 'fa fa-instagram' aria-hidden = 'true'></i>
-                    </a>
-                </li>
-        </footer> -->
         <script>let canvas = document.getElementById('thecanvas'); let c = canvas.getContext('2d');</script>
         <script src = 'conway/index.js'></script>
         <script>

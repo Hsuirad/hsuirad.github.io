@@ -86,7 +86,6 @@
             .jumbotron #thediv a{
                 color: black;
                 text-decoration: none;
-                margin-left: 2em;
                 margin-right: 2em;
             }
             .jumbotron #thediv a:hover{
@@ -168,21 +167,8 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Projects
-                        </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="https://www.github.com/hsuirad/flappy-pig">Flappy Pig</a>
-                        <a class="dropdown-item" href="https://www.github.com/hsuirad/conways-game-of-life">Conway's Game of Life</a>
-                        <a class="dropdown-item" href="https://www.github.com/hsuirad/block-man">Pac-man</a>
-                        <a class="dropdown-item" href="https://www.github.com/hsuirad/mycalendar">Calendar App</a>
-                        <a class="dropdown-item" href="https://www.github.com/hsuirad/terminal-tetris">CLI Tetris</a>
-                        <a class="dropdown-item" href="https://www.github.com/hsuirad/car-game">Car game</a>
-                        <a class="dropdown-item" href="https://www.github.com/hsuirad/scarlet-letter-game">Scarlet Letter game</a>
-                        <a class="dropdown-item" href="https://www.github.com/hsuirad/loboferoz">Dinosaur game</a>
-                        <a class="dropdown-item" href="https://www.github.com/hsuirad/drawing-app">Drawing App</a>
-                    </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./projects.html">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#thediv">Contact Info</a>
@@ -203,132 +189,6 @@
             <br><br><br><br>
             <p id = 'resstuff' style="font-size:1.4rem;padding-left:10%;padding-right:10%;">Currently a computer science and biochemistry double major working freelance, check out my resume!</p>
         </div>
-
-        
-        <div class = 'container-fluid' id = 'css-selector'>
-            <h1 style = "margin-bottom: 1em;">Projects</h1>
-            <div class = 'card-group'>
-                <div class="card" id = 'css-s'>
-                    <img src="pig/pics/readme.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Flappy Pig (Javascript)</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" onclick="changePages('pig')" class="card-link">Link to game</a>
-                        <a href="https://www.github.com/hsuirad/flappy-pig" class="card-link">Link to code</a>
-                    </div>
-                </div>
-                <div class="card" id = 'css-s'>
-                    <img src="scarlett_letter/first.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Scarlet Letter Game (Python)</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                    </ul>
-                    <div class="card-body">
-                        <a href="https://www.github.com/hsuirad/scarlet-letter-game" class="card-link">Link to code</a>
-                    </div>
-                </div>
-                <div class="card" id = 'css-s'>
-                    <img src="drawing_app/img.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Drawing App (Javascript)</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" onclick="changePages('drawing_app')" class="card-link">Link to demo</a>
-                        <a href="https://www.github.com/hsuirad/drawing-app" class="card-link">Link to code</a>
-                    </div>
-                </div>
-            </div>
-            <div class = 'card-group'>
-                <div class="card" id = 'css-s'>
-                    <img src="conway/imgs/img1.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Conway's Game of Life (Javascript)</h5>
-                    <p class="card-text">An in-browser Conway's Game of Life (also playing behind the welcome text). Tap to add or erase, 'p' pauses</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" onclick="changePages('conway')" class="card-link">Link to game</a>
-                        <a href="https://www.github.com/hsuirad/conways-game-of-life" class="card-link">Link to code</a>
-                    </div>
-                </div>
-                <div class="card" id = 'css-s'>
-                    <img src="loboferoz/screencaps/screencaptwo.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Loboferoz; Big Bad Wolf (Javascript)</h5>
-                    <p class="card-text">A variant of the Google Dinosaur game but with the big bad wolf, made in spanish because....</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" onclick="changePages('loboferoz')" class="card-link">Link to game</a>
-                        <a href="https://www.github.com/hsuirad/loboferoz" class="card-link">Link to code</a>
-                    </div>
-                </div>
-                <div class="card" id = 'css-s'>
-                    <img src="block-man/screencaps/img.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Pac-man (Javascript)</h5>
-                    <p class="card-text">Simple pac-man clone with local scoreboard</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" onclick="changePages('block-man/scripts')" class="card-link">Link to game</a>
-                        <a href="https://www.github.com/hsuirad/block-man" class="card-link">Link to code</a>
-                    </div>
-                </div>
-            </div>
-            <div class = 'card-group'>
-                <div class="card" id = 'css-s'>
-                    <img src="car_game/git.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Car Game (Javascript)</h5>
-                    <p class="card-text">A simple car game, run around the track and try and stay in the lanes to score points</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                    </ul>
-                    <div class="card-body">
-                        <a href = "#" onclick="changePages('car_game')" class="card-link">Link to game</a>
-                        <a href="https://www.github.com/hsuirad/car-game" class="card-link">Link to code</a>
-                    </div>
-                </div>
-                <div class="card" id = 'css-s'>
-                    <img src="recording.gif" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Terminal Tetris (C++)</h5>
-                    <p class="card-text">A variant of the Google Dinosaur game but with the big bad wolf, made in spanish because....</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                    </ul>
-                    <div class="card-body">
-                        <a href="https://www.github.com/hsuirad/terminal-tetris" class="card-link">Link to code</a>
-                    </div>
-                </div>
-                <div class="card" id = 'css-s'>
-                    <img src="calendar/buhtig.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">In-browser Calendar (Javascript)</h5>
-                    <p class="card-text">Simple pac-man clone with local scoreboard</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" onclick="changePages('calendar')" class="card-link">Link to demo</a>
-                        <a href="https://www.github.com/hsuirad/mycalendar" class="card-link">Link to code</a>
-                    </div>
-                </div>
-            </div>
-        </div>
         
         <div class="jumbotron">
             <h1 class="display-4">Contact me!</h1>
@@ -341,7 +201,7 @@
             </div>
             <p class="lead">I'm mostly active on GitHub and I respond to emails within the day, feel free to get in touch. (last is my fiverr)</p>
             <hr class="my-4">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Back to top</a>
+            
         </div>
         <div class = 'loader'>
             <span>L</span>
@@ -370,7 +230,7 @@
                     if(codeWords.innerHTML.length != phrases[onPhrase].length)codeWords.innerHTML += phrases[onPhrase][codeWords.innerHTML.length];                   
                     
                     if(codeWords.innerHTML.length == phrases[onPhrase].length){
-                        setTimeout(()=>{wordReached = true}, 1000);
+                        setTimeout(()=>{wordReached = true}, 2000);
                     }
                 }
                 else{
@@ -382,7 +242,7 @@
                 }
             }
 
-            let a = setInterval(changeWords, 100);
+            let a = setInterval(changeWords, 50);
             let b = setInterval(()=>{
                 document.getElementById('uncleanCodeButImTired').style.visibility = (val?"hidden":"visible");
                 val = !val;

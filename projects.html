@@ -141,8 +141,36 @@
                 100%{background-position:0% 18%}
             }
 
+            .jumbotron .fa{
+                font-size: 2rem !important;
+            }
+            
+	        @media (min-width: 576px){
+                .jumbotron .fa{
+                    font-size: 3rem !important;
+                }
+	        }
+	        @media (min-width: 786px){
+                .jumbotron .fa{
+                    font-size: 3rem !important;
+                }
+            }
+            @media (min-width: 992px){
+                .jumbotron .fa{
+                    font-size: 4rem !important;
+                }
+            }
+            @media(min-width: 1200px){
+                .jumbotron .fa{
+                    font-size: 5rem !important;
+                }
+	        }
+
             #css-s {
                 background-color: white;
+            }
+            .card{
+                margin: 1em 1em 1em 1em;
             }
         </style>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -159,7 +187,7 @@
         <canvas id = 'thecanvas'></canvas>
         <!-- yoinked from bootstrap bc lazy -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#"><i class = 'fa fa-coffee fa-lg'></i></a>
+            <a class="navbar-brand" href="./index.html"><i class = 'fa fa-coffee fa-2x'></i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -332,7 +360,7 @@
                 <a href = "https://www.instagram.com/d.aligholi/"><i class = 'fa fa-instagram fa-4x'></i></a>
 		<a href = "https://www.fiverr.com/hsuirad/"><i class = 'fa fa-fonticons fa-4x'></i></a>
             </div>
-            <p class="lead">I'm mostly active on GitHub and I respond to emails within the day, feel free to get in touch. (last is my fiverr)</p>
+            <p class="lead">I'm mostly active on GitHub and I respond to emails (<span style = "color:darkred">daligholi@gmail.com</span>) within the day, feel free to get in touch. (Last icon is my fiverr)</p>
             <hr class="my-4">
             <a class="btn btn-primary btn-lg" href="#" role="button">Back to top</a>
         </div>

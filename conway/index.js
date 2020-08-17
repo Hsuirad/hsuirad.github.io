@@ -1,7 +1,9 @@
-canvas.width = document.querySelector('nav').clientWidth;
+let canvas = document.getElementById("thecanvas")
 
-let offset = document.querySelector('nav').clientHeight;
-canvas.height = document.getElementById("codething").clientHeight+offset
+let c = canvas.getContext("2d")
+
+canvas.height = window.innerHeight
+canvas.width = window.innerWidth
 
 let mx = 0;
 let my = 0;
@@ -12,17 +14,11 @@ let pause = false;
 
 document.addEventListener("click", event => {
     mx = event.clientX;
-    my = event.clientY-offset;
+    my = event.clientY;
     mx = Math.floor(mx/scaleX);
     my = Math.floor(my/scaleY);
+    console.log(`Clicked at: (${mx}, ${my})`);
     cubes[my][mx].filled = !cubes[my][mx].filled;
-})
-
-window.addEventListener("resize", () => {
-    canvas.height = document.getElementById("codething").clientHeight
-    canvas.width = window.innerWidth
-    offset = document.querySelector('nav').clientHeight;
-    scaleY = scaleX = canvas.width/100;
 })
 
 document.onkeydown = e => {
@@ -38,8 +34,8 @@ class Cube{
     }
 
     draw = () => {
-        c.fillStyle = 'rgba(0, 0, 0, 0.5)'
-        this.filled?c.fillRect(this.x*scaleX, this.y*scaleY+offset, scaleX, scaleY):null;
+        c.fillStyle = 'black'
+        this.filled?c.fillRect(this.x*scaleX, this.y*scaleY, scaleX, scaleY):null;
     }
 
     update = () => {
@@ -83,12 +79,13 @@ for(let i = 0; i < Math.floor(canvas.height/scaleY); i++){
 }
 
 
+c.fillStyle = 'white'
+c.fillRect(0, 0, canvas.width, canvas.height)
 cubes.forEach(e => e.forEach(i => i.draw()));
 
 let animate = () => {
-    offset = document.querySelector('nav').clientHeight;
-    canvas.height = document.getElementById("codething").clientHeight+offset
-    c.clearRect(0, 0, canvas.width, canvas.height)
+    c.fillStyle = 'white'
+    c.fillRect(0, 0, canvas.width, canvas.height)
     if(!pause){
         cubes.forEach(e => e.forEach(i => i.getNeighbors()));
         cubes.forEach(e => e.forEach(i => i.update()));
@@ -98,5 +95,4 @@ let animate = () => {
     }
 }
 
-let interval = setInterval(animate, 70);
-
+setInterval(animate, 50);

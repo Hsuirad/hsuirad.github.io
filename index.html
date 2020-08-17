@@ -105,6 +105,78 @@
             canvas{
                 z-index:-1;
             }
+            a.button1{
+                display:inline-block;
+                padding:0.35em 1.2em;
+                border:0.1em solid #000000;
+                margin-top:1em;
+                border-radius:0.12em;
+                box-sizing: border-box;
+                text-decoration:none;
+                font-family:'Roboto',sans-serif;
+                font-weight:300;
+                font-size: 0.6rem;
+                color:#000;
+                text-align:center;
+                transition: all 0.2s;
+            }
+            a.button1:hover{
+                color:#000000;
+                background-color:#FFFFFF;
+            }
+            #codephrase{
+                font-size: 0.5rem;
+            }
+            .jumbotron .fa{
+                font-size: 2rem !important;
+            }
+            #resstuff{
+                font-size: 0.7rem;
+            }
+	        @media (min-width: 576px){
+                #codephrase{
+                    font-size:1rem;
+                }
+                a.button1, #resstuff{
+                    font-size: 1.1rem;
+                }
+                .jumbotron .fa{
+                    font-size: 3rem !important;
+                }
+	        }
+	        @media (min-width: 786px){
+                #codephrase{
+                    font-size:0.9rem;
+                }
+                a.button1, #resstuff{
+                    font-size: 1rem;
+                }
+                .jumbotron .fa{
+                    font-size: 3rem !important;
+                }
+            }
+            @media (min-width: 992px){
+                #codephrase{
+                    font-size: 1.1rem;
+                }
+                a.button1, #resstuff{
+                    font-size: 1.2rem;
+                }
+                .jumbotron .fa{
+                    font-size: 4rem !important;
+                }
+            }
+            @media(min-width: 1200px){
+                #codephrase{
+                    font-size: 1.4rem;
+                }
+                a.button1, #resstuff{
+                    font-size: 1.5rem;
+                }
+                .jumbotron .fa{
+                    font-size: 5rem !important;
+                }
+	        }
             .container-fluid{
                 background-color: white;
                 text-align: center;
@@ -158,14 +230,14 @@
         <canvas id = 'thecanvas'></canvas>
         <!-- yoinked from bootstrap bc lazy -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#"><i class = 'fa fa-coffee fa-lg'></i></a>
+            <a class="navbar-brand" href="#"><i class = 'fa fa-coffee fa-2x'></i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./projects.html">Projects</a>
@@ -183,15 +255,16 @@
             </div>
         </nav>
         <div id = "codething">
-            <code style = "font-size:1.2rem;">
+            <code id = 'codephrase'>
                 C:\Users\Hsuirad> I design and code <span id = "word"></span><span id='uncleanCodeButImTired'style='color:black;'>|</span>
             </code>
             <br><br><br><br>
-            <p id = 'resstuff' style="font-size:1.4rem;padding-left:10%;padding-right:10%;">Currently a computer science and biochemistry double major working freelance, check out my resume!</p>
+            <p id = 'resstuff' style="padding-left:10%;padding-right:10%;">Currently a computer science and biochemistry double major working freelance, check out my resume!</p>
+            <a href="./projects.html" class="button1">Finished Projects</a><span style="margin:0 2% 0 2%;"> </span><a href="./resume.pdf" class="button1">Resume</a><span style="margin:0 2% 0 2%;"> </span><a href="./resume.pdf" class="button1">Current Projects</a>
         </div>
         
         <div class="jumbotron">
-            <h1 class="display-4">Contact me!</h1>
+            <h1 class="display-5" style = 'text-align: center;'>Contact me!</h1>
             <div id = 'thediv'>
                 <a href = "https://www.github.com/hsuirad"><i class = 'fa fa-github fa-4x'></i></a>
                 <a href = "mailto:daligholi@gmail.com"><i class = 'fa fa-envelope fa-4x'></i></a>
@@ -199,7 +272,7 @@
                 <a href = "https://www.instagram.com/d.aligholi/"><i class = 'fa fa-instagram fa-4x'></i></a>
 		<a href = "https://www.fiverr.com/hsuirad/"><i class = 'fa fa-fonticons fa-4x'></i></a>
             </div>
-            <p class="lead">I'm mostly active on GitHub and I respond to emails within the day, feel free to get in touch. (last is my fiverr)</p>
+            <p class="lead">I'm mostly active on GitHub and I respond to emails (<span style = "color:darkred">daligholi@gmail.com</span>) within the day, feel free to get in touch. (Last icon is my fiverr)</p>
             <hr class="my-4">
             
         </div>
@@ -213,10 +286,11 @@
             <span>G</span>
         </div>
         <script>let canvas = document.getElementById('thecanvas'); let c = canvas.getContext('2d');</script>
-        <script src = 'conway/index.js'></script>
+        <script src = 'conway.js'></script>
         <script>
             let codeWords = document.querySelector("#word");
             let phrases = ["ReactJS and Node.js websites", "Machine Learning applications", "C++, Java, and Python applications"]
+            let longestPhrase = phrases[2].length;
             let wordReached = false;
             let onPhrase = 0;
             let val = false;

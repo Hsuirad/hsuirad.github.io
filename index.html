@@ -1,262 +1,215 @@
 <html>
     <head>
         <title>Dariush Aligholizadeh</title>
-	    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="icon" href="favicon.ico"/>
         <meta name  = 'description' content = 'Personal website to better demonstrate my portfolio'></meta>
+
+
         <style>
-            #thecanvas{
-                position:absolute;
+            @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,200&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #bccddf;
             }
-            .container a{
-                text-decoration: none;
-                color: black;
+            ::-webkit-scrollbar {
+                display: none;
             }
-            html{
-                scroll-behavior: smooth;
+            .centered_image {
+                z-index: -1;
+                top: 0;
+                bottom: 0;
+                display: block;
+                vertical-align: middle;
+                margin: auto;
+                height: 230%;
             }
-            body{
-                background-color: #dbdbdb;
+            canvas {
+                position: absolute;
                 margin: 0;
                 padding: 0;
             }
-            .jumbotron #thediv{
-                text-align: center;
-                margin-bottom: 1em;
+            .imgContainer {
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                vertical-align: middle;
+                height: 100%;
+                overflow: hidden;
             }
-            .jumbotron #thediv a{
-                color: black;
-                text-decoration: none;
+            .aboutMe{
+                padding: 2% 20% 4% 20%;
+                font-size: 1.5em;
+                font-family: 'Raleway', sans-serif;
+                background-color: #404952;
+                color: white;
+                width:100%;
+                text-align: center;
+            }
+            .contactInfo{
+                padding: 2% 20% 4% 20%;
+                font-size: 1.5em;
+                font-family: 'Raleway', sans-serif;
+                background-color: #5b97b1;
+                color: white;
+                width:100%;
+                text-align: center;
+            }
+            
+            a{
+                text-decoration: underline;
+                color: rgb(255, 255, 255);
+            }
+            a:hover{
+                color: rgb(200,200,200);
+            }
+            i{
                 margin: 0 1% 0 1%;
             }
-            .jumbotron #thediv a:hover{
-                color: rgba(50, 50, 50);
-            }
-            #codething{
-                width: 100%;
-                text-align:center;
-                padding: 4rem 0 6rem 0;
-                color: black;
-                background-color: rgba(255, 255, 255, 0.8);
-                filter:invert(100%);
-            }
-            .container-fluid h1{
-                margin-top:5%;
-            }
-            canvas{
-                z-index:-1;
-            }
-            a.button1{
-                display:inline-block;
-                padding:0.35em 1.2em;
-                border:0.1em solid #000000;
-                margin-top:1em;
-                border-radius:0.12em;
-                box-sizing: border-box;
-                text-decoration:none;
-                font-family:'Roboto',sans-serif;
-                font-weight:300;
-                font-size: 0.6rem;
-                color:#000;
-                text-align:center;
-                transition: all 0.2s;
-            }
-            a.button1:hover{
-                color:#000000;
-                background-color:#FFFFFF;
-            }
-            #codephrase{
-                font-size: 0.5rem;
-            }
-            .jumbotron .fa{
-                font-size: 2rem !important;
-            }
-            #resstuff{
-                font-size: 0.7rem;
-            }
-	        @media (min-width: 576px){
-                #codephrase{
-                    font-size:1rem;
-                }
-                a.button1, #resstuff{
-                    font-size: 1.1rem;
-                }
-                .jumbotron .fa{
-                    font-size: 3rem !important;
-                }
-	        }
-	        @media (min-width: 786px){
-                #codephrase{
-                    font-size:0.9rem;
-                }
-                a.button1, #resstuff{
-                    font-size: 1rem;
-                }
-                .jumbotron .fa{
-                    font-size: 3rem !important;
-                }
-            }
-            @media (min-width: 992px){
-                #codephrase{
-                    font-size: 1.1rem;
-                }
-                a.button1, #resstuff{
-                    font-size: 1.2rem;
-                }
-                .jumbotron .fa{
-                    font-size: 4rem !important;
-                }
-            }
-            @media(min-width: 1200px){
-                #codephrase{
-                    font-size: 1.4rem;
-                }
-                a.button1, #resstuff{
-                    font-size: 1.5rem;
-                }
-                .jumbotron .fa{
-                    font-size: 5rem !important;
-                }
-	        }
-            .container-fluid{
-                background-color: white;
-                text-align: center;
-                padding-top: 2%;
-                padding-bottom: 2%;
-                z-index:2;
-            }
-            .row{
-                margin-top:5%;
-            }
-            #css-selector {
-                background: linear-gradient(323deg, #9acbeb, #67e064, #e3ae85);
-                background-size: 800% 800%;
-
-                -webkit-animation: AnimationName 20s ease infinite;
-                -moz-animation: AnimationName 20s ease infinite;
-                animation: AnimationName 20s ease infinite;
+            .test{
+                display: flex;
+                justify-content: space-around;
             }
 
-            @-webkit-keyframes AnimationName {
-                0%{background-position:0% 18%}
-                50%{background-position:100% 83%}
-                100%{background-position:0% 18%}
+            @media only screen and (max-width: 862px) {
+                .edSect{
+                    margin: 11%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    text-align: left;
+                }
+                .education{
+                    padding: 2% 20% 2% 20%;
+                    font-size: 1.5em;
+                    font-family: 'Raleway', sans-serif;
+                    background-color: #908b8b;
+                    color: white;
+                    width:100%;
+                    text-align: center;
+                }
             }
-            @-moz-keyframes AnimationName {
-                0%{background-position:0% 18%}
-                50%{background-position:100% 83%}
-                100%{background-position:0% 18%}
-            }
-            @keyframes AnimationName {
-                0%{background-position:0% 18%}
-                50%{background-position:100% 83%}
-                100%{background-position:0% 18%}
-            }
-
-            #css-s {
-                background-color: white;
+            @media only screen and (min-width: 862px) {
+                .edSect{
+                    margin: 11%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    text-align: left;
+                }
+                .education{
+                    padding: 2% 20% 2% 20%;
+                    font-size: 1.5em;
+                    font-family: 'Raleway', sans-serif;
+                    background-color: #908b8b;
+                    color: white;
+                    width:100%;
+                    text-align: center;
+                }
             }
         </style>
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     </head>
-    <body id = 'test'>
-        <!-- add a light mode dark mode option god damnit-->
-        <!--
-            Current list of things to add:
-                - see if you  can fix wikisearch
-                - make something else for fun?????
-                - some animations like how alex has
-                - some other stuff
+    <body>
+
+        <!-- 
+        Current Ideas:
+        the home page is like the thing i showed on the greg site basically the yuma zaid dariush
+        photo with a speech bubble or a little arrow coming down to me
+
+        the rest follows the same format with little photos and quirky descriptions here and there
         -->
-        <canvas id = 'thecanvas'></canvas>
-        <!-- yoinked from bootstrap bc lazy -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#"><i class = 'fa fa-coffee fa-2x'></i></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#thediv">Contact Info</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="resume.pdf">Resume</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Toggle Light/Dark Mode (WIP)</a>
-                    </li>
-                </ul>
+        <div class = 'imgContainer'>
+            <canvas class = 'drawingBoard'></canvas>
+            <img class = 'centered_image' src = "./WelcomeBannerImage.JPEG"></img>
+        </div>
+        <div class = 'aboutMe'>
+            <p style="font-size:2em;font-family:'Yanone Kaffeesatz', sans-serif;">&#8213; About Me &#8213;</p>
+            <br>
+            I'm currently an undegraduate at UMBC majoring in Computer Science and Biochemistry & Molecular Biology on the Pre-Med Track. My interests range anywhere from virology to neurology to machine learning and software development. My goals have always been to attend Medical School, but I'm always interested in learning the most I can on the way there! Check out my <a href = "./Dariush_Undergraduate_Resume.pdf"> full resume</a>, or just keep scrolling
+        </div>
+        <div class = 'education'>
+            <p style="font-size:2em;font-family:'Yanone Kaffeesatz', sans-serif;">&#8213; Education &#8213;</p>
+            <br>
+            <div class = 'edSect'>
+                <img style = "margin:2%;" src = "UMBC.png" height = 100px></img>
+                <p style = "border-left: 2px solid white; float: left; padding-left:2%; font-size: 1em;">
+                    <strong>University of Maryland, Baltimore-County</strong><br>
+                    <em>Sept. 2020 - May 2024</em>
+                    <br>
+                    <br>
+                    <strong>Member:</strong> Honors College
+                    <br>
+                    <strong>GPA:</strong> 4.0/4.0
+                    <br>
+                    <strong>Majors:</strong> B.S. Computer Science, B.S. Biochemistry & Molecular Biology
+                </p>
             </div>
-        </nav>
-        <div id = "codething">
-            <code id = 'codephrase'>
-                C:\Users\Hsuirad> I design and code <span id = "word"></span><span id='uncleanCodeButImTired'style='color:black;'>|</span>
-            </code>
-            <br><br><br><br>
-            <p id = 'resstuff' style="padding-left:10%;padding-right:10%;">Currently a computer science and biochemistry double major working freelance, check out my resume!</p>
-            <a href="./projects.html" class="button1">Finished Projects</a><span style="margin:0 2% 0 2%;"> </span><a href="./resume.pdf" class="button1">Resume</a><span style="margin:0 2% 0 2%;"> </span><a href="./resume.pdf" class="button1">Current Projects</a>
+            <div style = "margin-top: 5%;" class = 'edSect'>
+                <img style = "margin:2%;border-radius: 10%;" src = "THS.jpg" height = 87px></img>
+                <p style = "border-left: 2px solid white; float: left; padding-left:2%; font-size: 1em;">
+                    <strong>Towson High School</strong><br>
+                    <em>Sept. 2016 - May 2020</em>
+                    <br>
+                    <br>
+                    <strong>Member:</strong> National Math Honor Society, National Social Studies Honor Society, National Music Honor Society
+                    <br>
+                    <strong>GPA:</strong> 3.88/4.0, <strong>QPA:</strong> 5.66/6.00
+                    <br>
+                    <strong>Rank: </strong>14/326
+                    <br>
+                    <strong>SAT: </strong>1450/1600
+                </p>
+            </div>
+        </div>
+        <!-- DO A SKILLS SECTION AND STUFF LIKE THAT AND YOUR PROJECTS MAYBE -->
+        <div class = 'contactInfo'>
+            <p style="font-size:2em;font-family:'Yanone Kaffeesatz', sans-serif;">&#8213; Contact Info &#8213;</p>
+            <br>
+            <div class = 'test'>
+                <a href = "mailto:daligho1@umbc.edu"><i class = 'fa fa-envelope fa-4x'></i></a><a href = "https://www.linkedin.com/in/dariush-aligholizadeh-8a9094199/"><i class = 'fab fa-linkedin-in fa-4x'></i></a><a href = "https://www.instagram.com/d.aligholi"><i class = 'fab fa-instagram fa-4x'></i></a>
+            </div>
         </div>
         
-        <div class="jumbotron">
-            <h1 class="display-5" style = 'text-align: center;'>Contact me!</h1>
-            <div id = 'thediv'>
-                <a href = "https://www.github.com/hsuirad"><i class = 'fa fa-github fa-4x'></i></a>
-                <a href = "mailto:daligholi@gmail.com"><i class = 'fa fa-envelope fa-4x'></i></a>
-                <a href = "https://www.linkedin.com/in/dariush-aligholizadeh-8a9094199/"><i class = 'fa fa-linkedin fa-4x'></i></a>
-                <a href = "https://www.instagram.com/d.aligholi/"><i class = 'fa fa-instagram fa-4x'></i></a>
-		<a href = "https://www.fiverr.com/hsuirad/"><i class = 'fa fa-fonticons fa-4x'></i></a>
-            </div>
-            <p class="lead">I'm mostly active on GitHub and I respond to emails (<a href = "mailto:daligholi@gmail.com" style = "color:darkred">daligholi@gmail.com</a>) within the day, feel free to get in touch. (Last icon is my fiverr)</p>
-            <hr class="my-4">
-            
-        </div>
-        <script>let canvas = document.getElementById('thecanvas'); let c = canvas.getContext('2d');</script>
-        <script src = 'conway.js'></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script>
-            let codeWords = document.querySelector("#word");
-            let phrases = ["ReactJS and Node.js websites", "Machine Learning applications", "C++, Java, and Python applications"]
-            let longestPhrase = phrases[2].length;
-            let wordReached = false;
-            let onPhrase = 0;
-            let val = false;
-            function changeWords(){
-                if(!wordReached){
-                    if(codeWords.innerHTML.length == 0){
-                        onPhrase++;
-                        onPhrase%=phrases.length;
-                    }
+            //  context.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y);
+            let canvas = document.querySelector('.drawingBoard')
+            let c = canvas.getContext('2d')
+            canvas.width = document.querySelector('.imgContainer').clientWidth;
+            canvas.height = window.innerHeight;
+            
 
-                    if(codeWords.innerHTML.length != phrases[onPhrase].length)codeWords.innerHTML += phrases[onPhrase][codeWords.innerHTML.length];                   
-                    
-                    if(codeWords.innerHTML.length == phrases[onPhrase].length){
-                        setTimeout(()=>{wordReached = true}, 2000);
-                    }
-                }
-                else{
-                    if(codeWords.innerHTML.length != 0)codeWords.innerHTML = codeWords.innerHTML.replace(/[\S,\s]$/g, '');
+            c.beginPath()
+            c.moveTo(canvas.width/2+40, canvas.height/1.58)
+            c.lineWidth = 4
+            c.lineCap = 'round'
+            c.strokeStyle = 'white'
 
-                    if(codeWords.innerHTML.length == 0){
-                        setTimeout(()=>{wordReached = false}, 500);
-                    }
-                }
+            function bezier(x2, y2){
+                c.beginPath()
+                c.moveTo(canvas.width/2+40, canvas.height/1.58)
+                c.clearRect(0, 0, canvas.width, canvas.height)
+                c.bezierCurveTo(canvas.width/2+75, canvas.height/1.63, x2, y2, x2, y2)//canvas.width/2+65, canvas.height/2.2)
+
+                c.stroke()
+
+                return [x2, y2];
             }
 
-            let a = setInterval(changeWords, 50);
-            let b = setInterval(()=>{
-                document.getElementById('uncleanCodeButImTired').style.visibility = (val?"hidden":"visible");
-                val = !val;
-            }, 700)
+
+
+
+            let imgObj = document.querySelector('.centered_image');
+            let overflow = imgObj.width - window.innerWidth;
+
+            imgObj.style.margin=`-30em 0 0 ${-overflow/2}`
 
 
             function changePages(page){
@@ -274,6 +227,132 @@
                     window.location.href = page + "/index.html";
                 }, 4000)
             }
+
+            let fadeText = () => {
+                let text = "Hi, I'm"
+                let name = "Dariush Aligholizadeh"
+                let opacity = 0.0;
+
+                let finalTimer = setInterval(()=>{
+                    if(canvas.width > 835)
+                        c.font = "2em Titillium Web, sans-serif"
+                    else
+                        c.font = "2em Titillium Web, sans-serif"
+
+                    c.fillStyle = `rgba(255, 255, 255, ${opacity})`
+                    c.fillText(text, Math.round(canvas.width/2 - c.measureText(text).width/2), Math.round(canvas.height/2 - (c.measureText(text).actualBoundingBoxAscent + c.measureText(text).actualBoundingBoxDescent)*5.5))
+                    if(canvas.width > 835)
+                        c.font = "4em Montserrat, sans-serif"
+                    else
+                        c.font = "1.5em Montserrat, sans-serif"
+                    c.fillStyle = `rgba(255, 255, 255, ${opacity/5})`
+                    c.fillText(name, Math.round(canvas.width/2 - c.measureText(name).width/2), Math.round(canvas.height/2.35))
+                    opacity += 0.1;
+                    if(opacity >= 5.0){
+                        clearInterval(finalTimer);
+                    }
+                }, 100)
+            }
+
+            let x1 = canvas.width/2+75
+            let y1 = canvas.height/1.63
+            let accelator = 7;
+
+            let startLine = () => {
+                let timer1 = setInterval(() => {
+                    let ret = bezier(x1, y1);
+                    //console.log(ret)
+                    x1 = ret[0];
+                    y1 = ret[1];
+                    if(ret[0] >= canvas.width/2+65){
+                        x1 = canvas.width/2+65
+                        if(ret[1] <= canvas.height/2.2){
+                            ret[1] = canvas.height/2.2;
+                            clearInterval(timer1)
+                            startBottom();
+                        }
+                        y1-=accelator
+                    }
+                    else{  
+                        if(ret[1] <= canvas.height/2.2){
+                            y1 = canvas.height/2.2;
+                            x1++
+                        }
+                        x1+=accelator
+                        y1-=accelator
+                    }
+                    accelator*=0.98
+                    if(accelator<0.5) accelator=0.5
+                }, 10)
+            }
+
+            let startBottom = () => {
+                c.clearRect(0, 0, canvas.width, canvas.height)
+
+                c.beginPath();
+                c.moveTo(canvas.width/2+40, canvas.height/1.58)
+                c.bezierCurveTo(canvas.width/2+75, canvas.height/1.63, canvas.width/2+65, canvas.height/2.2, canvas.width/2+65, canvas.height/2.2)
+                c.stroke()
+
+                if(canvas.width > 835)
+                        c.font = "4em Montserrat, sans-serif"
+                else
+                    c.font = "1.5em Montserrat, sans-serif"
+                let sides = c.measureText("Dariush Aligholizadeh").width*1.3
+
+                let startL = [canvas.width/2+65, canvas.height/2.2, canvas.width/2-sides/2, canvas.height/2.2]
+                let startR = [canvas.width/2+65, canvas.height/2.2, canvas.width/2+sides/2, canvas.height/2.2]
+                // let startxR = canvas.width/2+65
+                // let startyR = canvas.height/2.2
+                let movedL = 0;
+                let movedR = 0;
+                //left is 1.4 times right
+                let tempPoint = canvas.width/2+65;
+                let leftOff = tempPoint-(canvas.width/2-sides/2);
+                let rightOff = (canvas.width/2+sides/2)-tempPoint;
+
+                let accelatorL = canvas.width/2/80*(leftOff/rightOff);
+                let accelatorR = canvas.width/2/80;
+
+                let timer2 = setInterval(()=>{
+                    c.beginPath()
+                    c.moveTo(startL[0], startL[1]);
+                    c.lineTo(startL[0] - movedL, canvas.height/2.2)
+                    c.stroke()
+
+                    c.beginPath()
+                    c.moveTo(startR[0], startR[1]);
+                    c.lineTo(startR[0] + movedR, canvas.height/2.2)
+                    c.stroke()
+
+                    console.log(startL, movedL)
+
+                    accelatorL*=0.98
+                    accelatorR*=0.98
+
+                    if(accelatorL<=1*(leftOff/rightOff))accelatorL=1*(leftOff/rightOff)
+                    if(accelatorR<=1)accelatorR=1
+
+                    if(startL[0] - movedL <= startL[2]){
+                        accelatorL = 0;
+                        if(startR[0] + movedR >= startR[2]){
+                            movedR = 0;
+                            accelatorR = 0;
+                            fadeText();
+                            clearInterval(timer2)
+                        }
+                    } else{
+                        if(startR[0] + movedR >= startR[2]){
+                            accelatorR = 0;
+                        }
+                    }
+
+                    movedR += accelatorR
+                    movedL += accelatorL
+                }, 10)
+            }
+
+            setTimeout(startLine, 2000)
         </script>
     </body>
 </html>

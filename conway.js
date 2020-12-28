@@ -114,4 +114,3 @@ let animate = () => {
 }
 
 let interval = setInterval(animate, 70);
-

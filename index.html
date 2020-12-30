@@ -38,7 +38,7 @@
                 margin: 0;
                 padding: 0;
             }
-            .imgContainer {
+            .big {
                 padding: 0;
                 margin: 0;
                 width: 100%;
@@ -46,25 +46,27 @@
                 height: 100%;
                 overflow: hidden;
             }
-            .aboutMe{
-                padding: 2% 20% 4% 20%;
-                font-size: 1.5em;
-                font-family: 'Raleway', sans-serif;
-                background-color: #404952;
-                color: white;
-                width:100%;
-                text-align: center;
-            }
             .contactInfo{
                 padding: 2% 20% 4% 20%;
+                margin: 0 0 0 0;
+                top: 0;
                 font-size: 1.5em;
                 font-family: 'Raleway', sans-serif;
                 background-color: #5b97b1;
                 color: white;
-                width:100%;
+                width: 100%;
                 text-align: center;
             }
-            
+            .face_image {
+                top: 0;
+                bottom: 0;
+                position: absolute;
+                margin: auto;
+            }
+            .edHead{
+                font-size:2em;
+                font-family:'Yanone Kaffeesatz', sans-serif;
+            }
             a{
                 text-decoration: underline;
                 color: rgb(255, 255, 255);
@@ -79,30 +81,100 @@
                 display: flex;
                 justify-content: space-around;
             }
+            canvas{
+                position: absolute;
+            }
+            .aboutMe{
+                font-size: 1.5em;
+                font-family: 'Raleway', sans-serif;
+                background-color: #404952;
+                color: white;
+                width:100%;
+                text-align: center;
+            }
+            .alternate{
+                top: 0;
+                bottom: 0;
+                padding: 0;
+                position: absolute;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            .face_image{
+                z-index: -1;
+            }
+            .welcome{
+                font-size: 2em;
+                width: 100%;
+                text-align: center;
+                z-index:1;
+                position: absolute;
+            }
 
-            @media only screen and (max-width: 862px) {
+
+            @media only screen and (max-width: 870px) {
                 .edSect{
                     margin: 11%;
-                    display: flex;
-                    justify-content: space-evenly;
+                }
+                .edHead{
+                    font-size: 1.2em;
+                }
+                .aboutMe{
+                    font-size: 1em;
+                    padding: 6% 10% 8% 10%;
+                }
+                .aboutHead{
+                    font-size:1.5em;
+                    font-family:'Yanone Kaffeesatz', sans-serif;
+                }
+                .edSect p {
                     text-align: left;
+                    border-bottom: 2px solid white; 
+                    padding-bottom:2%; 
+                    padding-top:2%; 
+                    font-size: 1em;
                 }
                 .education{
-                    padding: 2% 20% 2% 20%;
-                    font-size: 1.5em;
+                    padding: 6% 10% 4% 10%;
+                    font-size: 1.2em;
                     font-family: 'Raleway', sans-serif;
                     background-color: #908b8b;
                     color: white;
                     width:100%;
                     text-align: center;
+
+                }
+                .big{
+                    visibility: hidden;
                 }
             }
-            @media only screen and (min-width: 862px) {
+            @media only screen and (max-width: 756px) {
+                .face_image{height: 100%;}
+            }
+            @media only screen and (min-width:756px){
+                .face_image{width: 100%;};
+            }
+            @media only screen and (min-width: 870px) {
+                .aboutHead{
+                    font-size:2em;
+                    font-family:'Yanone Kaffeesatz', sans-serif
+                }
+                .aboutMe{
+                    padding: 2% 20% 4% 20%;
+                }
                 .edSect{
                     margin: 11%;
                     display: flex;
                     justify-content: space-evenly;
                     text-align: left;
+                }
+                .edSect p{
+                    border-left: 2px solid white; 
+                    float: left; 
+                    padding-left:2%; 
+                    font-size: 1em;
                 }
                 .education{
                     padding: 2% 20% 2% 20%;
@@ -112,6 +184,9 @@
                     color: white;
                     width:100%;
                     text-align: center;
+                }
+                .alternate{
+                    visibility: hidden;
                 }
             }
         </style>
@@ -126,20 +201,25 @@
         the rest follows the same format with little photos and quirky descriptions here and there
         -->
         <div class = 'imgContainer'>
-            <canvas class = 'drawingBoard'></canvas>
-            <img class = 'centered_image' src = "./WelcomeBannerImage.JPEG"></img>
+            <div class = 'big'>
+                <canvas class = 'drawingBoard'></canvas>
+                <img class = 'centered_image' src = "./WelcomeBannerImage.JPEG"></img>
+            </div>
+            <div class = 'alternate'>
+                <canvas class = 'circleAnim'></canvas>
+                <img class = 'face_image' src = './altwelcome1.jpg'></img>
+            </div>
         </div>
         <div class = 'aboutMe'>
-            <p style="font-size:2em;font-family:'Yanone Kaffeesatz', sans-serif;">&#8213; About Me &#8213;</p>
+            <p class = 'aboutHead'>&#8213; About Me &#8213;</p>
             <br>
             I'm currently an undegraduate at UMBC majoring in Computer Science and Biochemistry & Molecular Biology on the Pre-Med Track. My interests range anywhere from virology to neurology to machine learning and software development. My goals have always been to attend Medical School, but I'm always interested in learning the most I can on the way there! Check out my <a href = "./Dariush_Undergraduate_Resume.pdf"> full resume</a>, or just keep scrolling
         </div>
         <div class = 'education'>
-            <p style="font-size:2em;font-family:'Yanone Kaffeesatz', sans-serif;">&#8213; Education &#8213;</p>
-            <br>
+            <p class = 'edHead'>&#8213; Education &#8213;</p>
             <div class = 'edSect'>
-                <img style = "margin:2%;" src = "UMBC.png" height = 100px></img>
-                <p style = "border-left: 2px solid white; float: left; padding-left:2%; font-size: 1em;">
+                <img style = "margin: 4%;" src = "UMBC.png" height = 100px></img>
+                <p>
                     <strong>University of Maryland, Baltimore-County</strong><br>
                     <em>Sept. 2020 - May 2024</em>
                     <br>
@@ -152,8 +232,8 @@
                 </p>
             </div>
             <div style = "margin-top: 5%;" class = 'edSect'>
-                <img style = "margin:2%;border-radius: 10%;" src = "THS.jpg" height = 87px></img>
-                <p style = "border-left: 2px solid white; float: left; padding-left:2%; font-size: 1em;">
+                <img style = "margin:4%;border-radius: 10%;" src = "THS.jpg" height = 87px></img>
+                <p>
                     <strong>Towson High School</strong><br>
                     <em>Sept. 2016 - May 2020</em>
                     <br>
@@ -180,37 +260,224 @@
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script>
             //  context.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y);
-            let canvas = document.querySelector('.drawingBoard')
-            let c = canvas.getContext('2d')
-            canvas.width = document.querySelector('.imgContainer').clientWidth;
-            canvas.height = window.innerHeight;
-            
+            if(document.querySelector('.imgContainer').clientWidth > 870){
+                let canvas = document.querySelector('.drawingBoard')
+                let c = canvas.getContext('2d')
+                canvas.width = document.querySelector('.imgContainer').clientWidth;
+                canvas.height = window.innerHeight;
+                
 
-            c.beginPath()
-            c.moveTo(canvas.width/2+40, canvas.height/1.58)
-            c.lineWidth = 4
-            c.lineCap = 'round'
-            c.strokeStyle = 'white'
-
-            function bezier(x2, y2){
                 c.beginPath()
                 c.moveTo(canvas.width/2+40, canvas.height/1.58)
-                c.clearRect(0, 0, canvas.width, canvas.height)
-                c.bezierCurveTo(canvas.width/2+75, canvas.height/1.63, x2, y2, x2, y2)//canvas.width/2+65, canvas.height/2.2)
+                c.lineWidth = 4
+                c.lineCap = 'round'
+                c.strokeStyle = 'white'
 
-                c.stroke()
+                function bezier(x2, y2){
+                    c.beginPath()
+                    c.moveTo(canvas.width/2+40, canvas.height/1.58)
+                    c.clearRect(0, 0, canvas.width, canvas.height)
+                    c.bezierCurveTo(canvas.width/2+75, canvas.height/1.63, x2, y2, x2, y2)//canvas.width/2+65, canvas.height/2.2)
 
-                return [x2, y2];
+                    c.stroke()
+
+                    return [x2, y2];
+                }
+                let fadeText = () => {
+                    let text = "Hi, I'm"
+                    let name = "Dariush Aligholizadeh"
+                    let opacity = 0.0;
+
+                    let finalTimer = setInterval(()=>{
+                        c.font = "2em Titillium Web, sans-serif"
+                        c.fillStyle = `rgba(255, 255, 255, ${opacity})`
+                        c.fillText(text, canvas.width/2 - c.measureText(text).width/2, canvas.height/2 - (c.measureText(text).actualBoundingBoxAscent + c.measureText(text).actualBoundingBoxDescent)*5.5)
+                        c.font = "4em Montserrat, sans-serif"
+                        c.fillStyle = `rgba(255, 255, 255, ${opacity/5})`
+                        c.fillText(name, canvas.width/2 - c.measureText(name).width/2, canvas.height/2.35)
+                        opacity += 0.1;
+                        if(opacity >= 5.0){
+                            clearInterval(finalTimer);
+                        }
+                    }, 100)
+                }
+                
+
+                let x1 = canvas.width/2+75
+                let y1 = canvas.height/1.63
+                let accelator = 7;
+
+                let startLine = () => {
+                    let timer1 = setInterval(() => {
+                        let ret = bezier(x1, y1);
+                        //console.log(ret)
+                        x1 = ret[0];
+                        y1 = ret[1];
+                        if(ret[0] >= canvas.width/2+65){
+                            x1 = canvas.width/2+65
+                            if(ret[1] <= canvas.height/2.2){
+                                ret[1] = canvas.height/2.2;
+                                clearInterval(timer1)
+                                startBottom();
+                            }
+                            y1-=accelator
+                        }
+                        else{  
+                            if(ret[1] <= canvas.height/2.2){
+                                y1 = canvas.height/2.2;
+                                x1++
+                            }
+                            x1+=accelator
+                            y1-=accelator
+                        }
+                        accelator*=0.98
+                        if(accelator<0.5) accelator=0.5
+                    }, 10)
+                }
+
+                let startBottom = () => {
+                    c.clearRect(0, 0, canvas.width, canvas.height)
+
+                    c.beginPath();
+                    c.moveTo(canvas.width/2+40, canvas.height/1.58)
+                    c.bezierCurveTo(canvas.width/2+75, canvas.height/1.63, canvas.width/2+65, canvas.height/2.2, canvas.width/2+65, canvas.height/2.2)
+                    c.stroke()
+
+                    c.font = "4em Montserrat, sans-serif"
+
+                    let sides = c.measureText("Dariush Aligholizadeh").width*1.3
+
+                    let startL = [canvas.width/2+65, canvas.height/2.2, canvas.width/2-sides/2, canvas.height/2.2]
+                    let startR = [canvas.width/2+65, canvas.height/2.2, canvas.width/2+sides/2, canvas.height/2.2]
+                    // let startxR = canvas.width/2+65
+                    // let startyR = canvas.height/2.2
+                    let movedL = 0;
+                    let movedR = 0;
+                    //left is 1.4 times right
+                    let tempPoint = canvas.width/2+65;
+                    let leftOff = tempPoint-(canvas.width/2-sides/2);
+                    let rightOff = (canvas.width/2+sides/2)-tempPoint;
+
+                    let accelatorL = canvas.width/2/80*(leftOff/rightOff);
+                    let accelatorR = canvas.width/2/80;
+
+                    let timer2 = setInterval(()=>{
+                        c.beginPath()
+                        c.moveTo(startL[0], startL[1]);
+                        c.lineTo(startL[0] - movedL, canvas.height/2.2)
+                        c.stroke()
+
+                        c.beginPath()
+                        c.moveTo(startR[0], startR[1]);
+                        c.lineTo(startR[0] + movedR, canvas.height/2.2)
+                        c.stroke()
+
+                        console.log(startL, movedL)
+
+                        accelatorL*=0.98
+                        accelatorR*=0.98
+
+                        if(accelatorL<=1*(leftOff/rightOff))accelatorL=1*(leftOff/rightOff)
+                        if(accelatorR<=1)accelatorR=1
+
+                        if(startL[0] - movedL <= startL[2]){
+                            accelatorL = 0;
+                            if(startR[0] + movedR >= startR[2]){
+                                movedR = 0;
+                                accelatorR = 0;
+                                fadeText();
+                                clearInterval(timer2)
+                            }
+                        } else{
+                            if(startR[0] + movedR >= startR[2]){
+                                accelatorR = 0;
+                            }
+                        }
+
+                        movedR += accelatorR
+                        movedL += accelatorL
+                    }, 10)
+                }
+
+                let imgObj = document.querySelector('.centered_image');
+                let overflow = imgObj.width - window.innerWidth;
+
+                imgObj.style.margin=`-500px 0 0 ${-overflow/2}`
+
+
+                setTimeout(startLine, 2000)
             }
+            else if(document.querySelector('.imgContainer').clientWidth < 870){
+                let offset = document.querySelector('.face_image').width - document.querySelector('.imgContainer').clientWidth;
+                document.querySelector('.face_image').style.margin = `0 0 0 ${-offset/2}`                
+
+                window.onresize = function(){
+                    offset = document.querySelector('.face_image').width - document.querySelector('.imgContainer').clientWidth;
+                    document.querySelector('.face_image').style.margin = `0 0 0 ${-offset/2}`                
+                }
 
 
+                let canvas = document.querySelector('.circleAnim')
+                let c = canvas.getContext('2d')
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                // c.beginPath();
+                // c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI);
+                c.lineWidth = 3
+                c.strokeStyle = 'white'
+                // c.stroke()
+                let radius = 0;
+                let acc = 0.005;
 
 
-            let imgObj = document.querySelector('.centered_image');
-            let overflow = imgObj.width - window.innerWidth;
+                let timer = setInterval(() => {
+                    if(radius < 2*Math.PI+0.03){
+                        c.clearRect(0, 0, canvas.width, canvas.height)
+                        c.beginPath()
+                        c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, radius);
+                        c.stroke()
+                        radius+=0.03;
+                        acc*=1.1
+                        acc<0.005?acc=0.005:acc=acc;
+                            console.log('a')
+                    }
+                    else{ 
+                        startSecond();
+                        clearInterval(timer)
+                    }
+                }, 10)
 
-            imgObj.style.margin=`-30em 0 0 ${-overflow/2}`
-
+                let startSecond = () => {
+                    let opacity = 0;
+                    acc = 0.01;
+                    let timer2 = setInterval(() => {
+                        if(opacity <= 1.0){
+                            c.clearRect(0, 0, canvas.width, canvas.height)
+                            c.beginPath()
+                            c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI)
+                            c.rect(canvas.width, 0, -canvas.width, canvas.height)
+                            c.fillStyle = `rgba(64, 73, 82, ${opacity})`;
+                            c.fill()
+                            c.beginPath()
+                            c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI);
+                            c.stroke()
+                            opacity+=0.01;
+                            acc*=1.1
+                            acc<0.005?acc=0.005:acc=acc;
+                            console.log('b')
+                        }
+                        else{ 
+                            clearInterval(timer2)
+                        }
+                    }, 15)
+                }
+                // setTimeout(() => {
+                //     c.beginPath()
+                //     c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI)
+                //     c.rect(canvas.width, 0, -canvas.width, canvas.height)
+                //     c.fill()
+                // }, 5000);
+            }
 
             function changePages(page){
                 clearInterval(b);
@@ -227,132 +494,6 @@
                     window.location.href = page + "/index.html";
                 }, 4000)
             }
-
-            let fadeText = () => {
-                let text = "Hi, I'm"
-                let name = "Dariush Aligholizadeh"
-                let opacity = 0.0;
-
-                let finalTimer = setInterval(()=>{
-                    if(canvas.width > 835)
-                        c.font = "2em Titillium Web, sans-serif"
-                    else
-                        c.font = "2em Titillium Web, sans-serif"
-
-                    c.fillStyle = `rgba(255, 255, 255, ${opacity})`
-                    c.fillText(text, Math.round(canvas.width/2 - c.measureText(text).width/2), Math.round(canvas.height/2 - (c.measureText(text).actualBoundingBoxAscent + c.measureText(text).actualBoundingBoxDescent)*5.5))
-                    if(canvas.width > 835)
-                        c.font = "4em Montserrat, sans-serif"
-                    else
-                        c.font = "1.5em Montserrat, sans-serif"
-                    c.fillStyle = `rgba(255, 255, 255, ${opacity/5})`
-                    c.fillText(name, Math.round(canvas.width/2 - c.measureText(name).width/2), Math.round(canvas.height/2.35))
-                    opacity += 0.1;
-                    if(opacity >= 5.0){
-                        clearInterval(finalTimer);
-                    }
-                }, 100)
-            }
-
-            let x1 = canvas.width/2+75
-            let y1 = canvas.height/1.63
-            let accelator = 7;
-
-            let startLine = () => {
-                let timer1 = setInterval(() => {
-                    let ret = bezier(x1, y1);
-                    //console.log(ret)
-                    x1 = ret[0];
-                    y1 = ret[1];
-                    if(ret[0] >= canvas.width/2+65){
-                        x1 = canvas.width/2+65
-                        if(ret[1] <= canvas.height/2.2){
-                            ret[1] = canvas.height/2.2;
-                            clearInterval(timer1)
-                            startBottom();
-                        }
-                        y1-=accelator
-                    }
-                    else{  
-                        if(ret[1] <= canvas.height/2.2){
-                            y1 = canvas.height/2.2;
-                            x1++
-                        }
-                        x1+=accelator
-                        y1-=accelator
-                    }
-                    accelator*=0.98
-                    if(accelator<0.5) accelator=0.5
-                }, 10)
-            }
-
-            let startBottom = () => {
-                c.clearRect(0, 0, canvas.width, canvas.height)
-
-                c.beginPath();
-                c.moveTo(canvas.width/2+40, canvas.height/1.58)
-                c.bezierCurveTo(canvas.width/2+75, canvas.height/1.63, canvas.width/2+65, canvas.height/2.2, canvas.width/2+65, canvas.height/2.2)
-                c.stroke()
-
-                if(canvas.width > 835)
-                        c.font = "4em Montserrat, sans-serif"
-                else
-                    c.font = "1.5em Montserrat, sans-serif"
-                let sides = c.measureText("Dariush Aligholizadeh").width*1.3
-
-                let startL = [canvas.width/2+65, canvas.height/2.2, canvas.width/2-sides/2, canvas.height/2.2]
-                let startR = [canvas.width/2+65, canvas.height/2.2, canvas.width/2+sides/2, canvas.height/2.2]
-                // let startxR = canvas.width/2+65
-                // let startyR = canvas.height/2.2
-                let movedL = 0;
-                let movedR = 0;
-                //left is 1.4 times right
-                let tempPoint = canvas.width/2+65;
-                let leftOff = tempPoint-(canvas.width/2-sides/2);
-                let rightOff = (canvas.width/2+sides/2)-tempPoint;
-
-                let accelatorL = canvas.width/2/80*(leftOff/rightOff);
-                let accelatorR = canvas.width/2/80;
-
-                let timer2 = setInterval(()=>{
-                    c.beginPath()
-                    c.moveTo(startL[0], startL[1]);
-                    c.lineTo(startL[0] - movedL, canvas.height/2.2)
-                    c.stroke()
-
-                    c.beginPath()
-                    c.moveTo(startR[0], startR[1]);
-                    c.lineTo(startR[0] + movedR, canvas.height/2.2)
-                    c.stroke()
-
-                    console.log(startL, movedL)
-
-                    accelatorL*=0.98
-                    accelatorR*=0.98
-
-                    if(accelatorL<=1*(leftOff/rightOff))accelatorL=1*(leftOff/rightOff)
-                    if(accelatorR<=1)accelatorR=1
-
-                    if(startL[0] - movedL <= startL[2]){
-                        accelatorL = 0;
-                        if(startR[0] + movedR >= startR[2]){
-                            movedR = 0;
-                            accelatorR = 0;
-                            fadeText();
-                            clearInterval(timer2)
-                        }
-                    } else{
-                        if(startR[0] + movedR >= startR[2]){
-                            accelatorR = 0;
-                        }
-                    }
-
-                    movedR += accelatorR
-                    movedL += accelatorL
-                }, 10)
-            }
-
-            setTimeout(startLine, 2000)
         </script>
     </body>
 </html>

@@ -149,6 +149,22 @@
                 .big{
                     visibility: hidden;
                 }
+                .alt_text_name{
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 2em;
+                    color: white;
+                    width: 100%;
+                    text-align: center;
+                }
+                .alt_text{
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 1em;
+                    color: white;
+                    width: 100%;
+                    text-align: center;
+                    vertical-align: middle;
+                    margin-top: calc(50% + 1em);
+                }
             }
             @media only screen and (max-width: 756px) {
                 .face_image{height: 100%;}
@@ -208,6 +224,13 @@
             <div class = 'alternate'>
                 <canvas class = 'circleAnim'></canvas>
                 <img class = 'face_image' src = './altwelcome1.jpg'></img>
+                <p class = "alt_text">
+                    Hi, I'm
+                    <br>
+                </p>
+                <p class = "alt_text_name">
+                    Dariush Aligholizadeh
+                </p>
             </div>
         </div>
         <div class = 'aboutMe'>
@@ -495,32 +518,19 @@
                     let opacity = 0;
                     acc = 0.01;
 
-                    let maskCanvas = document.createElement('canvas');
-                    maskCanvas.width=canvas.width;
-                    maskCanvas.height=canvas.height;
-                    let m = maskCanvas.getContext('2d');
                     let timer2 = setInterval(() => {
-                        if(opacity <= 1.0){
+                        if(opacity <= 0.5){
                             c.clearRect(0, 0, canvas.width, canvas.height)
-                            // c.beginPath()
-                            // c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI)
-                            // c.rect(canvas.width, 0, -canvas.width, canvas.height)
-                            // c.fillStyle = `rgba(64, 73, 82, ${opacity})`;
-                            // c.fill(canvas.width, 0, -canvas.width, canvas.height)
-
-                            m.beginPath()
-                            m.fillStyle = `rgba(64, 73, 82, ${opacity})`;
-                            m.rect(maskCanvas.width, 0, -maskCanvas.width, maskCanvas.height)
-                            m.arc(maskCanvas.width/2, maskCanvas.height/2, maskCanvas.width/2*0.9, 0, 2*Math.PI)
-                            m.globalCompositeOperation = 'xor'
-                            m.fill();
-
-                            c.drawImage(maskCanvas, 0, 0);
+                            c.beginPath()
+                            c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI)
+                            c.rect(canvas.width, 0, -canvas.width, canvas.height)
+                            c.fillStyle = `rgba(0, 0, 0, ${opacity})`;
+                            c.fill()
 
                             c.beginPath()
                             c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI);
                             c.stroke()
-                            opacity+=0.01;
+                            opacity+=0.02;
                             acc*=1.1
                             acc<0.005?acc=0.005:acc=acc;
                             console.log('b')

@@ -494,15 +494,29 @@
                 let startSecond = () => {
                     let opacity = 0;
                     acc = 0.01;
+
+                    let maskCanvas = document.createElement('canvas');
+                    maskCanvas.width=canvas.width;
+                    maskCanvas.height=canvas.height;
+                    let m = maskCanvas.getContext('2d');
                     let timer2 = setInterval(() => {
                         if(opacity <= 1.0){
                             c.clearRect(0, 0, canvas.width, canvas.height)
-                            c.beginPath()
-                            c.rect(0, 0, canvas.width, canvas.height)
-                            c.fillStyle = `rgba(64, 73, 82, ${opacity})`;
-                            c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI)
-                            c.fillStyle = 'rgba(0, 0, 0, 0)'
-                            c.fill()
+                            // c.beginPath()
+                            // c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI)
+                            // c.rect(canvas.width, 0, -canvas.width, canvas.height)
+                            // c.fillStyle = `rgba(64, 73, 82, ${opacity})`;
+                            // c.fill(canvas.width, 0, -canvas.width, canvas.height)
+
+                            m.beginPath()
+                            m.fillStyle = `rgba(64, 73, 82, ${opacity})`;
+                            m.rect(maskCanvas.width, 0, -maskCanvas.width, maskCanvas.height)
+                            m.arc(maskCanvas.width/2, maskCanvas.height/2, maskCanvas.width/2*0.9, 0, 2*Math.PI)
+                            m.globalCompositeOperation = 'xor'
+                            m.fill();
+
+                            c.drawImage(maskCanvas, 0, 0);
+
                             c.beginPath()
                             c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI);
                             c.stroke()

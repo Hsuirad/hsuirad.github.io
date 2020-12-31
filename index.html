@@ -498,9 +498,10 @@
                         if(opacity <= 1.0){
                             c.clearRect(0, 0, canvas.width, canvas.height)
                             c.beginPath()
-                            c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI)
-                            c.rect(canvas.width, 0, -canvas.width, canvas.height)
+                            c.rect(0, 0, canvas.width, canvas.height)
                             c.fillStyle = `rgba(64, 73, 82, ${opacity})`;
+                            c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI)
+                            c.fillStyle = 'rgba(0, 0, 0, 0)'
                             c.fill()
                             c.beginPath()
                             c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI);

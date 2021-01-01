@@ -359,7 +359,7 @@
                 var doc = document.documentElement;
                 let top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
 
-                //if(top == 0){
+                if(top == 0){
                     var eTop = e.getBoundingClientRect().top;
                     var eAmt = eTop / 100;
                     var curTime = 0;
@@ -367,7 +367,7 @@
                         window.setTimeout(SVS_B, curTime, eAmt, where);
                         curTime += time / 100;
                     }
-               // }
+               }
             }
 
             function SVS_B(eAmt, where) {
@@ -582,12 +582,12 @@
                             setTimeout(()=>SmoothVerticalScrolling(document.querySelector('.aboutMe'), 1000, 'top'), 1000);
                             clearInterval(t)
                         } else{
-                            opacity+=0.1;
+                            opacity+=0.01;
                             document.querySelector('.face_image').style.filter = `brightness(${1 - (opacity/3>0.4?0.4:opacity/3)})`
                             document.querySelector('.alt_text_name').style.color = `rgba(255, 255, 255, ${opacity-1}`
                             document.querySelector('.alt_text').style.color = `rgba(255, 255, 255, ${opacity})`
                         }
-                    }, 100)
+                    }, 10)
                 }
                 // setTimeout(() => {
                 //     c.beginPath()

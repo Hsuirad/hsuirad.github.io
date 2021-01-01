@@ -80,7 +80,7 @@
             i{
                 margin: 0 1% 0 1%;
             }
-            .test{
+            .fontIcons{
                 display: flex;
                 justify-content: space-around;
             }
@@ -121,21 +121,20 @@
             }
             .alt_text_name{
                 z-index: 2;
-                font-family: 'Raleway', sans-serif;
+                font-family: 'Montserrat', sans-serif;
                 font-size: 2em;
-                color: white;
+                color: rgba(255, 255, 255, 0.0);
                 width: 100%;
                 text-align: center;
             }
             .alt_text{
                 z-index: 2;
-                font-family: 'Raleway', sans-serif;
+                font-family: 'Titillium Web', sans-serif;
                 font-size: 1em;
-                color: white;
+                color: rgba(255, 255, 255, 0);
                 width: 100%;
                 text-align: center;
                 vertical-align: middle;
-                margin-top: calc(50% + 1em);
             }
 
 
@@ -146,6 +145,9 @@
                 .edHead{
                     font-size: 1.2em;
                 }
+                .contactInfo{
+                    font-size: 1.2em;
+                }
                 .aboutMe{
                     font-size: 1em;
                     padding: 6% 10% 8% 10%;
@@ -153,6 +155,9 @@
                 .aboutHead{
                     font-size:1.5em;
                     font-family:'Yanone Kaffeesatz', sans-serif;
+                }
+                .fontIcons{
+                    font-size: 3em;
                 }
                 .edSect p {
                     text-align: left;
@@ -175,6 +180,14 @@
                     visibility: hidden;
                 }
             }
+            @media only screen and (min-width: 0px){
+                .alt_text_name{font-size: 2em;}
+                .alt_text{font-size: 1.5em;}
+            }
+            @media only screen and (min-width: 600px){
+                .alt_text_name{font-size: 3em;}
+                .alt_text{font-size: 2em;}
+            }
             @media only screen and (max-width: 756px) {
                 .face_image{height: 100%;}
             }
@@ -185,6 +198,9 @@
                 .aboutHead{
                     font-size:2em;
                     font-family:'Yanone Kaffeesatz', sans-serif
+                }
+                .fontIcons{
+                    font-size: 4em;
                 }
                 .aboutMe{
                     padding: 2% 20% 4% 20%;
@@ -328,18 +344,22 @@
         <div class = 'contactInfo'>
             <p style="font-size:2em;font-family:'Yanone Kaffeesatz', sans-serif;">&#8213; Contact Info &#8213;</p>
             <br>
-            <div class = 'test'>
-                <a href = "mailto:daligho1@umbc.edu"><i class = 'fa fa-envelope fa-4x'></i></a><a href = "https://www.linkedin.com/in/dariush-aligholizadeh-8a9094199/"><i class = 'fab fa-linkedin-in fa-4x'></i></a><a href = "https://www.instagram.com/d.aligholi"><i class = 'fab fa-instagram fa-4x'></i></a>
+            <div class = 'fontIcons'>
+                <a href = "mailto:daligho1@umbc.edu"><i class = 'fa fa-envelope'></i></a><a href = "https://www.linkedin.com/in/dariush-aligholizadeh-8a9094199/"><i class = 'fab fa-linkedin-in'></i></a><a href = "https://www.instagram.com/d.aligholi"><i class = 'fab fa-instagram'></i></a><a href = "https://www.github.com/hsuirad"><i class = 'fab fa-github'></i></a>
             </div>
         </div>
         
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script>
+            console.log(window.innerHeight)
+            document.querySelector('.alt_text').style.paddingTop = (window.innerHeight/2 - (document.querySelector('.alt_text').getBoundingClientRect().height + document.querySelector('.alt_text_name').getBoundingClientRect().height)/1.2) + 'px'
+
+
             function SmoothVerticalScrolling(e, time, where) {
                 var doc = document.documentElement;
                 let top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
 
-                if(top == 0){
+                //if(top == 0){
                     var eTop = e.getBoundingClientRect().top;
                     var eAmt = eTop / 100;
                     var curTime = 0;
@@ -347,7 +367,7 @@
                         window.setTimeout(SVS_B, curTime, eAmt, where);
                         curTime += time / 100;
                     }
-                }
+               // }
             }
 
             function SVS_B(eAmt, where) {
@@ -557,10 +577,17 @@
                     let opacity = 0;
                     acc = 0.01;
 
-                    let timer2 = setTimeout(() => {
-                        SmoothVerticalScrolling(document.querySelector('.aboutMe'), 500, 'top')
-                        //document.querySelector('.aboutMe').scrollIntoView({behavior: "smooth"})
-                    }, 2000);
+                    let t = setInterval(() => {
+                        if(opacity > 3.0){
+                            setTimeout(()=>SmoothVerticalScrolling(document.querySelector('.aboutMe'), 1000, 'top'), 1000);
+                            clearInterval(t)
+                        } else{
+                            opacity+=0.1;
+                            document.querySelector('.face_image').style.filter = `brightness(${1 - (opacity/3>0.4?0.4:opacity/3)})`
+                            document.querySelector('.alt_text_name').style.color = `rgba(255, 255, 255, ${opacity-1}`
+                            document.querySelector('.alt_text').style.color = `rgba(255, 255, 255, ${opacity})`
+                        }
+                    }, 100)
                 }
                 // setTimeout(() => {
                 //     c.beginPath()

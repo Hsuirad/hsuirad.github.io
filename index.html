@@ -21,6 +21,9 @@
                 padding: 0;
                 background-color: #bccddf;
             }
+            * {
+                -webkit-overflow-scrolling: touch;
+            }
             ::-webkit-scrollbar {
                 display: none;
             }
@@ -334,9 +337,8 @@
         <script>
             //  context.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y);
             if(document.querySelector('.imgContainer').clientWidth > 870){
-                document.body.scrollTop = 0; // For Safari
-                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera 
-                
+                setTimeout(()=>window.scrollTo(0, 0), 500);
+
                 let canvas = document.querySelector('.drawingBoard')
                 let c = canvas.getContext('2d')
                 canvas.width = document.querySelector('.imgContainer').clientWidth;
@@ -484,8 +486,7 @@
                 setTimeout(startLine, 2000)
             }
             else if(document.querySelector('.imgContainer').clientWidth < 870){
-                document.body.scrollTop = 0; // For Safari
-                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera 
+                setTimeout(()=>window.scrollTo(0, 0), 500);
 
                 let offset = document.querySelector('.face_image').width - document.querySelector('.imgContainer').clientWidth;
                 document.querySelector('.face_image').style.margin = `0 0 0 ${-offset/2}`                
@@ -532,7 +533,7 @@
 
                     let timer2 = setTimeout(() => {
                         document.querySelector('.aboutMe').scrollIntoView({behavior: "smooth"})
-                    }, 1000);
+                    }, 2000);
                 }
                 // setTimeout(() => {
                 //     c.beginPath()

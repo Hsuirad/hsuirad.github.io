@@ -83,7 +83,10 @@
             }
             canvas{
                 position: absolute;
-                z-index: 0;
+            }
+            .circleAnim{
+                position: absolute;
+                z-index: 1;
             }
             .aboutMe{
                 font-size: 1.5em;
@@ -112,6 +115,24 @@
                 text-align: center;
                 z-index:1;
                 position: absolute;
+            }
+            .alt_text_name{
+                z-index: 2;
+                font-family: 'Raleway', sans-serif;
+                font-size: 2em;
+                color: white;
+                width: 100%;
+                text-align: center;
+            }
+            .alt_text{
+                z-index: 2;
+                font-family: 'Raleway', sans-serif;
+                font-size: 1em;
+                color: white;
+                width: 100%;
+                text-align: center;
+                vertical-align: middle;
+                margin-top: calc(50% + 1em);
             }
 
 
@@ -149,24 +170,6 @@
                 }
                 .big{
                     visibility: hidden;
-                }
-                .alt_text_name{
-                    z-index: 2;
-                    font-family: 'Raleway', sans-serif;
-                    font-size: 2em;
-                    color: white;
-                    width: 100%;
-                    text-align: center;
-                }
-                .alt_text{
-                    z-index: 2;
-                    font-family: 'Raleway', sans-serif;
-                    font-size: 1em;
-                    color: white;
-                    width: 100%;
-                    text-align: center;
-                    vertical-align: middle;
-                    margin-top: calc(50% + 1em);
                 }
             }
             @media only screen and (max-width: 756px) {
@@ -331,6 +334,9 @@
         <script>
             //  context.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y);
             if(document.querySelector('.imgContainer').clientWidth > 870){
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera 
+                
                 let canvas = document.querySelector('.drawingBoard')
                 let c = canvas.getContext('2d')
                 canvas.width = document.querySelector('.imgContainer').clientWidth;
@@ -478,6 +484,9 @@
                 setTimeout(startLine, 2000)
             }
             else if(document.querySelector('.imgContainer').clientWidth < 870){
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera 
+
                 let offset = document.querySelector('.face_image').width - document.querySelector('.imgContainer').clientWidth;
                 document.querySelector('.face_image').style.margin = `0 0 0 ${-offset/2}`                
 
@@ -521,27 +530,9 @@
                     let opacity = 0;
                     acc = 0.01;
 
-                    let timer2 = setInterval(() => {
-                        if(opacity <= 0.5){
-                            c.clearRect(0, 0, canvas.width, canvas.height)
-                            c.beginPath()
-                            c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI)
-                            c.rect(canvas.width, 0, -canvas.width, canvas.height)
-                            c.fillStyle = `rgba(0, 0, 0, ${opacity})`;
-                            c.fill()
-
-                            c.beginPath()
-                            c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI);
-                            c.stroke()
-                            opacity+=0.02;
-                            acc*=1.1
-                            acc<0.005?acc=0.005:acc=acc;
-                            console.log('b')
-                        }
-                        else{ 
-                            clearInterval(timer2)
-                        }
-                    }, 15)
+                    let timer2 = setTimeout(() => {
+                        document.querySelector('.aboutMe').scrollIntoView({behavior: "smooth"})
+                    }, 1000);
                 }
                 // setTimeout(() => {
                 //     c.beginPath()

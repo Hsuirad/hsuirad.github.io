@@ -335,6 +335,31 @@
         
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script>
+            function SmoothVerticalScrolling(e, time, where) {
+                var doc = document.documentElement;
+                let top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+
+                if(top == 0){
+                    var eTop = e.getBoundingClientRect().top;
+                    var eAmt = eTop / 100;
+                    var curTime = 0;
+                    while (curTime <= time) {
+                        window.setTimeout(SVS_B, curTime, eAmt, where);
+                        curTime += time / 100;
+                    }
+                }
+            }
+
+            function SVS_B(eAmt, where) {
+                if(where == "center" || where == "")
+                    window.scrollBy(0, eAmt / 2);
+                if (where == "top")
+                    window.scrollBy(0, eAmt);
+            }
+
+
+
+
             //  context.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y);
             if(document.querySelector('.imgContainer').clientWidth > 870){
                 setTimeout(()=>window.scrollTo(0, 0), 500);
@@ -371,10 +396,11 @@
                         c.fillStyle = `rgba(255, 255, 255, ${opacity})`
                         c.fillText(text, canvas.width/2 - c.measureText(text).width/2, canvas.height/2 - (c.measureText(text).actualBoundingBoxAscent + c.measureText(text).actualBoundingBoxDescent)*5.5)
                         c.font = "4em Montserrat, sans-serif"
-                        c.fillStyle = `rgba(255, 255, 255, ${opacity/5})`
+                        c.fillStyle = `rgba(255, 255, 255, ${opacity/3})`
                         c.fillText(name, canvas.width/2 - c.measureText(name).width/2, canvas.height/2.35)
                         opacity += 0.1;
-                        if(opacity >= 5.0){
+                        if(opacity >= 3.0){
+                            SmoothVerticalScrolling(document.querySelector('.aboutMe'), 1000, 'top'), 0;
                             clearInterval(finalTimer);
                         }
                     }, 100)
@@ -519,7 +545,7 @@
                         radius+=0.03;
                         acc*=1.1
                         acc<0.005?acc=0.005:acc=acc;
-                            console.log('a')
+                        console.log('a')
                     }
                     else{ 
                         startSecond();
@@ -532,7 +558,8 @@
                     acc = 0.01;
 
                     let timer2 = setTimeout(() => {
-                        document.querySelector('.aboutMe').scrollIntoView({behavior: "smooth"})
+                        SmoothVerticalScrolling(document.querySelector('.aboutMe'), 500, 'top')
+                        //document.querySelector('.aboutMe').scrollIntoView({behavior: "smooth"})
                     }, 2000);
                 }
                 // setTimeout(() => {

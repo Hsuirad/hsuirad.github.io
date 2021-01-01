@@ -582,12 +582,12 @@
                             setTimeout(()=>SmoothVerticalScrolling(document.querySelector('.aboutMe'), 1000, 'top'), 1000);
                             clearInterval(t)
                         } else{
-                            opacity+=0.01;
+                            opacity+=0.05;
                             document.querySelector('.face_image').style.filter = `brightness(${1 - (opacity/3>0.4?0.4:opacity/3)})`
                             document.querySelector('.alt_text_name').style.color = `rgba(255, 255, 255, ${opacity-1}`
                             document.querySelector('.alt_text').style.color = `rgba(255, 255, 255, ${opacity})`
                         }
-                    }, 10)
+                    }, 50)
                 }
                 // setTimeout(() => {
                 //     c.beginPath()

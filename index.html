@@ -15,6 +15,7 @@
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
 
             body {
                 margin: 0;
@@ -50,12 +51,10 @@
                 overflow: hidden;
             }
             .contactInfo{
-                padding: 2% 20% 4% 20%;
-                margin: 0 0 0 0;
+                padding: 5% 7% 5% 7%;
                 top: 0;
-                font-size: 1.5em;
                 font-family: 'Raleway', sans-serif;
-                background-color: #5b97b1;
+                background-color: #000000;
                 color: white;
                 width: 100%;
                 text-align: center;
@@ -67,8 +66,16 @@
                 margin: auto;
             }
             .edHead{
+                padding: 1rem 0 1.5rem 0;
+                border-bottom: 1px solid white;
                 font-size:2em;
-                font-family:'Yanone Kaffeesatz', sans-serif;
+                font-family:'Antic Slab', sans-serif;
+            }
+            .skillsHead{
+                padding: 1rem 0 1.5rem 0;
+                border-bottom: 1px solid white;
+                font-size:2rem;
+                font-family:'Antic Slab', sans-serif;
             }
             a{
                 text-decoration: underline;
@@ -92,9 +99,14 @@
                 position: absolute;
                 z-index: 1;
             }
+            .skillsSect{
+                text-align: left;
+                font-size: 1rem;
+                padding: 1% 0 1% 0;
+            }
             .aboutMe{
-                font-size: 1.5em;
-                font-family: 'Raleway', sans-serif;
+                font-size: 1.5rem;
+                font-family: 'Montserrat', sans-serif;
                 background-color: #404952;
                 color: white;
                 width:100%;
@@ -112,6 +124,18 @@
             }
             .face_image{
                 z-index: -1;
+            }
+            .sps{
+                background-image: url("crest.JPG");
+
+                /* Set a specific height */
+                height: 100%;
+                background-color: black;
+
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
             }
             .welcome{
                 font-size: 2em;
@@ -131,11 +155,16 @@
             .alt_text{
                 z-index: 2;
                 font-family: 'Montserrat', sans-serif;
-                font-size: 1em;
+                font-size: 1rem;
                 color: rgba(255, 255, 255, 0);
                 width: 100%;
                 text-align: center;
                 vertical-align: middle;
+            }
+            .aboutHead{
+                font-family:'Antic Slab', sans-serif;
+                padding: 1rem 0 1.5rem 0;
+                border-bottom: 1px solid white;
             }
 
 
@@ -144,15 +173,14 @@
                     margin: 11%;
                 }
                 .edHead{
-                    font-size: 1.2em;
+                    font-size: 1.5rem;
                 }
                 .aboutMe{
-                    font-size: 1em;
-                    padding: 6% 10% 8% 10%;
+                    font-size: 1rem;
+                    padding: 4% 10% 8% 10%;
                 }
                 .aboutHead{
-                    font-size:1.5em;
-                    font-family:'Yanone Kaffeesatz', sans-serif;
+                    font-size:1.5rem;
                 }
                 .fontIcons{
                     font-size: 2em;
@@ -162,16 +190,28 @@
                     border-bottom: 2px solid white; 
                     padding-bottom:2%; 
                     padding-top:2%; 
-                    font-size: 1em;
+                    font-size: 1rem;
                 }
-                .contactInfo{
-                    font-size: 1.5em;
+                .skillsSect{
+                    font-size: 1.1rem;
+                }
+                .skillsHead{
+                    font-size: 1.5rem;
+                }
+                .skills{
+                    padding: 6% 10% 4% 10%;
+                    font-size: 0.8em;
+                    font-family: 'Raleway', sans-serif;
+                    background-color: #9b4d4b;
+                    color: white;
+                    width:100%;
+                    text-align: center;
                 }
                 .education{
                     padding: 6% 10% 4% 10%;
                     font-size: 1.2em;
-                    font-family: 'Raleway', sans-serif;
-                    background-color: #908b8b;
+                    font-family: 'Montserrat', sans-serif;
+                    background-color:#505672;
                     color: white;
                     width:100%;
                     text-align: center;
@@ -182,19 +222,19 @@
                 }
             }
             @media only screen and (min-width: 0px){
-                .alt_text_name{font-size: 1.5em;}
-                .alt_text{font-size: 1em;}
+                .alt_text_name{font-size: 1.5rem;}
+                .alt_text{font-size: 1rem;}
                 .fontIcons{font-size: 2em;}
             }
             @media only screen and (min-width: 430px){
-                .alt_text_name{font-size: 2em;}
-                .alt_text{font-size: 1.5em;}
-                .fontIcons{font-size: 2em;}
+                .alt_text_name{font-size: 2rem;}
+                .alt_text{font-size: 1.5rem;}
+                .fontIcons{font-size: 2rem;}
             }
             @media only screen and (min-width: 600px){
-                .alt_text_name{font-size: 3em;}
-                .alt_text{font-size: 2em;}
-                .fontIcons{font-size: 2.5em;}
+                .alt_text_name{font-size: 3rem;}
+                .alt_text{font-size: 2rem;}
+                .fontIcons{font-size: 2.5rem;}
             }
             @media only screen and (max-width: 756px) {
                 .face_image{height: 100%;}
@@ -205,13 +245,15 @@
             @media only screen and (min-width: 870px) {
                 .aboutHead{
                     font-size:2em;
-                    font-family:'Yanone Kaffeesatz', sans-serif
                 }
                 .fontIcons{
                     font-size: 3em;
                 }
                 .aboutMe{
                     padding: 2% 20% 4% 20%;
+                }
+                .skillsHead{
+                    font-size: 3rem;
                 }
                 .edSect{
                     margin: 11%;
@@ -223,13 +265,25 @@
                     border-left: 2px solid white; 
                     float: left; 
                     padding-left:2%; 
-                    font-size: 1em;
+                    font-size: 1.5rem;
+                }
+                .skills{
+                    padding: 2% 20% 2% 20%;
+                    font-size: 1.5rem;
+                    font-family: 'Raleway', sans-serif;
+                    background-color: #9b4d4b;
+                    color: white;
+                    width:100%;
+                    text-align: center;
+                }
+                .skillsSect{
+                    font-size: 1.5rem;
                 }
                 .education{
                     padding: 2% 20% 2% 20%;
-                    font-size: 1.5em;
-                    font-family: 'Raleway', sans-serif;
-                    background-color: #908b8b;
+                    font-size: 1.5rem;
+                    font-family: 'Montserrat', sans-serif;
+                    background-color:#505672;
                     color: white;
                     width:100%;
                     text-align: center;
@@ -241,14 +295,6 @@
         </style>
     </head>
     <body>
-
-        <!-- 
-        Current Ideas:
-        the home page is like the thing i showed on the greg site basically the yuma zaid dariush
-        photo with a speech bubble or a little arrow coming down to me
-
-        the rest follows the same format with little photos and quirky descriptions here and there
-        -->
         <div class = 'imgContainer'>
             <div class = 'big'>
                 <canvas class = 'drawingBoard'></canvas>
@@ -267,12 +313,12 @@
             </div>
         </div>
         <div class = 'aboutMe'>
-            <p class = 'aboutHead'>&#8213; About Me &#8213;</p>
-            <br>
-            I'm currently an undegraduate at UMBC majoring in Computer Science and Biochemistry & Molecular Biology on the Pre-Med Track. My interests range anywhere from virology to neurology to machine learning and software development. My goals have always been to attend Medical School, but I'm always interested in learning the most I can on the way there! Check out my <a href = "./Dariush_Undergraduate_Resume.pdf"> full resume</a>, or just keep scrolling
+            <p class = 'aboutHead'>ABOUT ME</p>
+            <br><strong>
+            I'm currently an undegraduate at UMBC majoring in Computer Science and Biochemistry & Molecular Biology on the Pre-Med Track. I'm interested in neurology, machine learning, and software development. My current goal is to attend Medical School, check out my <a href = "./Dariush_Undergraduate_Resume.pdf">full resume</a>, or just keep scrolling</strong>
         </div>
         <div class = 'education'>
-            <p class = 'edHead'>&#8213; Education &#8213;</p>
+            <p class = 'edHead'>EDUCATION</p>
             <div class = 'edSect'>
                 <img style = "margin: 4%;" src = "UMBC.png" height = 100px></img>
                 <p>
@@ -288,7 +334,7 @@
                 </p>
             </div>
             <div style = "margin-top: 5%;" class = 'edSect'>
-                <img style = "margin:4%;border-radius: 10%;" src = "THS.jpg" height = 87px></img>
+                <img style = "margin:4%;border-radius: 7.5%;" src = "THS.jpg" height = 87px></img>
                 <p>
                     <strong>Towson High School</strong><br>
                     <em>Sept. 2016 - May 2020</em>
@@ -301,6 +347,35 @@
                     <strong>Rank: </strong>14/326
                     <br>
                     <strong>SAT: </strong>1450/1600
+                </p>
+            </div>
+        </div>
+        <div class = 'skills'>
+            <p class = 'skillsHead'>SKILLS</p>
+            <div class = 'skillsSect'>
+                <p class = "skillsEntry">
+                    HTML/CSS/Javascript: &#9679;&#9679;&#9679;&#9679;&#9679;
+                </p>
+                <p class = "skillsEntry">
+                    C/C++: &#9679;&#9679;&#9679;&#9679;&#9675;
+                </p>
+                <p class = "skillsEntry">
+                    Python: &#9679;&#9679;&#9679;&#9679;&#9679;
+                </p>
+                <p class = "skillsEntry">
+                    Java: &#9679;&#9679;&#9675;&#9675;&#9675;
+                </p>
+                <p class = "skillsEntry">
+                    ReactJS/Node.js: &#9679;&#9679;&#9679;&#9679;&#9675;
+                </p>
+                <p class = "skillsEntry">
+                    Biology/Biochemistry: &#9679;&#9679;&#9679;&#9679;&#9679;
+                </p>
+                <p class = "skillsEntry">
+                    Chemistry: &#9679;&#9679;&#9679;&#9679;&#9675;
+                </p>
+                <p class = "skillsEntry">
+                    Calc./Linear Alg.: &#9679;&#9679;&#9679;&#9679;&#9675;
                 </p>
             </div>
         </div>
@@ -350,16 +425,18 @@
 
 
         <div class = 'contactInfo'>
-            <p style="font-family:'Yanone Kaffeesatz', sans-serif;">&#8213; Contact Info &#8213;</p>
-            <br>
             <div class = 'fontIcons'>
                 <a href = "mailto:daligho1@umbc.edu"><i class = 'fa fa-envelope'></i></a><a href = "https://www.linkedin.com/in/dariush-aligholizadeh-8a9094199/"><i class = 'fab fa-linkedin-in'></i></a><a href = "https://www.instagram.com/d.aligholi"><i class = 'fab fa-instagram'></i></a><a href = "https://www.github.com/hsuirad"><i class = 'fab fa-github'></i></a>
             </div>
         </div>
-        
+        <div style = "height: 100%; background-color: black"></div>
+        <div class = 'sps'>
+            <!-- <img src = "crest.JPG" width = 100%></img> -->
+            <p style = 'font-size:15vw;text-align:center;font-family:"Comic Sans MS", "Comic Sans", cursive;background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);-webkit-background-clip: text;color: transparent;'>Mouthwash</p>
+        </div>
+
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script>
-            console.log(window.innerHeight)
             document.querySelector('.alt_text').style.paddingTop = (window.innerHeight/2 - (document.querySelector('.alt_text').getBoundingClientRect().height + document.querySelector('.alt_text_name').getBoundingClientRect().height)/1.2) + 'px'
 
 

@@ -125,4 +125,5 @@ function changeVisualizationMode() {
         modeSelector.setAttribute("href", "#3d");
         modeSelector.textContent = "3D Mode";
     }
+}
 

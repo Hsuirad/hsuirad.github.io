@@ -66,7 +66,7 @@
 
     <body>
         <div id="map"></div>
-        <a style="text-decoration:none;color:blue" id="modeSelector">3D Mode</a>
+        <a style="text-decoration:none;color:black" id="modeSelector">3D Mode</a>
 
         <div id="info_container" style="display: none;">
             <p id="info_container_close">x</p>
@@ -80,12 +80,14 @@
 		<script>
 			let x = document.getElementById('modeSelector');
 
+			x.style.hover = 'blue'
+
 			x.addEventListener('click', (() => {
 				if(x.innerText == '3D Mode'){
 					window.location.hash = '#3d'
 					x.innerText = 'Normal Mode'
 				} else{
-					window.location.hash = '#normal'
+					window.location.hash = '#flat'
 					x.innerText = '3D Mode'
 				}
 			}))		

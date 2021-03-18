@@ -19,7 +19,7 @@ const map = new mapboxgl.Map({
     container: "map",
     style: SADMAP_BASE_STYLE,
     center: [-76.71209711, 39.2556232],
-    zoom: 40
+    zoom: 30
 });
 
 map.on("click", "buildings", e => {
@@ -97,6 +97,7 @@ function addIncidentLocations() {
 }
 
 function changeVisualizationMode() {
+	console.log('visualization mode changed')
     const hash = window.location.hash.substr(1);
 
     if (hash == "3d") 

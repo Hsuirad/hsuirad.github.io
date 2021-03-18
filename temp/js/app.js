@@ -19,7 +19,7 @@ const map = new mapboxgl.Map({
     container: "map",
     style: SADMAP_BASE_STYLE,
     center: [-76.71209711, 39.2556232],
-    zoom: 2
+    zoom: 40
 });
 
 map.on("click", "buildings", e => {
@@ -125,4 +125,4 @@ function changeVisualizationMode() {
         modeSelector.setAttribute("href", "#3d");
         modeSelector.textContent = "3D Mode";
     }
-}
+

@@ -19,7 +19,7 @@ const map = new mapboxgl.Map({
     container: "map",
     style: SADMAP_BASE_STYLE,
     center: [-76.71255, 39.25432],
-    zoom: 13
+    zoom: 20
 });
 
 map.on("click", "buildings", e => {

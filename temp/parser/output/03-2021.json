@@ -36,5 +36,41 @@
         "cleryStatOnly": false,
         "disposition": "Open",
         "dateModified": null
+    },
+    {
+        "incident": "CSA - -Stalking",
+        "reportDate": 1615563360000,
+        "location": "UNKNOWN DORM RM",
+        "onCampus": true,
+        "timeStart": 1501560060000,
+        "timeEnd": 1527825540000,
+        "incidentClass": "Stalking",
+        "cleryStatOnly": true,
+        "disposition": "Suspended",
+        "dateModified": 1615573680000
+    },
+    {
+        "incident": "Theft from Buildings",
+        "reportDate": 1615586100000,
+        "location": "Sherman Hall- A WING",
+        "onCampus": true,
+        "timeStart": 1614816000000,
+        "timeEnd": 1615584600000,
+        "incidentClass": "Theft",
+        "cleryStatOnly": false,
+        "disposition": "Suspended",
+        "dateModified": 1616507880000
+    },
+    {
+        "incident": "CSA - -Rape",
+        "reportDate": 1616802960000,
+        "location": "UNKNOWN DORM RM",
+        "onCampus": true,
+        "timeStart": 1616212860000,
+        "timeEnd": 1616385540000,
+        "incidentClass": "Rape",
+        "cleryStatOnly": true,
+        "disposition": "Suspended",
+        "dateModified": 1617032160000
     }
 ]

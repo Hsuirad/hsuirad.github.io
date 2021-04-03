@@ -47,7 +47,9 @@ let addIncidentLocations = () => {
     //TODO:
     //try to find in LOCATIONS, if cant geoguessr thing the geocoder
 
-    fetch(`data/${month}-${year}.json`)
+    //change from 3 later, right now there are not any entries for april
+
+    fetch(`data/${'03'}-${year}.json`)
     .then(response => response.json())
     .then(data => {
         console.log(data)
@@ -55,7 +57,7 @@ let addIncidentLocations = () => {
             // console.log(x.location);
             //check if has latlong
 
-            console.log(x.location)
+            // console.log(x.location.split('-')[0])
 
             // if the location is in the location lookup table
             //check whether the word is any certain locations, since the police
@@ -65,15 +67,18 @@ let addIncidentLocations = () => {
             
 
             if(x.location != "Off Campus"){
-                if(x.location in LOCATIONS){
+
+                if(x.location.split('-')[0] in LOCATIONS || x.location == "COPT Multi-Tenant Bldg"){
                     new mapboxgl.Marker({color: x.incidentClass=='Interference'?'orange':'red'})
-                    .setLngLat(LOCATIONS[x.location])
+                    .setLngLat(LOCATIONS[x.location == "COPT Multi-Tenant Bldg" ? x.location : x.location.split('-')[0]])
                     .setPopup(new mapboxgl.Popup({ offset: 25 })
                         .setHTML(`
                             Incident: ${x.incident}
                         `)
                     )
                     .addTo(map);
+
+                    console.log('skr' + x.location)
                 } else{
                     incidents.push(x.incident)
                     bingGeocoder.geocode((x.location.toUpperCase().includes("UMBC") ? '' : 'UMBC ') + x.location, function(result){

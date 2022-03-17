@@ -1,0 +1,340 @@
+<html>
+    <head>
+        <title>Dariush Aligholizadeh</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="icon" href="favicon.ico"/>
+        <meta name  = 'description' content = 'Personal website to better demonstrate my portfolio'></meta>
+
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,200&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
+
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #bccddf;
+            }
+            * {
+                -webkit-overflow-scrolling: touch;
+            }
+            ::-webkit-scrollbar {
+                display: none;
+            }
+            .centered_image {
+                z-index: -1;
+                top: 0;
+                bottom: 0;
+                display: block;
+                vertical-align: middle;
+                margin: auto;
+                height: 230%;
+            }
+            canvas {
+                position: absolute;
+                margin: 0;
+                padding: 0;
+            }
+            .big {
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                vertical-align: middle;
+                height: 100%;
+                overflow: hidden;
+            }
+            .contactInfo{
+                padding: 5% 7% 5% 7%;
+                top: 0;
+                font-family: 'Raleway', sans-serif;
+                background-color: #000000;
+                color: white;
+                width: 100%;
+                text-align: center;
+            }
+            .face_image {
+                top: 0;
+                bottom: 0;
+                position: absolute;
+                margin: auto;
+            }
+            .edHead{
+                padding: 1rem 0 1.5rem 0;
+                border-bottom: 1px solid white;
+                font-size:2em;
+                font-family:'Antic Slab', sans-serif;
+            }
+            .skillsHead{
+                padding: 1rem 0 1.5rem 0;
+                border-bottom: 1px solid white;
+                font-size:2rem;
+                font-family:'Antic Slab', sans-serif;
+            }
+            a{
+                text-decoration: underline;
+                color: rgb(255, 255, 255);
+            }
+            a:hover{
+                color: rgb(200,200,200);
+            }
+            i{
+                margin: 0 1% 0 1%;
+            }
+            .fontIcons{
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+            }
+            canvas{
+                position: absolute;
+            }
+            .circleAnim{
+                position: absolute;
+                z-index: 1;
+            }
+            .skillsSect{
+                text-align: left;
+                font-size: 1rem;
+                padding: 1% 0 1% 0;
+            }
+            .aboutMe{
+                font-size: 1.5rem;
+                font-family: 'Montserrat', sans-serif;
+                background-color: #404952;
+                color: white;
+                width:100%;
+                text-align: center;
+            }
+            .alternate{
+                top: 0;
+                bottom: 0;
+                padding: 0;
+                position: absolute;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            .face_image{
+                z-index: -1;
+            }
+            .sps{
+                background-image: url("crest.JPG");
+
+                /* Set a specific height */
+                height: 100%;
+                background-color: black;
+
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .welcome{
+                font-size: 2em;
+                width: 100%;
+                text-align: center;
+                z-index:1;
+                position: absolute;
+            }
+            .alt_text_name{
+                z-index: 2;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 2em;
+                color: rgba(255, 255, 255, 0.0);
+                width: 100%;
+                text-align: center;
+            }
+            .alt_text{
+                z-index: 2;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1rem;
+                color: rgba(255, 255, 255, 0);
+                width: 100%;
+                text-align: center;
+                vertical-align: middle;
+            }
+            .aboutHead{
+                font-family:'Antic Slab', sans-serif;
+                padding: 1rem 0 1.5rem 0;
+                border-bottom: 1px solid white;
+            }
+
+
+            @media only screen and (max-width: 870px) {
+                .edSect{
+                    margin: 11%;
+                }
+                .edHead{
+                    font-size: 1.5rem;
+                }
+                .aboutMe{
+                    font-size: 1rem;
+                    padding: 4% 10% 8% 10%;
+                }
+                .aboutHead{
+                    font-size:1.5rem;
+                }
+                .fontIcons{
+                    font-size: 2em;
+                }
+                .edSect p {
+                    text-align: left;
+                    border-bottom: 2px solid white; 
+                    padding-bottom:2%; 
+                    padding-top:2%; 
+                    font-size: 1rem;
+                }
+                .skillsSect{
+                    font-size: 1.1rem;
+                }
+                .ratings{
+                    font-size: 0.8rem;
+                }
+                .skillsHead{
+                    font-size: 1.5rem;
+                }
+                .skills{
+                    padding: 6% 10% 4% 10%;
+                    font-size: 0.8em;
+                    font-family: 'Raleway', sans-serif;
+                    background-color: #9b4d4b;
+                    color: white;
+                    width:100%;
+                    text-align: center;
+                }
+                .education{
+                    padding: 6% 10% 4% 10%;
+                    font-size: 1.2em;
+                    font-family: 'Montserrat', sans-serif;
+                    background-color:#505672;
+                    color: white;
+                    width:100%;
+                    text-align: center;
+
+                }
+                .big{
+                    visibility: hidden;
+                }
+            }
+            @media only screen and (min-width: 0px){
+                .alt_text_name{font-size: 1.5rem;}
+                .alt_text{font-size: 1rem;}
+                .fontIcons{font-size: 2em;}
+            }
+            @media only screen and (min-width: 430px){
+                .alt_text_name{font-size: 2rem;}
+                .alt_text{font-size: 1.5rem;}
+                .fontIcons{font-size: 2rem;}
+            }
+            @media only screen and (min-width: 600px){
+                .alt_text_name{font-size: 3rem;}
+                .alt_text{font-size: 2rem;}
+                .fontIcons{font-size: 2.5rem;}
+            }
+            @media only screen and (max-width: 756px) {
+                .face_image{height: 100%;}
+            }
+            @media only screen and (min-width:756px){
+                .face_image{width: 100%;};
+            }
+            @media only screen and (min-width: 870px) {
+                .aboutHead{
+                    font-size:2em;
+                }
+                .fontIcons{
+                    font-size: 3em;
+                }
+                .aboutMe{
+                    padding: 2% 20% 4% 20%;
+                }
+                .skillsHead{
+                    font-size: 3rem;
+                }
+                .edSect{
+                    margin: 11%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    text-align: left;
+                }
+                .edSect p{
+                    border-left: 2px solid white; 
+                    float: left; 
+                    padding-left:2%; 
+                    font-size: 1.5rem;
+                }
+                .skills{
+                    padding: 2% 20% 2% 20%;
+                    font-size: 1.5rem;
+                    font-family: 'Raleway', sans-serif;
+                    background-color: #9b4d4b;
+                    color: white;
+                    width:100%;
+                    text-align: center;
+                }
+                .skillsSect{
+                    font-size: 1.5rem;
+                }
+                .ratings{
+                    font-size: 1.2rem;
+                }
+                .education{
+                    padding: 2% 20% 2% 20%;
+                    font-size: 1.5rem;
+                    font-family: 'Montserrat', sans-serif;
+                    background-color:#505672;
+                    color: white;
+                    width:100%;
+                    text-align: center;
+                }
+                .alternate{
+                    visibility: hidden;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class = 'education'>
+            <p class = 'edHead'>CONTACT INFO</p>
+            <div class = 'edSect'>
+                <p>
+                    <strong>Dariush Aligholizadeh</strong><br>
+                    <em>Sophomore, University of Maryland-Baltimore-County</em>
+                    <br>
+                    <strong>Email:</strong> <a href = "mailto:daligho1@umbc.edu">daligho1@umbc.edu</a>
+                    <br>
+                    <strong>LinkedIn:</strong> <a href = "https://www.linkedin.com/in/dariush-aligholizadeh-8a9094199/">link here</a>
+                    <br>
+                    <strong>Phone Number:</strong> (410) 428-7366
+                </p>
+            </div>
+            <div style = "margin-top: 5%;" class = 'edSect'>
+                <p>
+                    <strong>Dr. Mary S. Devadas</strong><br>
+                    <em>PI of Devadas Nanomaterial Lab @ Towson University</em>
+                    <br>
+                    <br>
+                    <strong>Email:</strong> <a href = "mailto:mdevadas@towson.edu">mdevadas@towson.edu</a>
+                    <br>
+                    <strong>Twitter:</strong> <a href = "https://twitter.com/Devadas_GroupTU">link here</a>
+                </p>
+            </div>
+        </div>
+
+
+        <div class = 'contactInfo'>
+            <div class = 'fontIcons'>
+                <a href = "mailto:daligho1@umbc.edu"><i class = 'fa fa-envelope'></i></a><a href = "https://www.linkedin.com/in/dariush-aligholizadeh-8a9094199/"><i class = 'fab fa-linkedin-in'></i></a><a href = "https://www.instagram.com/d.aligholi"><i class = 'fab fa-instagram'></i></a><a href = "https://www.github.com/hsuirad"><i class = 'fab fa-github'></i></a>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    </body>
+</html>

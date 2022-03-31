@@ -51,7 +51,7 @@ canvas.addEventListener('mousedown', (e) => {
     })
     if(del.length>0){
         delete mlcs[del];
-        console.log("DELETED: " + del)
+        console.log("FUCK: " + del)
 
         setTimeout(() => {console.log(del, data); mlcs[del] = data; c.clearRect(0, 0, W, H);testDraw();}, 4000)
     }

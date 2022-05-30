@@ -1,0 +1,703 @@
+<html>
+    <head>
+        <title>Dariush Aligholizadeh</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="icon" href="favicon.ico"/>
+        <meta name  = 'description' content = 'Personal website to better demonstrate my portfolio'></meta>
+
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,200&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
+
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #bccddf;
+            }
+            * {
+                -webkit-overflow-scrolling: touch;
+            }
+            ::-webkit-scrollbar {
+                display: none;
+            }
+            .centered_image {
+                z-index: -1;
+                top: 0;
+                bottom: 0;
+                display: block;
+                vertical-align: middle;
+                margin: auto;
+                height: 230%;
+            }
+            canvas {
+                position: absolute;
+                margin: 0;
+                padding: 0;
+            }
+            .big {
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                vertical-align: middle;
+                height: 100%;
+                overflow: hidden;
+            }
+            .contactInfo{
+                padding: 5% 7% 5% 7%;
+                top: 0;
+                font-family: 'Raleway', sans-serif;
+                background-color: #000000;
+                color: white;
+                width: 100%;
+                text-align: center;
+            }
+            .face_image {
+                top: 0;
+                bottom: 0;
+                position: absolute;
+                margin: auto;
+            }
+            .edHead{
+                padding: 1rem 0 1.5rem 0;
+                border-bottom: 1px solid white;
+                font-size:2em;
+                font-family:'Antic Slab', sans-serif;
+            }
+            .skillsHead{
+                padding: 1rem 0 1.5rem 0;
+                border-bottom: 1px solid white;
+                font-size:2rem;
+                font-family:'Antic Slab', sans-serif;
+            }
+            a{
+                text-decoration: underline;
+                color: rgb(255, 255, 255);
+            }
+            a:hover{
+                color: rgb(200,200,200);
+            }
+            i{
+                margin: 0 1% 0 1%;
+            }
+            .fontIcons{
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+            }
+            canvas{
+                position: absolute;
+            }
+            .circleAnim{
+                position: absolute;
+                z-index: 1;
+            }
+            .skillsSect{
+                text-align: left;
+                font-size: 1rem;
+                padding: 1% 0 1% 0;
+            }
+            .aboutMe{
+                font-size: 1.5rem;
+                font-family: 'Montserrat', sans-serif;
+                background-color: #404952;
+                color: white;
+                width:100%;
+                text-align: center;
+            }
+            .alternate{
+                top: 0;
+                bottom: 0;
+                padding: 0;
+                position: absolute;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            .face_image{
+                z-index: -1;
+            }
+            .sps{
+                background-image: url("crest.JPG");
+
+                /* Set a specific height */
+                height: 100%;
+                background-color: black;
+
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .welcome{
+                font-size: 2em;
+                width: 100%;
+                text-align: center;
+                z-index:1;
+                position: absolute;
+            }
+            .alt_text_name{
+                z-index: 2;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 2em;
+                color: rgba(255, 255, 255, 0.0);
+                width: 100%;
+                text-align: center;
+            }
+            .alt_text{
+                z-index: 2;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1rem;
+                color: rgba(255, 255, 255, 0);
+                width: 100%;
+                text-align: center;
+                vertical-align: middle;
+            }
+            .aboutHead{
+                font-family:'Antic Slab', sans-serif;
+                padding: 1rem 0 1.5rem 0;
+                border-bottom: 1px solid white;
+            }
+
+
+            @media only screen and (max-width: 870px) {
+                .edSect{
+                    margin: 11%;
+                }
+                .edHead{
+                    font-size: 1.5rem;
+                }
+                .aboutMe{
+                    font-size: 1rem;
+                    padding: 4% 10% 8% 10%;
+                }
+                .aboutHead{
+                    font-size:1.5rem;
+                }
+                .fontIcons{
+                    font-size: 2em;
+                }
+                .edSect p {
+                    text-align: left;
+                    border-bottom: 2px solid white; 
+                    padding-bottom:2%; 
+                    padding-top:2%; 
+                    font-size: 1rem;
+                }
+                .skillsSect{
+                    font-size: 1.1rem;
+                }
+                .ratings{
+                    font-size: 0.8rem;
+                }
+                .skillsHead{
+                    font-size: 1.5rem;
+                }
+                .skills{
+                    padding: 6% 10% 4% 10%;
+                    font-size: 0.8em;
+                    font-family: 'Raleway', sans-serif;
+                    background-color: #9b4d4b;
+                    color: white;
+                    width:100%;
+                    text-align: center;
+                }
+                .education{
+                    padding: 6% 10% 4% 10%;
+                    font-size: 1.2em;
+                    font-family: 'Montserrat', sans-serif;
+                    background-color:#505672;
+                    color: white;
+                    width:100%;
+                    text-align: center;
+
+                }
+                .big{
+                    visibility: hidden;
+                }
+            }
+            @media only screen and (min-width: 0px){
+                .alt_text_name{font-size: 1.5rem;}
+                .alt_text{font-size: 1rem;}
+                .fontIcons{font-size: 2em;}
+            }
+            @media only screen and (min-width: 430px){
+                .alt_text_name{font-size: 2rem;}
+                .alt_text{font-size: 1.5rem;}
+                .fontIcons{font-size: 2rem;}
+            }
+            @media only screen and (min-width: 600px){
+                .alt_text_name{font-size: 3rem;}
+                .alt_text{font-size: 2rem;}
+                .fontIcons{font-size: 2.5rem;}
+            }
+            @media only screen and (max-width: 756px) {
+                .face_image{height: 100%;}
+            }
+            @media only screen and (min-width:756px){
+                .face_image{width: 100%;};
+            }
+            @media only screen and (min-width: 870px) {
+                .aboutHead{
+                    font-size:2em;
+                }
+                .fontIcons{
+                    font-size: 3em;
+                }
+                .aboutMe{
+                    padding: 2% 20% 4% 20%;
+                }
+                .skillsHead{
+                    font-size: 3rem;
+                }
+                .edSect{
+                    margin: 11%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    text-align: left;
+                }
+                .edSect p{
+                    border-left: 2px solid white; 
+                    float: left; 
+                    padding-left:2%; 
+                    font-size: 1.5rem;
+                }
+                .skills{
+                    padding: 2% 20% 2% 20%;
+                    font-size: 1.5rem;
+                    font-family: 'Raleway', sans-serif;
+                    background-color: #9b4d4b;
+                    color: white;
+                    width:100%;
+                    text-align: center;
+                }
+                .skillsSect{
+                    font-size: 1.5rem;
+                }
+                .ratings{
+                    font-size: 1.2rem;
+                }
+                .education{
+                    padding: 2% 20% 2% 20%;
+                    font-size: 1.5rem;
+                    font-family: 'Montserrat', sans-serif;
+                    background-color:#505672;
+                    color: white;
+                    width:100%;
+                    text-align: center;
+                }
+                .alternate{
+                    visibility: hidden;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class = 'imgContainer'>
+            <div class = 'big'>
+                <canvas class = 'drawingBoard'></canvas>
+                <img class = 'centered_image' src = "./WelcomeBannerImage.JPEG"></img>
+            </div>
+            <div class = 'alternate'>
+                <canvas class = 'circleAnim'></canvas>
+                <img class = 'face_image' src = './altwelcome1.jpg'></img>
+                <p class = "alt_text">
+                    Hi, I'm
+                    <br>
+                </p>
+                <p class = "alt_text_name">
+                    Dariush Aligholizadeh
+                </p>
+            </div>
+        </div>
+        <div class = 'aboutMe'>
+            <p class = 'aboutHead'>ABOUT ME</p>
+            <br><strong>
+            I'm currently an undegraduate at UMBC majoring in Computer Science and Biochemistry & Molecular Biology on the Pre-Med Track. I'm interested in neurology, machine learning, and software development. My current goal is to attend Medical School, check out my <a href = "./Dariush-Undergraduate-Resume.pdf">full resume</a>, or just keep scrolling</strong>
+        </div>
+        <div class = 'education'>
+            <p class = 'edHead'>EDUCATION</p>
+            <div class = 'edSect'>
+                <img style = "margin: 4%;" src = "UMBC.png" height = 100px></img>
+                <p>
+                    <strong>University of Maryland, Baltimore-County</strong><br>
+                    <em>Sept. 2020 - May 2024</em>
+                    <br>
+                    <br>
+                    <strong>Member:</strong> Honors College
+                    <br>
+                    <strong>GPA:</strong> 4.0/4.0
+                    <br>
+                    <strong>Majors:</strong> B.S. Computer Science, B.S. Biochemistry & Molecular Biology
+                </p>
+            </div>
+            <div style = "margin-top: 5%;" class = 'edSect'>
+                <img style = "margin:4%;border-radius: 7.5%;" src = "THS.jpg" height = 87px></img>
+                <p>
+                    <strong>Towson High School</strong><br>
+                    <em>Sept. 2016 - May 2020</em>
+                    <br>
+                    <br>
+                    <strong>Member:</strong> National Math Honor Society, National Social Studies Honor Society, National Music Honor Society
+                    <br>
+                    <strong>GPA:</strong> 3.88/4.0, <strong>QPA:</strong> 5.66/6.00
+                    <br>
+                    <strong>Rank: </strong>14/326
+                    <br>
+                    <strong>SAT: </strong>1450/1600
+                </p>
+            </div>
+        </div>
+        <div class = 'skills'>
+            <p class = 'skillsHead'>SKILLS</p>
+            <div class = 'skillsSect'>
+                <p class = "skillsEntry">
+                    HTML/CSS/JS: <span class = 'ratings'>&#11044;&#11044;&#11044;&#11044;&#11044;</span>
+                </p>
+                <p class = "skillsEntry">
+                    C/C++: <span class = 'ratings'>&#11044;&#11044;&#11044;&#11044;&#9711;</span>
+                </p>
+                <p class = "skillsEntry">
+                    Python: <span class = 'ratings'>&#11044;&#11044;&#11044;&#11044;&#11044;</span>
+                </p>
+                <p class = "skillsEntry">
+                    Java: <span class = 'ratings'>&#11044;&#11044;&#9711;&#9711;&#9711;</span>
+                </p>
+                <p class = "skillsEntry">
+                    ReactJS/Node.js: <span class = 'ratings'>&#11044;&#11044;&#11044;&#11044;&#9711;</span>
+                </p>
+                <p class = "skillsEntry">
+                    Biology: <span class = 'ratings'>&#11044;&#11044;&#11044;&#11044;&#11044;</span>
+                </p>
+                <p class = "skillsEntry">
+                    Chemistry: <span class = 'ratings'>&#11044;&#11044;&#11044;&#11044;&#9711;</span>
+                </p>
+                <p class = "skillsEntry">
+                    Calc./Linear Alg.: <span class = 'ratings'>&#11044;&#11044;&#11044;&#11044;&#9711;</span>
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- DO A SKILLS SECTION AND STUFF LIKE THAT AND YOUR PROJECTS MAYBE AND ADD THE FUNNY PHOTO AND UR RESEARCH EXPERIENCE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class = 'contactInfo'>
+            <div class = 'fontIcons'>
+                <a href = "mailto:daligho1@umbc.edu"><i class = 'fa fa-envelope'></i></a><a href = "https://www.linkedin.com/in/dariush-aligholizadeh-8a9094199/"><i class = 'fab fa-linkedin-in'></i></a><a href = "https://www.instagram.com/d.aligholi"><i class = 'fab fa-instagram'></i></a><a href = "https://www.github.com/hsuirad"><i class = 'fab fa-github'></i></a>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script>
+            document.querySelector('.alt_text').style.paddingTop = (window.innerHeight/2 - (document.querySelector('.alt_text').getBoundingClientRect().height + document.querySelector('.alt_text_name').getBoundingClientRect().height)/1.2) + 'px'
+
+
+            function SmoothVerticalScrolling(e, time, where) {
+                var doc = document.documentElement;
+                let top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+
+                if(top == 0){
+                    var eTop = e.getBoundingClientRect().top;
+                    var eAmt = eTop / 100;
+                    var curTime = 0;
+                    while (curTime <= time) {
+                        window.setTimeout(SVS_B, curTime, eAmt, where);
+                        curTime += time / 100;
+                    }
+               }
+            }
+
+            function SVS_B(eAmt, where) {
+                if(where == "center" || where == "")
+                    window.scrollBy(0, eAmt / 2);
+                if (where == "top")
+                    window.scrollBy(0, eAmt);
+            }
+
+
+
+
+            //  context.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y);
+            if(document.querySelector('.imgContainer').clientWidth > 870){
+                setTimeout(()=>window.scrollTo(0, 0), 500);
+
+                let canvas = document.querySelector('.drawingBoard')
+                let c = canvas.getContext('2d')
+                canvas.width = document.querySelector('.imgContainer').clientWidth;
+                canvas.height = window.innerHeight;
+                
+
+                c.beginPath()
+                c.moveTo(canvas.width/2+40, canvas.height/1.58)
+                c.lineWidth = 4
+                c.lineCap = 'round'
+                c.strokeStyle = 'white'
+
+                function bezier(x2, y2){
+                    c.beginPath()
+                    c.moveTo(canvas.width/2+40, canvas.height/1.58)
+                    c.clearRect(0, 0, canvas.width, canvas.height)
+                    c.bezierCurveTo(canvas.width/2+75, canvas.height/1.63, x2, y2, x2, y2)//canvas.width/2+65, canvas.height/2.2)
+
+                    c.stroke()
+
+                    return [x2, y2];
+                }
+                let fadeText = () => {
+                    let text = "Hi, I'm"
+                    let name = "Dariush Aligholizadeh"
+                    let opacity = 0.0;
+
+                    let finalTimer = setInterval(()=>{
+                        c.font = "2em Titillium Web, sans-serif"
+                        c.fillStyle = `rgba(255, 255, 255, ${opacity})`
+                        c.fillText(text, canvas.width/2 - c.measureText(text).width/2, canvas.height/2 - (c.measureText(text).actualBoundingBoxAscent + c.measureText(text).actualBoundingBoxDescent)*5.5)
+                        c.font = "4em Montserrat, sans-serif"
+                        c.fillStyle = `rgba(255, 255, 255, ${opacity/3})`
+                        c.fillText(name, canvas.width/2 - c.measureText(name).width/2, canvas.height/2.35)
+                        opacity += 0.1;
+                        if(opacity >= 3.0){
+                            SmoothVerticalScrolling(document.querySelector('.aboutMe'), 1000, 'top'), 0;
+                            clearInterval(finalTimer);
+                        }
+                    }, 100)
+                }
+                
+
+                let x1 = canvas.width/2+75
+                let y1 = canvas.height/1.63
+                let accelator = 7;
+
+                let startLine = () => {
+                    let timer1 = setInterval(() => {
+                        let ret = bezier(x1, y1);
+                        //console.log(ret)
+                        x1 = ret[0];
+                        y1 = ret[1];
+                        if(ret[0] >= canvas.width/2+65){
+                            x1 = canvas.width/2+65
+                            if(ret[1] <= canvas.height/2.2){
+                                ret[1] = canvas.height/2.2;
+                                clearInterval(timer1)
+                                startBottom();
+                            }
+                            y1-=accelator
+                        }
+                        else{  
+                            if(ret[1] <= canvas.height/2.2){
+                                y1 = canvas.height/2.2;
+                                x1++
+                            }
+                            x1+=accelator
+                            y1-=accelator
+                        }
+                        accelator*=0.98
+                        if(accelator<0.5) accelator=0.5
+                    }, 10)
+                }
+
+                let startBottom = () => {
+                    c.clearRect(0, 0, canvas.width, canvas.height)
+
+                    c.beginPath();
+                    c.moveTo(canvas.width/2+40, canvas.height/1.58)
+                    c.bezierCurveTo(canvas.width/2+75, canvas.height/1.63, canvas.width/2+65, canvas.height/2.2, canvas.width/2+65, canvas.height/2.2)
+                    c.stroke()
+
+                    c.font = "4em Montserrat, sans-serif"
+
+                    let sides = c.measureText("Dariush Aligholizadeh").width*1.3
+
+                    let startL = [canvas.width/2+65, canvas.height/2.2, canvas.width/2-sides/2, canvas.height/2.2]
+                    let startR = [canvas.width/2+65, canvas.height/2.2, canvas.width/2+sides/2, canvas.height/2.2]
+                    // let startxR = canvas.width/2+65
+                    // let startyR = canvas.height/2.2
+                    let movedL = 0;
+                    let movedR = 0;
+                    //left is 1.4 times right
+                    let tempPoint = canvas.width/2+65;
+                    let leftOff = tempPoint-(canvas.width/2-sides/2);
+                    let rightOff = (canvas.width/2+sides/2)-tempPoint;
+
+                    let accelatorL = canvas.width/2/80*(leftOff/rightOff);
+                    let accelatorR = canvas.width/2/80;
+
+                    let timer2 = setInterval(()=>{
+                        c.beginPath()
+                        c.moveTo(startL[0], startL[1]);
+                        c.lineTo(startL[0] - movedL, canvas.height/2.2)
+                        c.stroke()
+
+                        c.beginPath()
+                        c.moveTo(startR[0], startR[1]);
+                        c.lineTo(startR[0] + movedR, canvas.height/2.2)
+                        c.stroke()
+
+                        console.log(startL, movedL)
+
+                        accelatorL*=0.98
+                        accelatorR*=0.98
+
+                        if(accelatorL<=1*(leftOff/rightOff))accelatorL=1*(leftOff/rightOff)
+                        if(accelatorR<=1)accelatorR=1
+
+                        if(startL[0] - movedL <= startL[2]){
+                            accelatorL = 0;
+                            if(startR[0] + movedR >= startR[2]){
+                                movedR = 0;
+                                accelatorR = 0;
+                                fadeText();
+                                clearInterval(timer2)
+                            }
+                        } else{
+                            if(startR[0] + movedR >= startR[2]){
+                                accelatorR = 0;
+                            }
+                        }
+
+                        movedR += accelatorR
+                        movedL += accelatorL
+                    }, 10)
+                }
+
+                let imgObj = document.querySelector('.centered_image');
+                let overflow = imgObj.width - window.innerWidth;
+
+                imgObj.style.margin=`-500px 0 0 ${-overflow/2}`
+
+
+                setTimeout(startLine, 2000)
+            }
+            else if(document.querySelector('.imgContainer').clientWidth < 870){
+                setTimeout(()=>window.scrollTo(0, 0), 500);
+
+                let offset = document.querySelector('.face_image').width - document.querySelector('.imgContainer').clientWidth;
+                document.querySelector('.face_image').style.margin = `0 0 0 ${-offset/2}`                
+
+                window.onresize = function(){
+                    offset = document.querySelector('.face_image').width - document.querySelector('.imgContainer').clientWidth;
+                    document.querySelector('.face_image').style.margin = `0 0 0 ${-offset/2}`                
+                }
+
+
+                let canvas = document.querySelector('.circleAnim')
+                let c = canvas.getContext('2d')
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                // c.beginPath();
+                // c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI);
+                c.lineWidth = 3
+                c.strokeStyle = 'white'
+                // c.stroke()
+                let radius = 0;
+                let acc = 0.005;
+
+
+                let timer = setInterval(() => {
+                    if(radius < 2*Math.PI+0.03){
+                        c.clearRect(0, 0, canvas.width, canvas.height)
+                        c.beginPath()
+                        c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, radius);
+                        c.stroke()
+                        radius+=0.03;
+                        acc*=1.1
+                        acc<0.005?acc=0.005:acc=acc;
+                        console.log('a')
+                    }
+                    else{ 
+                        startSecond();
+                        clearInterval(timer)
+                    }
+                }, 10)
+
+                let startSecond = () => {
+                    let opacity = 0;
+                    acc = 0.01;
+
+                    let t = setInterval(() => {
+                        if(opacity > 3.0){
+                            setTimeout(()=>SmoothVerticalScrolling(document.querySelector('.aboutMe'), 1000, 'top'), 1000);
+                            clearInterval(t)
+                        } else{
+                            opacity+=0.05;
+                            document.querySelector('.face_image').style.filter = `brightness(${1 - (opacity/3>0.4?0.4:opacity/3)})`
+                            document.querySelector('.alt_text_name').style.color = `rgba(255, 255, 255, ${opacity-1}`
+                            document.querySelector('.alt_text').style.color = `rgba(255, 255, 255, ${opacity})`
+                        }
+                    }, 50)
+                }
+                // setTimeout(() => {
+                //     c.beginPath()
+                //     c.arc(canvas.width/2, canvas.height/2, canvas.width/2*0.9, 0, 2*Math.PI)
+                //     c.rect(canvas.width, 0, -canvas.width, canvas.height)
+                //     c.fill()
+                // }, 5000);
+            }
+
+            function changePages(page){
+                clearInterval(b);
+                clearInterval(a);
+                document.body.style.backgroundColor = "#2b2b2b"
+                document.querySelector('#codething').remove()
+                document.querySelector('nav').remove();
+                document.querySelector('.container-fluid').remove();
+                document.querySelector('.jumbotron').remove();
+                document.querySelector('.loader').style.display = "inline-block";
+                clearInterval(interval);
+                c.clearRect(0, 0, window.innerWidth, window.innerHeight);
+                setTimeout(() => {
+                    window.location.href = page + "/index.html";
+                }, 4000)
+            }
+        </script>
+    </body>
+</html>

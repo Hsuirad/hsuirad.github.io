@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://majestic-sherbet-af55f9.netlify.app/ -->
+<html lang="en" style="--vsc-domain: &quot;majestic-sherbet-af55f9.netlify.app&quot;;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psychiatry Practice Exam — High Yield Question Bank</title>
+<link href="./psych-practice-questions_files/css2" rel="stylesheet">
+<style>
+:root {
+  --bg: #0e0c0a;
+  --surface: #161412;
+  --card: #1c1916;
+  --border: #2e2a25;
+  --text: #f0ece5;
+  --muted: #7a7268;
+  --accent: #d4622a;
+  --accent2: #3a7ca5;
+  --green: #2e8b57;
+  --gold: #c8991a;
+  --purple: #8b5cf6;
+  --red-bg: rgba(212,98,42,0.12);
+  --blue-bg: rgba(58,124,165,0.12);
+  --green-bg: rgba(46,139,87,0.12);
+  --gold-bg: rgba(200,153,26,0.12);
+  --purple-bg: rgba(139,92,246,0.12);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* HEADER */
+.hdr {
+  background: linear-gradient(135deg, #1a1410 0%, #0e0c0a 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 2.5rem 2rem 1.5rem;
+  position: sticky; top: 0; z-index: 100;
+}
+.hdr-inner { max-width: 960px; margin: 0 auto; }
+.hdr-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.hdr h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text);
+}
+.hdr h1 em { color: var(--accent); font-style: italic; }
+.hdr p { font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.4rem; }
+.score-display {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  text-align: right;
+  min-width: 140px;
+}
+.score-display .sc-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.score-display .sc-val { font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--accent); font-weight: 700; }
+.score-display .sc-sub { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; color: var(--muted); }
+.prog-bar { height: 2px; background: var(--border); border-radius: 2px; margin-top: 1rem; overflow: hidden; }
+.prog-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--gold)); transition: width 0.5s ease; width: 0%; }
+
+/* NAV */
+.nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 1.5rem;
+  display: flex; flex-wrap: wrap; gap: 0.3rem;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.nb {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.65rem;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.nb:hover, .nb.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* MAIN */
+.main { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 6rem; }
+
+/* SECTION HEADER */
+.sec-hdr {
+  margin: 3rem 0 1.2rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+.sec-num {
+  font-family: 'Fraunces', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.25;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.sec-info {}
+.sec-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.sec-sub { font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.2rem; }
+.sec-rule { height: 1px; background: var(--border); margin-bottom: 1.2rem; }
+
+/* QUESTION CARD */
+.qcard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 0.9rem;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.qcard:hover { border-color: #3e3830; }
+.qcard.answered-correct { border-left: 3px solid var(--green); }
+.qcard.answered-wrong { border-left: 3px solid var(--accent); }
+
+/* QUESTION STEM */
+.qstem {
+  padding: 1rem 1.2rem 0.8rem;
+  cursor: pointer;
+  user-select: none;
+}
+.qtag {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.57rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
+}
+.qtag-dx { background: var(--blue-bg); color: var(--accent2); border: 1px solid rgba(58,124,165,0.3); }
+.qtag-rx { background: var(--red-bg); color: var(--accent); border: 1px solid rgba(212,98,42,0.3); }
+.qtag-img { background: var(--purple-bg); color: var(--purple); border: 1px solid rgba(139,92,246,0.3); }
+.qtag-mgmt { background: var(--green-bg); color: var(--green); border: 1px solid rgba(46,139,87,0.3); }
+.qtag-diff { background: var(--gold-bg); color: var(--gold); border: 1px solid rgba(200,153,26,0.3); }
+.qtag-moa { background: var(--red-bg); color: #e88; border: 1px solid rgba(212,98,42,0.2); }
+
+.qtext {
+  font-size: 0.88rem;
+  color: #d0ccc5;
+  line-height: 1.65;
+  margin-bottom: 0.85rem;
+}
+.qtext strong { color: var(--text); }
+
+/* OPTIONS */
+.options { display: flex; flex-direction: column; gap: 0.4rem; padding: 0 1.2rem 0.9rem; }
+.opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+  width: 100%;
+  color: #c0bbb4;
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
+.opt:hover:not(.locked) { background: rgba(255,255,255,0.03); border-color: #4a4540; }
+.opt .opt-letter {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+  min-width: 1.2rem;
+}
+.opt.selected { border-color: var(--accent2); background: rgba(58,124,165,0.08); color: var(--text); }
+.opt.selected .opt-letter { color: var(--accent2); }
+.opt.correct { border-color: var(--green) !important; background: rgba(46,139,87,0.1) !important; color: var(--text) !important; }
+.opt.correct .opt-letter { color: var(--green) !important; }
+.opt.wrong { border-color: var(--accent) !important; background: rgba(212,98,42,0.1) !important; }
+.opt.locked { cursor: default; pointer-events: none; }
+
+/* EXPLANATION */
+.explanation {
+  display: none;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.explanation.show { display: block; }
+.exp-inner { padding: 1rem 1.2rem 1.1rem; }
+.exp-verdict {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-bottom: 0.7rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.exp-correct { color: var(--green); }
+.exp-wrong { color: var(--accent); }
+.exp-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.exp-body { font-size: 0.82rem; color: #b8b3aa; line-height: 1.7; }
+.exp-body strong { color: var(--text); }
+.exp-body em { color: var(--gold); font-style: normal; font-weight: 500; }
+.exp-body .trap {
+  margin-top: 0.7rem;
+  padding: 0.55rem 0.8rem;
+  background: rgba(212,98,42,0.1);
+  border-left: 2px solid var(--accent);
+  border-radius: 3px;
+  font-size: 0.8rem;
+  color: #c9c3ba;
+}
+.exp-body .trap strong { color: var(--accent); }
+.exp-body .key {
+  margin-top: 0.7rem;
+  padding: 0.55rem 0.8rem;
+  background: rgba(46,139,87,0.1);
+  border-left: 2px solid var(--green);
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+/* HIGH YIELD SECTION */
+.hy-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.hy-head {
+  display: flex; align-items: center; gap: 0.8rem;
+  padding: 0.9rem 1.2rem;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.hy-card.open .hy-head { border-color: var(--border); }
+.hy-icon { font-size: 1.1rem; flex-shrink: 0; }
+.hy-label { font-family: 'Fraunces', serif; font-size: 0.98rem; font-weight: 700; }
+.hy-sub { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; margin-top: 0.1rem; }
+.hy-chev { color: var(--muted); font-size: 0.75rem; margin-left: auto; transition: transform 0.3s; }
+.hy-card.open .hy-chev { transform: rotate(180deg); }
+.hy-body { display: none; padding: 1.1rem 1.2rem; }
+.hy-card.open .hy-body { display: block; }
+
+.hy-body .sl {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin: 1rem 0 0.4rem;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.hy-body .sl::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.hy-body .sl:first-child { margin-top: 0; }
+
+.box-r { background: rgba(212,98,42,0.1); border-left: 2px solid var(--accent); border-radius: 4px; padding: 0.6rem 0.85rem; font-size: 0.82rem; color: #c0bbb4; margin-bottom: 0.5rem; line-height: 1.6; }
+.box-b { background: rgba(58,124,165,0.1); border-left: 2px solid var(--accent2); border-radius: 4px; padding: 0.6rem 0.85rem; font-size: 0.82rem; color: #c0bbb4; margin-bottom: 0.5rem; line-height: 1.6; }
+.box-g { background: rgba(46,139,87,0.1); border-left: 2px solid var(--green); border-radius: 4px; padding: 0.6rem 0.85rem; font-size: 0.82rem; color: #c0bbb4; margin-bottom: 0.5rem; line-height: 1.6; }
+.box-gold { background: rgba(200,153,26,0.1); border-left: 2px solid var(--gold); border-radius: 4px; padding: 0.6rem 0.85rem; font-size: 0.82rem; color: #c0bbb4; margin-bottom: 0.5rem; line-height: 1.6; }
+.box-p { background: rgba(139,92,246,0.1); border-left: 2px solid var(--purple); border-radius: 4px; padding: 0.6rem 0.85rem; font-size: 0.82rem; color: #c0bbb4; margin-bottom: 0.5rem; line-height: 1.6; }
+.box-r strong, .box-b strong, .box-g strong, .box-gold strong, .box-p strong { color: var(--text); }
+
+.t { width: 100%; border-collapse: collapse; font-size: 0.79rem; margin-bottom: 0.5rem; }
+.t th { text-align: left; padding: 0.32rem 0.6rem; background: rgba(255,255,255,0.04); color: var(--muted); font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--border); }
+.t td { padding: 0.4rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; color: #b8b3aa; }
+.t td strong { color: var(--text); }
+.t tr:last-child td { border-bottom: none; }
+.t tr:hover td { background: rgba(255,255,255,0.02); }
+
+.c2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.5rem; }
+@media(max-width: 560px) { .c2 { grid-template-columns: 1fr; } }
+.cb2 { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 5px; padding: 0.7rem; font-size: 0.79rem; }
+.cb2 .cbt { font-weight: 600; font-size: 0.82rem; margin-bottom: 0.35rem; color: var(--text); }
+.cb2 ul { list-style: none; padding: 0; }
+.cb2 li { padding: 0.15rem 0; color: #b0aaa3; display: flex; gap: 0.35rem; }
+.cb2 li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 0.68rem; margin-top: 0.25rem; }
+
+.mn {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.mn-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.2rem; }
+.mn-word { font-family: 'Fraunces', serif; font-size: 1.2rem; color: var(--accent); margin-bottom: 0.2rem; font-style: italic; }
+.mn-body { font-size: 0.8rem; color: #a8a39c; line-height: 1.9; }
+.mn-body strong { color: var(--text); }
+
+/* RESET BTN */
+.reset-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.reset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-inner">
+    <div class="hdr-top">
+      <div>
+        <h1>Psychiatry <em>Practice Exam</em></h1>
+        <p>High-yield question bank · All disorders · All MOAs · Imaging · Differentiators</p>
+      </div>
+      <div class="score-display">
+        <div class="sc-label">Score</div>
+        <div class="sc-val" id="score-val">0/0</div>
+        <div class="sc-sub" id="score-pct">–%</div>
+      </div>
+    </div>
+    <div class="prog-bar"><div class="prog-fill" id="prog-fill"></div></div>
+  </div>
+</div>
+
+<div class="nav">
+  <button class="nb on" onclick="filterSection(&#39;all&#39;, this)">All</button>
+  <button class="nb" onclick="filterSection(&#39;mood&#39;, this)">Mood</button>
+  <button class="nb" onclick="filterSection(&#39;psychosis&#39;, this)">Psychosis</button>
+  <button class="nb" onclick="filterSection(&#39;anxiety&#39;, this)">Anxiety</button>
+  <button class="nb" onclick="filterSection(&#39;trauma&#39;, this)">Trauma</button>
+  <button class="nb" onclick="filterSection(&#39;substance&#39;, this)">Substance</button>
+  <button class="nb" onclick="filterSection(&#39;sleep&#39;, this)">Sleep</button>
+  <button class="nb" onclick="filterSection(&#39;eating&#39;, this)">Eating</button>
+  <button class="nb" onclick="filterSection(&#39;somatic&#39;, this)">Somatic</button>
+  <button class="nb" onclick="filterSection(&#39;neuro&#39;, this)">Neurocognitive</button>
+  <button class="nb" onclick="filterSection(&#39;child&#39;, this)">Child/Dev</button>
+  <button class="nb" onclick="filterSection(&#39;repro&#39;, this)">Repro/Sexual</button>
+  <button class="nb" onclick="filterSection(&#39;personality&#39;, this)">Personality</button>
+  <button class="nb" onclick="filterSection(&#39;therapy&#39;, this)">Therapy</button>
+  <button class="nb" onclick="filterSection(&#39;hy&#39;, this)">⭐ High Yield</button>
+</div>
+
+<div class="main">
+
+<!-- ============================================================ -->
+<!-- SECTION 1: MOOD DISORDERS -->
+<!-- ============================================================ -->
+<div data-section="mood">
+<div class="sec-hdr">
+  <div class="sec-num">01</div>
+  <div class="sec-info">
+    <div class="sec-title">Mood Disorders</div>
+    <div class="sec-sub">MDD · Bipolar I &amp; II · PMDD · Cyclothymia · Dysthymia</div>
+  </div>
+</div>
+<div class="sec-rule"></div>
+
+<!-- Q1 -->
+<div class="qcard" id="q1">
+  <div class="qstem" onclick="toggleQ(1)">
+    <span class="qtag qtag-dx">Most Likely Diagnosis</span>
+    <div class="qtext">A 34-year-old woman presents with 3 weeks of depressed mood, inability to experience pleasure, hypersomnia, increased appetite with 8 lb weight gain, psychomotor retardation, fatigue, and feelings of worthlessness. She denies any prior episodes of elevated mood, decreased need for sleep, or increased goal-directed activity. Her symptoms are causing significant impairment at work. TSH and CBC are normal. <strong>What is the most likely diagnosis?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(1,&#39;A&#39;)"><span class="opt-letter">A</span>Bipolar II Disorder, current episode depressed</button>
+    <button class="opt" onclick="answer(1,&#39;B&#39;)"><span class="opt-letter">B</span>Major Depressive Disorder, single episode</button>
+    <button class="opt" onclick="answer(1,&#39;C&#39;)"><span class="opt-letter">C</span>Persistent Depressive Disorder (Dysthymia)</button>
+    <button class="opt" onclick="answer(1,&#39;D&#39;)"><span class="opt-letter">D</span>Adjustment Disorder with depressed mood</button>
+  </div>
+  <div class="explanation" id="exp1">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Major Depressive Disorder (MDD) — Single Episode</div>
+      <div class="exp-body">
+        This patient meets full DSM-5 criteria for MDD: <strong>≥5 symptoms</strong> (depressed mood, anhedonia, hypersomnia, ↑ appetite/weight gain, psychomotor retardation, fatigue, worthlessness) for <strong>≥2 weeks</strong> with clinically significant impairment. Medical causes have been excluded (normal TSH, CBC). There is <strong>no history of hypomanic or manic episodes</strong> — this is critical.
+        <div class="key"><strong>Mnemonic: SIG E CAPS</strong> — Sleep ↑↓ · Interest ↓ (anhedonia) · Guilt/worthlessness · Energy ↓ · Concentration ↓ · Appetite ↑↓ · Psychomotor changes · Suicidality. Need ≥5, including depressed mood OR anhedonia, for ≥2 weeks.</div>
+        <div class="trap"><strong>⚠ Exam Trap:</strong> Choice A (Bipolar II) is a critical exclusion. You MUST ask about prior hypomanic episodes. Never diagnose MDD without first ruling out bipolar spectrum. A single missed hypomanic episode changes treatment entirely — SSRIs alone can precipitate mania in Bipolar II.</div>
+        <div class="trap"><strong>⚠ Choice C (Dysthymia):</strong> Persistent Depressive Disorder requires symptoms for <em>≥2 years</em>, not 3 weeks. Also typically less severe (≥2 symptoms, not ≥5). Choice D (Adjustment) would require an identifiable stressor and would not meet full MDE criteria.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="qcard" id="q2">
+  <div class="qstem" onclick="toggleQ(2)">
+    <span class="qtag qtag-diff">Differentiator</span>
+    <div class="qtext">A 28-year-old man is brought in by his wife, who notes that 4 days ago he suddenly became extremely talkative, needed only 2 hours of sleep, started three new business ventures, and spent $12,000 on cryptocurrency. He has a history of two prior major depressive episodes treated with sertraline. He denies any psychotic features. He has never been hospitalized. <strong>Which diagnosis is most appropriate?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(2,&#39;A&#39;)"><span class="opt-letter">A</span>Bipolar I Disorder, current episode manic</button>
+    <button class="opt" onclick="answer(2,&#39;B&#39;)"><span class="opt-letter">B</span>Bipolar II Disorder, current episode hypomanic</button>
+    <button class="opt" onclick="answer(2,&#39;C&#39;)"><span class="opt-letter">C</span>MDD with psychotic features</button>
+    <button class="opt" onclick="answer(2,&#39;D&#39;)"><span class="opt-letter">D</span>Cyclothymic Disorder</button>
+  </div>
+  <div class="explanation" id="exp2">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Bipolar II Disorder — Hypomanic Episode</div>
+      <div class="exp-body">
+        Bipolar II requires: at least one <strong>hypomanic episode</strong> (≥4 days, not requiring hospitalization, no psychotic features, not severe enough to cause marked impairment) AND at least one <strong>major depressive episode</strong>. This patient's 4-day episode, with no psychosis and no hospitalization, meets hypomanic — not manic — criteria. His two prior depressive episodes complete the Bipolar II picture.
+        <div class="key"><strong>DIG FAST</strong> (manic/hypomanic Sx): Distractibility · Impulsivity/Indiscretion · Grandiosity · Flight of ideas · Activity ↑ · Sleep ↓ · Talkativeness. All present here.</div>
+        <div class="trap"><strong>⚠ Bipolar I vs II Critical Difference:</strong> Bipolar I = full manic episode (≥7 days OR hospitalization OR psychosis required). Bipolar II = hypomanic episode (≥4 days, NO hospitalization, NO psychotic features, NOT severe impairment). This patient's 4-day episode + no hospitalization + no psychosis = Bipolar <em>II</em>. Bipolar II is NOT "milder" — it carries the same depression burden and equal or higher suicide risk.</div>
+        <div class="trap"><strong>⚠ Action Item:</strong> STOP sertraline (SSRIs can worsen cycling and precipitate full mania in Bipolar II). Start mood stabilizer (lithium, valproate, or quetiapine). This is a common exam action step.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="qcard" id="q3">
+  <div class="qstem" onclick="toggleQ(3)">
+    <span class="qtag qtag-moa">Drug MOA</span>
+    <div class="qtext">A patient with Bipolar I Disorder is started on lithium for long-term mood stabilization. Which of the following best explains the mechanism of action of lithium that makes it particularly effective in <strong>reducing suicide risk</strong> in bipolar disorder, and what is the most important monitoring parameter?</div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(3,&#39;A&#39;)"><span class="opt-letter">A</span>NMDA receptor antagonism; monitor renal function and serum levels</button>
+    <button class="opt" onclick="answer(3,&#39;B&#39;)"><span class="opt-letter">B</span>Inhibition of inositol monophosphatase and GSK-3β (glycogen synthase kinase-3β); narrow therapeutic index requires monitoring serum levels, renal and thyroid function</button>
+    <button class="opt" onclick="answer(3,&#39;C&#39;)"><span class="opt-letter">C</span>Sodium channel blockade; monitor for QTc prolongation</button>
+    <button class="opt" onclick="answer(3,&#39;D&#39;)"><span class="opt-letter">D</span>GABA-A potentiation; monitor for sedation and respiratory depression</button>
+  </div>
+  <div class="explanation" id="exp3">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Lithium MOA — Inositol Phosphatase + GSK-3β Inhibition</div>
+      <div class="exp-body">
+        Lithium has a multifaceted MOA: (1) <strong>Inhibits inositol monophosphatase</strong> → depletes free inositol → dampens phosphoinositide signaling → ↓ excitatory neurotransmission. (2) <strong>Inhibits GSK-3β</strong> → neuroprotective effects (↑ BDNF, neurogenesis) — this may underlie its anti-suicidal effects. It also modulates adenylyl cyclase and reduces cAMP signaling.
+        <div class="box-gold"><strong>Lithium Monitoring (narrow therapeutic index):</strong> Serum Li levels (therapeutic: 0.6–1.2 mEq/L; toxicity: &gt;1.5) · Renal function (Li is excreted renally; NSAIDs/ACE inhibitors raise levels → toxicity) · Thyroid (hypothyroidism in ~40%) · Calcium (↑ PTH → hypercalcemia) · ECG (T-wave flattening). Withhold 48 hrs before delivery in pregnancy.</div>
+        <div class="trap"><strong>⚠ Toxicity Triad:</strong> Tremor → Ataxia → Confusion → Seizure → Death (in order of increasing toxicity). Key precipitants: dehydration, NSAIDs, thiazide diuretics (↑ Li reabsorption), ACE inhibitors.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="qcard" id="q4">
+  <div class="qstem" onclick="toggleQ(4)">
+    <span class="qtag qtag-mgmt">Next Step</span>
+    <div class="qtext">A 26-year-old woman with a confirmed diagnosis of MDD has been on sertraline 50 mg for 6 weeks with minimal response. She denies suicidal ideation. She has no prior hypomanic episodes. She is frustrated and wants to stop all medications. <strong>What is the most appropriate next step?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(4,&#39;A&#39;)"><span class="opt-letter">A</span>Discontinue sertraline and initiate a MAOI</button>
+    <button class="opt" onclick="answer(4,&#39;B&#39;)"><span class="opt-letter">B</span>Increase sertraline to 100 mg and reassess in 4–6 weeks; add CBT</button>
+    <button class="opt" onclick="answer(4,&#39;C&#39;)"><span class="opt-letter">C</span>Switch immediately to a TCA</button>
+    <button class="opt" onclick="answer(4,&#39;D&#39;)"><span class="opt-letter">D</span>Add lithium augmentation immediately</button>
+  </div>
+  <div class="explanation" id="exp4">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Optimize Dose Before Switching — MDD Treatment Algorithm</div>
+      <div class="exp-body">
+        <strong>First step in a partial responder:</strong> Ensure adequate dose AND adequate duration. 6 weeks at 50 mg sertraline is an adequate trial at a possibly sub-therapeutic dose — the next step is to <em>optimize</em> (increase dose to 100 mg) before declaring failure. Adding CBT is always appropriate (combination &gt; monotherapy).
+        <div class="box-g"><strong>MDD Treatment Steps:</strong> Step 1: SSRI + CBT (4–8 wks) → Step 2: Optimize dose → Step 3: Switch SSRI or add augmentation (bupropion, buspirone, atypical antipsychotic, lithium) → Step 4: Switch class (SNRI, TCA) → Step 5: MAOIs or ECT (treatment-resistant; ≥2 failed trials)</div>
+        <div class="trap"><strong>⚠ MAOIs:</strong> Reserved for treatment-resistant MDD — not first-line or second-line. Require strict dietary tyramine restriction. NEVER combine with SSRIs (serotonin syndrome). Must wait ≥2 weeks (5 weeks for fluoxetine due to long T½) after stopping SSRI before starting MAOI.</div>
+        <div class="trap"><strong>⚠ Why not lithium yet?</strong> Lithium augmentation is valid for treatment-resistant MDD but premature here — patient hasn't failed an adequate dose trial. Step before augmentation = optimize current drug.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="qcard" id="q5">
+  <div class="qstem" onclick="toggleQ(5)">
+    <span class="qtag qtag-img">Neuroimaging</span>
+    <div class="qtext">Neuroimaging studies comparing patients with MDD to healthy controls consistently show specific structural and functional changes. A researcher presents MRI and fMRI data from a cohort of MDD patients. <strong>Which set of findings is most consistent with MDD?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(5,&#39;A&#39;)"><span class="opt-letter">A</span>Enlarged lateral ventricles and increased prefrontal cortex volume</button>
+    <button class="opt" onclick="answer(5,&#39;B&#39;)"><span class="opt-letter">B</span>Decreased hippocampal volume, decreased PFC activity, and increased habenula activity</button>
+    <button class="opt" onclick="answer(5,&#39;C&#39;)"><span class="opt-letter">C</span>White matter hyperintensities and enlarged caudate nucleus</button>
+    <button class="opt" onclick="answer(5,&#39;D&#39;)"><span class="opt-letter">D</span>Increased hippocampal volume and decreased amygdala reactivity</button>
+  </div>
+  <div class="explanation" id="exp5">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">MDD Neuroimaging — Hippocampal Atrophy, ↓ PFC, ↑ Habenula</div>
+      <div class="exp-body">
+        <strong>Key MDD imaging findings:</strong>
+        <div class="box-b"><strong>↓ Hippocampal Volume:</strong> Most replicated finding. Caused by HPA axis dysregulation → excess cortisol → ↓ BDNF → impaired neurogenesis. Antidepressants (SSRIs, especially) and exercise restore hippocampal neurogenesis. The <em>synaptic plasticity hypothesis</em> of depression is based on this.</div>
+        <div class="box-b"><strong>↓ PFC Activity (hypofrontality):</strong> Explains negative thinking, poor executive function, impaired regulation of emotion. Particularly subgenual ACC (cingulate cortex) is implicated.</div>
+        <div class="box-b"><strong>↑ Habenula Activity:</strong> The habenula is the brain's "anti-reward" center — it encodes punishment and disappointment signals. Hyperactive habenula → inhibits dopamine reward neurons → anhedonia. Ketamine's rapid antidepressant effect may work partly by inhibiting habenula burst firing.</div>
+        <div class="trap"><strong>⚠ Enlarged lateral ventricles</strong> = schizophrenia. <strong>White matter hyperintensities</strong> = vascular dementia or bipolar disorder. Don't confuse.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q6 PMDD -->
+<div class="qcard" id="q6">
+  <div class="qstem" onclick="toggleQ(6)">
+    <span class="qtag qtag-dx">Most Likely Diagnosis</span>
+    <div class="qtext">A 30-year-old woman reports that for the past 8 months, in the week before her period, she experiences severe irritability, depressed mood, mood swings, marked anxiety, decreased interest in activities, and difficulty concentrating. Her symptoms resolve completely within 2–3 days of menstruation onset. She functions well the rest of the month. Charting confirms a consistent luteal phase pattern. <strong>What is the diagnosis, and what is the first-line treatment?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(6,&#39;A&#39;)"><span class="opt-letter">A</span>PMS; calcium supplementation</button>
+    <button class="opt" onclick="answer(6,&#39;B&#39;)"><span class="opt-letter">B</span>PMDD; SSRIs (can be continuous or luteal phase only)</button>
+    <button class="opt" onclick="answer(6,&#39;C&#39;)"><span class="opt-letter">C</span>MDD with menstrual exacerbation; continuous SSRI only</button>
+    <button class="opt" onclick="answer(6,&#39;D&#39;)"><span class="opt-letter">D</span>Cyclothymic disorder; lithium</button>
+  </div>
+  <div class="explanation" id="exp6">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">PMDD — ≥5 Symptoms, Luteal Phase, Confirmed by Prospective Charting</div>
+      <div class="exp-body">
+        <strong>PMDD DSM-5:</strong> ≥5 symptoms in the final week before menstruation that improve within a few days of onset and become minimal/absent in the week post-menses. At least one symptom must be: (1) marked affective lability, (2) marked irritability/anger, (3) marked depressed mood, or (4) marked anxiety/tension. Importantly, PMDD must be confirmed by <em>prospective daily ratings</em> for ≥2 menstrual cycles — patient charting is required.
+        <div class="box-g"><strong>PMDD Treatment:</strong> SSRIs (1st line) — uniquely, can be given <em>continuously</em> OR <em>luteal phase only</em> (Day 14–onset of menses) — luteal phase dosing works because the mechanism in PMDD involves rapid modulation of neurosteroid (allopregnanolone) sensitivity, not receptor upregulation. Also: oral contraceptives (drospirenone-containing), GnRH agonists (severe cases), CBT.</div>
+        <div class="trap"><strong>⚠ PMS vs PMDD:</strong> PMS = milder, does NOT meet full DSM criteria, does NOT require ≥5 symptoms, no significant impairment. PMDD = full DSM diagnosis, marked impairment. Calcium supplementation helps PMS but is not the answer for PMDD.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /mood -->
+
+<!-- ============================================================ -->
+<!-- SECTION 2: PSYCHOSIS / SCHIZOPHRENIA -->
+<!-- ============================================================ -->
+<div data-section="psychosis">
+<div class="sec-hdr">
+  <div class="sec-num">02</div>
+  <div class="sec-info">
+    <div class="sec-title">Psychosis &amp; Schizophrenia Spectrum</div>
+    <div class="sec-sub">Schizophrenia · Schizoaffective · Brief Psychotic · Delusional D/O · Pharmacology</div>
+  </div>
+</div>
+<div class="sec-rule"></div>
+
+<!-- Q7 -->
+<div class="qcard" id="q7">
+  <div class="qstem" onclick="toggleQ(7)">
+    <span class="qtag qtag-diff">Differentiator</span>
+    <div class="qtext">A 32-year-old man has a 3-year history of auditory hallucinations and paranoid delusions. During years 1 and 2, he also experienced a 14-month period of major depressive episode concurrent with his psychotic symptoms. For approximately 4 months of that period, his hallucinations persisted even after his depression remitted. He now presents with flat affect and social withdrawal without active psychosis. <strong>What is the most likely diagnosis?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(7,&#39;A&#39;)"><span class="opt-letter">A</span>Schizophrenia</button>
+    <button class="opt" onclick="answer(7,&#39;B&#39;)"><span class="opt-letter">B</span>Major Depressive Disorder with psychotic features</button>
+    <button class="opt" onclick="answer(7,&#39;C&#39;)"><span class="opt-letter">C</span>Schizoaffective Disorder, depressive type</button>
+    <button class="opt" onclick="answer(7,&#39;D&#39;)"><span class="opt-letter">D</span>Bipolar I Disorder with psychotic features</button>
+  </div>
+  <div class="explanation" id="exp7">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: C</div>
+      <div class="exp-title">Schizoaffective Disorder — Psychosis Present ≥2 Weeks Without Mood Episode</div>
+      <div class="exp-body">
+        <strong>Schizoaffective Disorder:</strong> The hallmark is that psychotic symptoms (hallucinations or delusions) must be present for ≥2 weeks in the <em>absence</em> of a major mood episode during the overall illness. The mood episode (here, MDE) is present for the <em>majority</em> of the total illness duration. This patient's 4 months of isolated psychosis (without depression) proves the psychosis is independent of mood.
+        <div class="c2">
+          <div class="cb2"><div class="cbt" style="color:#e88">Schizophrenia</div><ul><li>Mood episodes brief or absent</li><li>Psychosis = dominant feature</li><li>Mood episodes do NOT persist for majority of total illness</li></ul></div>
+          <div class="cb2"><div class="cbt" style="color:#3a7ca5">Schizoaffective</div><ul><li>Psychosis ≥2 wks WITHOUT mood Sx (key)</li><li>Mood episode present for MAJORITY of total duration</li><li>Two subtypes: bipolar type (if manic) vs depressive type (only MDE)</li></ul></div>
+        </div>
+        <div class="trap"><strong>⚠ MDD/Bipolar with psychotic features:</strong> Psychosis only occurs DURING mood episodes — never independent. Once the mood resolves, psychosis resolves. In this patient, psychosis persisted 4 months after depression remitted → rules out pure mood disorder with psychotic features.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q8 -->
+<div class="qcard" id="q8">
+  <div class="qstem" onclick="toggleQ(8)">
+    <span class="qtag qtag-moa">Drug MOA</span>
+    <div class="qtext">A patient with treatment-resistant schizophrenia who has failed two adequate trials of antipsychotics is started on clozapine. His psychiatrist explains that clozapine works differently than other antipsychotics. Which of the following best describes why clozapine has <strong>fewer extrapyramidal side effects</strong> than typical antipsychotics while maintaining antipsychotic efficacy?</div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(8,&#39;A&#39;)"><span class="opt-letter">A</span>Clozapine selectively blocks D1 receptors, sparing the nigrostriatal pathway</button>
+    <button class="opt" onclick="answer(8,&#39;B&#39;)"><span class="opt-letter">B</span>Clozapine's combined D2 antagonism plus strong 5HT2A blockade → 5HT2A blockade disinhibits DA in the nigrostriatal pathway, reducing EPS; its loose D2 binding allows rapid dissociation</button>
+    <button class="opt" onclick="answer(8,&#39;C&#39;)"><span class="opt-letter">C</span>Clozapine activates D2 receptors as a partial agonist, preventing EPS</button>
+    <button class="opt" onclick="answer(8,&#39;D&#39;)"><span class="opt-letter">D</span>Clozapine exclusively blocks muscarinic receptors, bypassing dopamine entirely</button>
+  </div>
+  <div class="explanation" id="exp8">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Clozapine — Atypical MOA: 5HT2A + "Fast-Off" D2 Binding</div>
+      <div class="exp-body">
+        Clozapine is the prototypical atypical antipsychotic. Its low EPS profile is explained by two mechanisms: (1) <strong>5HT2A antagonism</strong> → disinhibits dopamine release in the nigrostriatal pathway → prevents the dopamine depletion that causes EPS; (2) <strong>"Fast-off" theory</strong> — clozapine has lower affinity for D2 receptors and dissociates rapidly, allowing normal dopamine neurotransmission to transiently outcompete drug binding.
+        <div class="box-r"><strong>Clozapine Side Effects (Must Know All):</strong> Agranulocytosis (0.5–2% → REMS program, mandatory WBC monitoring) · Weight gain (most common) · Metabolic syndrome (Metformin prescribed simultaneously) · Seizures (dose-dependent) · Hypersalivation · Myocarditis (rare but fatal) · Sedation · Orthostatic hypotension · No tardive dyskinesia · No ↑ prolactin</div>
+        <div class="trap"><strong>⚠ Clozapine is reserved for:</strong> (1) Treatment-resistant schizophrenia (failed ≥2 antipsychotics), (2) Persistent negative symptoms despite adequate treatment, (3) Schizophrenia with suicidality (only antipsychotic with anti-suicidal evidence in schizophrenia). It is NEVER first-line due to agranulocytosis risk.</div>
+        <div class="box-g"><strong>Aripiprazole comparison:</strong> D2 <em>partial agonist</em> (not antagonist) + 5HT2A antagonist. "Goldilocks" — enough D2 activity to prevent receptor upregulation but not full agonism. Minimal weight gain, minimal EPS, minimal prolactin elevation. Used as add-on to clozapine.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="qcard" id="q9">
+  <div class="qstem" onclick="toggleQ(9)">
+    <span class="qtag qtag-img">Neuroimaging</span>
+    <div class="qtext">A 22-year-old man with a first episode of psychosis undergoes MRI brain as part of his workup. The radiologist reports findings consistent with schizophrenia. <strong>Which structural finding is the most consistently replicated neuroimaging abnormality in schizophrenia?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(9,&#39;A&#39;)"><span class="opt-letter">A</span>Decreased lateral ventricle size with increased grey matter</button>
+    <button class="opt" onclick="answer(9,&#39;B&#39;)"><span class="opt-letter">B</span>Enlarged lateral ventricles with decreased grey matter in prefrontal and temporal regions</button>
+    <button class="opt" onclick="answer(9,&#39;C&#39;)"><span class="opt-letter">C</span>Hippocampal enlargement with intact prefrontal cortex</button>
+    <button class="opt" onclick="answer(9,&#39;D&#39;)"><span class="opt-letter">D</span>White matter hyperintensities in periventricular regions</button>
+  </div>
+  <div class="explanation" id="exp9">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Schizophrenia Imaging — Enlarged Ventricles + Grey Matter Loss</div>
+      <div class="exp-body">
+        <strong>Most consistently replicated finding in schizophrenia:</strong> <em>Enlarged lateral ventricles</em> — present in ~70-80% of patients. This is thought to reflect reduced surrounding brain tissue (grey matter loss) rather than increased CSF production.
+        <div class="box-b"><strong>Full Structural Picture:</strong> ↑ Lateral ventricle volume · ↓ Grey matter in PFC (explains negative symptoms, cognitive deficits) · ↓ Temporal lobe (esp. superior temporal gyrus — Wernicke's area → may explain thought disorder/auditory hallucinations) · ↓ Hippocampal volume (memory deficits) · ↓ Thalamic volume</div>
+        <div class="box-p"><strong>Functional (fMRI/PET):</strong> "Hypofrontality" = ↓ PFC activation during cognitive tasks. ↑ Mesolimbic DA → positive symptoms. ↓ Mesocortical DA → negative symptoms. Disrupted connectivity between frontal and temporal regions.</div>
+        <div class="trap"><strong>⚠ Important note:</strong> These findings are group-level statistics — no single neuroimaging finding is diagnostic of schizophrenia. MRI is ordered in first-episode psychosis to <em>rule out</em> organic causes (tumor, MS, autoimmune encephalitis), not to confirm schizophrenia.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q10 NMS -->
+<div class="qcard" id="q10">
+  <div class="qstem" onclick="toggleQ(10)">
+    <span class="qtag qtag-mgmt">Next Step</span>
+    <div class="qtext">A 45-year-old man with schizophrenia is admitted to the hospital 2 weeks after his haloperidol dose was increased. He presents with temperature of 40.2°C, "lead-pipe" muscle rigidity, altered mental status, and diaphoresis. His CK is 4,800 U/L. Vitals show HR 128, BP 158/98. <strong>What is the most appropriate immediate next step?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(10,&#39;A&#39;)"><span class="opt-letter">A</span>Increase the haloperidol dose to treat the agitation</button>
+    <button class="opt" onclick="answer(10,&#39;B&#39;)"><span class="opt-letter">B</span>Administer benztropine for EPS</button>
+    <button class="opt" onclick="answer(10,&#39;C&#39;)"><span class="opt-letter">C</span>Immediately discontinue all antipsychotics; provide aggressive hydration, cooling measures; administer bromocriptine and dantrolene</button>
+    <button class="opt" onclick="answer(10,&#39;D&#39;)"><span class="opt-letter">D</span>Switch to clozapine immediately</button>
+  </div>
+  <div class="explanation" id="exp10">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: C</div>
+      <div class="exp-title">Neuroleptic Malignant Syndrome (NMS) — Psychiatric Emergency</div>
+      <div class="exp-body">
+        This is <strong>NMS</strong>: tetrad of (1) Hyperthermia, (2) Muscle rigidity ("lead-pipe"), (3) Altered mental status, (4) Autonomic instability. Elevated CK confirms rhabdomyolysis from muscle rigidity. NMS is idiosyncratic and life-threatening (10-20% mortality if untreated).
+        <div class="box-r"><strong>NMS vs Serotonin Syndrome:</strong> Both = hyperthermia + altered MS. Key difference: NMS = bradykinesia + "lead-pipe" rigidity (slow, severe) + ↑ CK + occurs over days. Serotonin Syndrome = hyperreflexia + clonus + tremor + diarrhea + occurs within 24h of serotonergic drug. NMS → D2 blockers. SS → serotonergic agents.</div>
+        <div class="box-g"><strong>NMS Treatment:</strong> (1) STOP antipsychotic immediately. (2) Supportive care: hydration, cooling, ICU monitoring. (3) Bromocriptine (DA agonist — reverses DA blockade) + Dantrolene (muscle relaxant — blocks ryanodine receptor → ↓ muscle contraction). (4) Benzos for agitation. (5) Do NOT restart antipsychotic for ≥2 weeks.</div>
+        <div class="trap"><strong>⚠ EPS vs NMS:</strong> Benztropine treats EPS (dystonia, parkinsonism from antipsychotics). In NMS, benztropine is NOT the answer — this is a medical emergency requiring drug discontinuation and bromocriptine/dantrolene.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /psychosis -->
+
+<!-- ============================================================ -->
+<!-- SECTION 3: ANXIETY DISORDERS -->
+<!-- ============================================================ -->
+<div data-section="anxiety">
+<div class="sec-hdr">
+  <div class="sec-num">03</div>
+  <div class="sec-info">
+    <div class="sec-title">Anxiety Disorders</div>
+    <div class="sec-sub">GAD · Panic · OCD · Social Anxiety · Specific Phobia · Agoraphobia</div>
+  </div>
+</div>
+<div class="sec-rule"></div>
+
+<!-- Q11 -->
+<div class="qcard" id="q11">
+  <div class="qstem" onclick="toggleQ(11)">
+    <span class="qtag qtag-diff">Differentiator</span>
+    <div class="qtext">A 35-year-old man presents with recurrent, intrusive thoughts that he has left the stove on and will cause a fire. He describes these thoughts as extremely distressing and inconsistent with his self-image as a responsible person. He checks the stove 30+ times before leaving home, which temporarily relieves his anxiety. He has tried to resist the urge but cannot. His partner has a similar need for "everything in order" and becomes angry when routines are disrupted but does not find this distressing. <strong>What diagnosis applies to the patient and what applies to the partner?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(11,&#39;A&#39;)"><span class="opt-letter">A</span>Patient: GAD; Partner: OCD</button>
+    <button class="opt" onclick="answer(11,&#39;B&#39;)"><span class="opt-letter">B</span>Patient: OCD; Partner: OCPD</button>
+    <button class="opt" onclick="answer(11,&#39;C&#39;)"><span class="opt-letter">C</span>Patient: OCD; Partner: GAD</button>
+    <button class="opt" onclick="answer(11,&#39;D&#39;)"><span class="opt-letter">D</span>Patient: OCPD; Partner: OCD</button>
+  </div>
+  <div class="explanation" id="exp11">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">OCD (ego-dystonic) vs OCPD (ego-syntonic)</div>
+      <div class="exp-body">
+        <strong>Patient = OCD:</strong> Obsessions are <em>ego-dystonic</em> — they feel alien, inconsistent with self-image, and cause distress. He WANTS to stop but cannot. The checking (compulsion) is performed to reduce anxiety from the obsession (intrusive thought about fire).
+        <div class="c2">
+          <div class="cb2"><div class="cbt" style="color:#e88">OCD</div><ul><li>Ego-DYSTONIC (feels wrong to patient)</li><li>Intrusive, unwanted thoughts</li><li>Patient is distressed by the thoughts</li><li>Compulsions performed to neutralize obsessions</li><li>Insight present (usually)</li></ul></div>
+          <div class="cb2"><div class="cbt" style="color:#c8991a">OCPD</div><ul><li>Ego-SYNTONIC (feels right to patient)</li><li>Preoccupation with order, control, perfection</li><li>Patient is NOT distressed — the WORLD frustrates THEM</li><li>No obsessions; no compulsions</li><li>Cluster C personality disorder</li></ul></div>
+        </div>
+        <div class="box-g"><strong>OCD Treatment:</strong> CBT with <em>Exposure and Response Prevention (ERP)</em> is 1st line. For moderate-severe: add SSRI (fluvoxamine is most studied for OCD; all SSRIs are effective). Refractory: clomipramine (TCA — most serotonin-selective). Note: higher SSRI doses needed for OCD vs MDD.</div>
+        <div class="trap"><strong>⚠ OCD Neuroimaging:</strong> ↑ orbitofrontal cortex (OFC) activity + ↑ caudate nucleus activity. This cortico-striato-thalamo-cortical (CSTC) circuit hyperactivation is the basis of OCD. Deep brain stimulation targets this circuit in refractory cases.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q12 -->
+<div class="qcard" id="q12">
+  <div class="qstem" onclick="toggleQ(12)">
+    <span class="qtag qtag-moa">Drug MOA</span>
+    <div class="qtext">A 28-year-old woman with GAD has been offered buspirone. She asks how it works and whether she will become addicted like her sister did to alprazolam. <strong>Which of the following correctly describes buspirone's mechanism and key advantages over benzodiazepines?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(12,&#39;A&#39;)"><span class="opt-letter">A</span>Buspirone allosterically potentiates GABA-A receptors; it is not addictive because it is not a controlled substance</button>
+    <button class="opt" onclick="answer(12,&#39;B&#39;)"><span class="opt-letter">B</span>Buspirone is a 5HT1A partial agonist (pre- and post-synaptic); no tolerance, no dependence, no sedation; onset 1–2 weeks; can augment SSRIs</button>
+    <button class="opt" onclick="answer(12,&#39;C&#39;)"><span class="opt-letter">C</span>Buspirone is a D2 partial agonist; onset is within hours; useful for acute anxiety attacks</button>
+    <button class="opt" onclick="answer(12,&#39;D&#39;)"><span class="opt-letter">D</span>Buspirone blocks NMDA glutamate receptors, reducing excitatory transmission</button>
+  </div>
+  <div class="explanation" id="exp12">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Buspirone — 5HT1A Partial Agonist, No Dependence</div>
+      <div class="exp-body">
+        <strong>Buspirone MOA:</strong> Partial agonist at <em>5HT1A receptors</em> — acts both presynaptically (inhibits serotonin release via autoreceptors) and postsynaptically (partial stimulation). Unlike benzodiazepines, it has no effect on GABA-A receptors.
+        <div class="box-b"><strong>Key Advantages Over Benzos:</strong> No tolerance or physical dependence · No abuse potential · No sedation or cognitive impairment · No respiratory depression · No interaction with alcohol · Can augment SSRI efficacy and reduce SSRI-induced sexual dysfunction · Safe in elderly</div>
+        <div class="box-r"><strong>Key Disadvantage:</strong> Onset is 1–2 weeks (not useful for acute panic attacks). Patients who have taken benzodiazepines may not "feel" buspirone working — important counseling point.</div>
+        <div class="box-gold"><strong>Benzo MOA Comparison:</strong> Benzodiazepines bind the allosteric site between α and γ subunits of GABA-A receptor → ↑ frequency of Cl⁻ channel opening (vs. barbiturates which ↑ duration). → ↑ Cl⁻ influx → hyperpolarization → ↓ neuronal firing. LETHAL in withdrawal (unlike buspirone).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q13 -->
+<div class="qcard" id="q13">
+  <div class="qstem" onclick="toggleQ(13)">
+    <span class="qtag qtag-dx">Most Likely Diagnosis</span>
+    <div class="qtext">A 40-year-old surgeon develops intense anxiety specifically when he must speak at grand rounds conferences, though he operates and interacts with patients and staff without anxiety. He avoids these events when possible. No other social situations cause him anxiety. He has no panic attacks at rest. <strong>What is the most appropriate diagnosis AND treatment?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(13,&#39;A&#39;)"><span class="opt-letter">A</span>Agoraphobia; SSRIs</button>
+    <button class="opt" onclick="answer(13,&#39;B&#39;)"><span class="opt-letter">B</span>Social Anxiety Disorder, performance-only subtype; propranolol PRN before performances + CBT</button>
+    <button class="opt" onclick="answer(13,&#39;C&#39;)"><span class="opt-letter">C</span>Panic Disorder; SSRIs + benzodiazepines</button>
+    <button class="opt" onclick="answer(13,&#39;D&#39;)"><span class="opt-letter">D</span>Generalized Social Anxiety Disorder; SSRIs for 12 months</button>
+  </div>
+  <div class="explanation" id="exp13">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">SAD — Performance-Only Subtype: Beta-Blockers + CBT</div>
+      <div class="exp-body">
+        The patient's anxiety is <em>limited to performance situations</em> (public speaking) — not general social interactions. This is the <strong>performance-only specifier</strong> of Social Anxiety Disorder.
+        <div class="box-g"><strong>Performance-Only SAD Treatment:</strong> Beta-blockers (propranolol — blocks peripheral adrenergic symptoms: palpitations, tremor, flushing) taken 30–60 minutes before the performance. CBT remains cornerstone (cognitive restructuring + exposure). Benzos can also be used PRN but risk sedation/cognitive impairment in performance context.</div>
+        <div class="box-b"><strong>Generalized SAD Treatment:</strong> SSRIs/SNRIs for 12 months + CBT (gold standard). Performance-only ≠ generalized — the treatment differs. Propranolol is NOT indicated for generalized SAD.</div>
+        <div class="trap"><strong>⚠ Propranolol MOA:</strong> Non-selective β-adrenergic receptor antagonist → blocks NE/epinephrine effects on heart and peripheral vasculature → ↓ HR, ↓ tremor, ↓ flushing. Does NOT affect the cognitive/subjective anxiety experience — only peripheral somatic symptoms.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /anxiety -->
+
+<!-- ============================================================ -->
+<!-- SECTION 4: TRAUMA & DISSOCIATION -->
+<!-- ============================================================ -->
+<div data-section="trauma">
+<div class="sec-hdr">
+  <div class="sec-num">04</div>
+  <div class="sec-info">
+    <div class="sec-title">Trauma &amp; Dissociative Disorders</div>
+    <div class="sec-sub">PTSD · Acute Stress · Prolonged Grief · DID · Dissociative Amnesia</div>
+  </div>
+</div>
+<div class="sec-rule"></div>
+
+<!-- Q14 -->
+<div class="qcard" id="q14">
+  <div class="qstem" onclick="toggleQ(14)">
+    <span class="qtag qtag-mgmt">Next Step</span>
+    <div class="qtext">A 28-year-old combat veteran has a confirmed diagnosis of PTSD. He has marked avoidance, hypervigilance, flashbacks, nightmares, and negative alterations in mood. He prefers not to take medications. His friend who also has PTSD was prescribed lorazepam and suggests the veteran ask for it too. <strong>What is the most appropriate next step in management?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(14,&#39;A&#39;)"><span class="opt-letter">A</span>Prescribe lorazepam as his friend suggested — benzos are effective for hyperarousal in PTSD</button>
+    <button class="opt" onclick="answer(14,&#39;B&#39;)"><span class="opt-letter">B</span>Initiate Prolonged Exposure (PE) or Cognitive Processing Therapy (CPT); explain that benzodiazepines are strongly contraindicated in PTSD</button>
+    <button class="opt" onclick="answer(14,&#39;C&#39;)"><span class="opt-letter">C</span>Start prazosin first, then add PE</button>
+    <button class="opt" onclick="answer(14,&#39;D&#39;)"><span class="opt-letter">D</span>Start sertraline and defer trauma-focused therapy</button>
+  </div>
+  <div class="explanation" id="exp14">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">PTSD: Psychotherapy 1st Line; Benzos = STRONG AGAINST</div>
+      <div class="exp-body">
+        The VA/DoD guidelines give <strong>STRONG FOR</strong> to trauma-focused psychotherapy (PE, CPT, EMDR) as first-line treatment. Since he prefers no medications, psychotherapy is the ideal starting point.
+        <div class="box-r"><strong>Benzodiazepines in PTSD = STRONG AGAINST (VA/DoD):</strong> Benzos worsen PTSD outcomes by: (1) Interfering with fear extinction (which is the mechanism of exposure therapy), (2) Worsening dissociation, (3) Worsening depression, (4) High abuse/dependence risk in trauma patients, (5) No evidence of efficacy for PTSD core symptoms. This is a heavily tested point.</div>
+        <div class="box-b"><strong>VA Evidence Tiers:</strong> STRONG FOR: PE, CPT, EMDR, SSRIs (sertraline, paroxetine), SNRIs (venlafaxine). WEAK FOR: Prazosin (for nightmares — α1 blocker → ↓ NE-mediated nightmare intensity). STRONG AGAINST: Benzodiazepines, Cannabis.</div>
+        <div class="trap"><strong>⚠ Prazosin for PTSD:</strong> Only indicated for nightmares — it is NOT first-line for overall PTSD treatment. He has generalized PTSD with multiple symptom clusters, not just nightmares. CBT first.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q15 -->
+<div class="qcard" id="q15">
+  <div class="qstem" onclick="toggleQ(15)">
+    <span class="qtag qtag-diff">Differentiator</span>
+    <div class="qtext">A 35-year-old woman survived a serious car accident 10 days ago. Since then she has had intrusive memories, nightmares, dissociative episodes, avoidance of driving, and hyperarousal. She is significantly impaired at work. <strong>What is the most appropriate diagnosis at this time, and what is the most important prognostic fact?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(15,&#39;A&#39;)"><span class="opt-letter">A</span>PTSD; she will likely need lifelong treatment</button>
+    <button class="opt" onclick="answer(15,&#39;B&#39;)"><span class="opt-letter">B</span>Acute Stress Disorder (ASD); high risk of progressing to PTSD if untreated — early CBT is indicated</button>
+    <button class="opt" onclick="answer(15,&#39;C&#39;)"><span class="opt-letter">C</span>Adjustment Disorder; symptoms are expected and no treatment is needed</button>
+    <button class="opt" onclick="answer(15,&#39;D&#39;)"><span class="opt-letter">D</span>PTSD; SSRIs should be started immediately</button>
+  </div>
+  <div class="explanation" id="exp15">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Acute Stress Disorder — 3 Days to 1 Month Post-Trauma</div>
+      <div class="exp-body">
+        <strong>Acute Stress Disorder (ASD):</strong> Symptoms that begin 3 days to 1 month after trauma exposure. She is 10 days out → ASD, not PTSD. If symptoms persist beyond 1 month → re-evaluate for PTSD.
+        <div class="c2">
+          <div class="cb2"><div class="cbt">ASD</div><ul><li>3 days – 1 month post-trauma</li><li>Same symptom clusters as PTSD</li><li>Strong predictor of PTSD development</li><li>Tx: Trauma-focused CBT (early intervention ↓ PTSD progression)</li></ul></div>
+          <div class="cb2"><div class="cbt">PTSD</div><ul><li>&gt;1 month post-trauma</li><li>4 clusters: intrusion, avoidance, neg. cognitions, arousal</li><li>With/without dissociative subtype</li><li>Tx: PE, CPT, EMDR, SSRIs/SNRIs</li></ul></div>
+        </div>
+        <div class="trap"><strong>⚠ Adjustment Disorder:</strong> Requires an identifiable stressor but does NOT meet criteria for another disorder. Car accident + PTSD-level symptoms = ASD, not Adjustment. Adjustment disorder does not include the specific intrusion/dissociation cluster required here.</div>
+        <div class="trap"><strong>⚠ Early Intervention:</strong> ASD is highly predictive of PTSD (~50% progress). Trauma-focused CBT started during ASD phase significantly reduces PTSD rates. SSRIs alone are NOT first-line for ASD — CBT is.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /trauma -->
+
+<!-- ============================================================ -->
+<!-- SECTION 5: SUBSTANCE USE -->
+<!-- ============================================================ -->
+<div data-section="substance">
+<div class="sec-hdr">
+  <div class="sec-num">05</div>
+  <div class="sec-info">
+    <div class="sec-title">Substance Use Disorders</div>
+    <div class="sec-sub">Alcohol · Opioids · Stimulants · Cannabis · Withdrawal Danger</div>
+  </div>
+</div>
+<div class="sec-rule"></div>
+
+<!-- Q16 -->
+<div class="qcard" id="q16">
+  <div class="qstem" onclick="toggleQ(16)">
+    <span class="qtag qtag-mgmt">Next Step</span>
+    <div class="qtext">A 52-year-old man with a 20-year history of heavy alcohol use is admitted to the hospital for an unrelated procedure. His last drink was 18 hours ago. He is now tremulous, diaphoretic, and anxious. His BP is 162/94, HR 108. He denies hallucinations. <strong>What is the most important immediate next step beyond supportive care?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(16,&#39;A&#39;)"><span class="opt-letter">A</span>Start naltrexone to block the reinforcing effects of alcohol</button>
+    <button class="opt" onclick="answer(16,&#39;B&#39;)"><span class="opt-letter">B</span>Administer IV thiamine BEFORE any glucose, then initiate CIWA-guided benzodiazepine protocol</button>
+    <button class="opt" onclick="answer(16,&#39;C&#39;)"><span class="opt-letter">C</span>Start disulfiram immediately</button>
+    <button class="opt" onclick="answer(16,&#39;D&#39;)"><span class="opt-letter">D</span>Give haloperidol for agitation</button>
+  </div>
+  <div class="explanation" id="exp16">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Alcohol Withdrawal — Thiamine FIRST, Then Benzos</div>
+      <div class="exp-body">
+        This patient is in <strong>Stage 1 alcohol withdrawal</strong> (tremor, autonomic hyperactivity, 18 hours after last drink). This can progress to Delirium Tremens (Stage 3) — which is <strong>potentially fatal</strong>.
+        <div class="box-r"><strong>CRITICAL: Thiamine BEFORE glucose.</strong> Giving glucose to a thiamine-deficient patient can precipitate Wernicke's Encephalopathy (triad: confusion, ophthalmoplegia, ataxia) by consuming the last remaining thiamine in the glycolytic cycle. Always thiamine first in any alcoholic patient.</div>
+        <div class="box-b"><strong>CIWA-Ar Protocol:</strong> Clinical Institute Withdrawal Assessment for Alcohol. Scores 10 items (tremor, diaphoresis, anxiety, agitation, nausea, sensory disturbances, headache, orientation). Score ≥8 → initiate benzodiazepines (lorazepam, diazepam, or chlordiazepoxide — cross-reactive with GABA-A → prevent seizures and DTs).</div>
+        <div class="trap"><strong>⚠ Alcohol Withdrawal Stages:</strong> Stage 1 (0–24h): tremor, anxiety, autonomic hyperactivity. Stage 2 (24–48h): same + hallucinations (usually auditory, reality testing intact). Stage 3 (48–72h): Delirium Tremens — confusion, vivid hallucinations, autonomic instability, potentially fatal. &lt;1% progress to DTs but high mortality without treatment.</div>
+        <div class="trap"><strong>⚠ Disulfiram is NOT used during active withdrawal</strong> — it is an aversion therapy tool given only to abstinent, motivated patients who understand they must completely avoid alcohol. Starting disulfiram while a patient is in withdrawal is dangerous.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q17 -->
+<div class="qcard" id="q17">
+  <div class="qstem" onclick="toggleQ(17)">
+    <span class="qtag qtag-moa">Drug MOA</span>
+    <div class="qtext">A patient with opioid use disorder is being considered for medication-assisted treatment (MOUD). His physician explains the three FDA-approved options. <strong>Which of the following correctly matches each medication with its mechanism of action and key clinical consideration?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(17,&#39;A&#39;)"><span class="opt-letter">A</span>Methadone = partial μ-agonist; Buprenorphine = full μ-agonist; Naltrexone = partial antagonist</button>
+    <button class="opt" onclick="answer(17,&#39;B&#39;)"><span class="opt-letter">B</span>Methadone = full μ-opioid agonist (oral, OTP clinic-dispensed); Buprenorphine = partial μ-agonist with ceiling effect (Suboxone = bup + naloxone); Naltrexone = pure μ-antagonist (Vivitrol — monthly injection, no abuse potential)</button>
+    <button class="opt" onclick="answer(17,&#39;C&#39;)"><span class="opt-letter">C</span>All three are partial agonists; they differ only in route of administration</button>
+    <button class="opt" onclick="answer(17,&#39;D&#39;)"><span class="opt-letter">D</span>Buprenorphine = full agonist (can be prescribed in any office); Methadone = κ-opioid agonist (clinic-based); Naltrexone = μ-agonist used for cravings</button>
+  </div>
+  <div class="explanation" id="exp17">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">MOUD — Methadone, Buprenorphine, Naltrexone MOAs</div>
+      <div class="exp-body">
+        <table class="t">
+          <tbody><tr><th>Drug</th><th>MOA</th><th>Setting</th><th>Critical Point</th></tr>
+          <tr><td><strong>Methadone</strong></td><td>Full μ-opioid receptor agonist</td><td>OTP clinic only; daily supervised dosing</td><td>Long T½ (24–36h); OD risk if non-tolerant; metabolized CYP3A4; QTc prolongation at high doses</td></tr>
+          <tr><td><strong>Buprenorphine</strong></td><td>Partial μ-agonist + κ-antagonist; high receptor affinity, slow dissociation</td><td>Office-based (DATA 2000 waiver previously required); Suboxone = bup + naloxone (naloxone inactive SL, active if injected → precipitated withdrawal)</td><td>Ceiling effect on respiratory depression → safer OD profile. <em>Precipitated withdrawal</em> if given while full agonist still occupying receptors (COWS score first!)</td></tr>
+          <tr><td><strong>Naltrexone</strong></td><td>Pure competitive μ-opioid receptor antagonist</td><td>Office; oral daily or Vivitrol (monthly IM injection)</td><td>No abuse potential; must be opioid-free 7–10 days before starting or precipitated withdrawal; useful for alcohol use disorder too (same drug)</td></tr>
+        </tbody></table>
+        <div class="trap"><strong>⚠ Precipitated Withdrawal with Buprenorphine:</strong> Buprenorphine has very high receptor affinity — it displaces full agonists (heroin, methadone) from μ receptors. If given while full agonist is still occupying receptors, the partial agonism of buprenorphine causes net decrease in opioid effect → sudden severe withdrawal. Wait until COWS ≥8–12 before initiating buprenorphine.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q18 Stimulant withdrawal -->
+<div class="qcard" id="q18">
+  <div class="qstem" onclick="toggleQ(18)">
+    <span class="qtag qtag-dx">Most Likely Diagnosis + Next Step</span>
+    <div class="qtext">A 24-year-old woman is brought to the ED by her roommate. She stopped using cocaine 2 days ago after a 3-week binge. She is sleeping 15 hours/day, hyperphagia, and has expressed wishes that she were dead. Her roommate is concerned she is suicidal. Her urine toxicology is positive for cocaine. <strong>What is the correct diagnosis and most critical management concern?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(18,&#39;A&#39;)"><span class="opt-letter">A</span>Cocaine intoxication; benzodiazepines for agitation</button>
+    <button class="opt" onclick="answer(18,&#39;B&#39;)"><span class="opt-letter">B</span>Stimulant withdrawal; reassure patient that suicidal ideation is drug-related and will resolve on its own</button>
+    <button class="opt" onclick="answer(18,&#39;C&#39;)"><span class="opt-letter">C</span>Stimulant withdrawal ("crash"); suicidal ideation must be taken seriously — safety assessment, supportive care; consider antidepressant only if depression persists after abstinence</button>
+    <button class="opt" onclick="answer(18,&#39;D&#39;)"><span class="opt-letter">D</span>Opioid withdrawal; start buprenorphine</button>
+  </div>
+  <div class="explanation" id="exp18">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: C</div>
+      <div class="exp-title">Stimulant Withdrawal "Crash" — Suicidal Ideation is REAL</div>
+      <div class="exp-body">
+        <strong>Stimulant withdrawal</strong> (cocaine, meth) is <em>NOT physically dangerous</em> (no seizures, no DTs) but carries a critical risk: <strong>suicidal ideation</strong>. The "crash" from dopamine depletion causes profound dysphoria, hypersomnia, hyperphagia, and anhedonia — identical in presentation to severe MDD.
+        <div class="box-r"><strong>Exam Critical Point:</strong> Stimulant withdrawal suicide risk is real. Do not dismiss as "just the drugs." Perform a full safety assessment. The patient may need inpatient admission if suicidal ideation is active with intent/plan. This is perhaps the highest-yield exam point about stimulant withdrawal.</div>
+        <div class="box-b"><strong>Management:</strong> Supportive care (sleep, food, monitoring). Safety assessment. Do NOT start antidepressant acutely — if depressive symptoms persist 2–4 weeks after full abstinence, then consider antidepressant (underlying MDD vs substance-induced). No FDA-approved pharmacotherapy for cocaine/meth use disorder.</div>
+        <div class="trap"><strong>⚠ Do NOT compare to opioid withdrawal:</strong> Opioid withdrawal is miserable but not life-threatening (except neonates/severely ill). Stimulant withdrawal is NOT miserable in the same somatic way — but the psychiatric risk (suicide) makes it equally important to manage.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /substance -->
+
+<!-- ============================================================ -->
+<!-- SECTION 6: SLEEP DISORDERS -->
+<!-- ============================================================ -->
+<div data-section="sleep">
+<div class="sec-hdr">
+  <div class="sec-num">06</div>
+  <div class="sec-info">
+    <div class="sec-title">Sleep Disorders</div>
+    <div class="sec-sub">Insomnia · Narcolepsy · OSA · REM Behavior Disorder · RLS · Circadian</div>
+  </div>
+</div>
+<div class="sec-rule"></div>
+
+<!-- Q19 -->
+<div class="qcard" id="q19">
+  <div class="qstem" onclick="toggleQ(19)">
+    <span class="qtag qtag-diff">Differentiator</span>
+    <div class="qtext">A 45-year-old man presents with excessive daytime sleepiness, episodes in which he suddenly falls to the floor laughing, vivid hallucinations as he falls asleep, and brief inability to move when waking. His polysomnography shows sleep-onset REM within 8 minutes. <strong>What is the diagnosis and what is the significance of his "falling to the floor while laughing" episodes?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(19,&#39;A&#39;)"><span class="opt-letter">A</span>REM Sleep Behavior Disorder; the falling episodes are REM without atonia</button>
+    <button class="opt" onclick="answer(19,&#39;B&#39;)"><span class="opt-letter">B</span>Narcolepsy with cataplexy; the falling episodes represent cataplexy (sudden loss of muscle tone triggered by strong emotion), a pathognomonic feature</button>
+    <button class="opt" onclick="answer(19,&#39;C&#39;)"><span class="opt-letter">C</span>Obstructive Sleep Apnea; the falling episodes are microsleeps</button>
+    <button class="opt" onclick="answer(19,&#39;D&#39;)"><span class="opt-letter">D</span>Idiopathic hypersomnia; the episodes are normal sleep attacks</button>
+  </div>
+  <div class="explanation" id="exp19">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Narcolepsy Type 1 — Cataplexy + Low Orexin + Sleep-Onset REM</div>
+      <div class="exp-body">
+        <strong>Narcolepsy Tetrad:</strong> (1) <em>Excessive daytime sleepiness</em> with sudden REM attacks; (2) <em>Cataplexy</em> (50% of cases — Type 1) — sudden bilateral loss of muscle tone triggered by strong emotion (laughter, surprise); fully conscious; (3) <em>Hypnagogic/hypnopompic hallucinations</em> (vivid hallucinations at sleep onset/waking); (4) <em>Sleep paralysis</em> (brief inability to move upon waking).
+        <div class="box-g"><strong>Diagnosis:</strong> MSLT (Multiple Sleep Latency Test) — sleep latency &lt;8 min in ≥2 naps. Narcolepsy Type 1: low/absent orexin (hypocretin) in CSF — loss of orexinergic neurons (likely autoimmune). Orexin normally promotes wakefulness and suppresses REM.</div>
+        <div class="box-b"><strong>Treatment:</strong> Behavioral (scheduled daytime naps). Pharmacologic: Modafinil (Provigil — α1 agonist, promotes wakefulness; fewer side effects than traditional stimulants) — 1st line for sleepiness. Amphetamines (second-line). Sodium oxybate (GHB — improves nighttime sleep, reduces cataplexy, daytime sleepiness). SSRIs/TCAs suppress REM → reduce cataplexy. New: Pitolisant (H3 inverse agonist), Solriamfetol.</div>
+        <div class="trap"><strong>⚠ REM Sleep Behavior Disorder vs Narcolepsy:</strong> REM Behavior = acts out dreams, complex motor behaviors during REM sleep (while asleep). Narcolepsy cataplexy = brief muscle weakness while AWAKE, triggered by emotion. Completely different. RBD = associated with synucleinopathies (Parkinson's, Lewy body dementia).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q20 -->
+<div class="qcard" id="q20">
+  <div class="qstem" onclick="toggleQ(20)">
+    <span class="qtag qtag-moa">Drug MOA</span>
+    <div class="qtext">A 55-year-old woman with chronic insomnia is prescribed suvorexant. She asks how it works and how it differs from her friend's sleeping pill, zolpidem. <strong>Which correctly describes the mechanism of both drugs?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(20,&#39;A&#39;)"><span class="opt-letter">A</span>Both potentiate GABA-A; suvorexant just has a longer half-life</button>
+    <button class="opt" onclick="answer(20,&#39;B&#39;)"><span class="opt-letter">B</span>Suvorexant = orexin receptor antagonist (blocks wake-promoting orexin signaling → sleep); Zolpidem = non-benzodiazepine GABA-A modulator (Z-drug, binds α1 subunit → sedation/sleep)</button>
+    <button class="opt" onclick="answer(20,&#39;C&#39;)"><span class="opt-letter">C</span>Suvorexant = melatonin receptor agonist; Zolpidem = benzodiazepine</button>
+    <button class="opt" onclick="answer(20,&#39;D&#39;)"><span class="opt-letter">D</span>Both are melatonin receptor agonists; they differ only in receptor subtype specificity</button>
+  </div>
+  <div class="explanation" id="exp20">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Sleep Pharmacology — MOA Comparison</div>
+      <div class="exp-body">
+        <table class="t">
+          <tbody><tr><th>Drug</th><th>Class</th><th>MOA</th><th>Key Notes</th></tr>
+          <tr><td><strong>Suvorexant (Belsomra)</strong></td><td>Dual orexin receptor antagonist (DORA)</td><td>Blocks OX1R and OX2R → removes orexin wake-promoting drive → passive sleep onset</td><td>Preferred in elderly; no dependence; novel mechanism</td></tr>
+          <tr><td><strong>Zolpidem (Ambien)</strong></td><td>Non-benzodiazepine GABA-A modulator (Z-drug)</td><td>Binds α1 subunit of GABA-A → ↑ Cl⁻ → sedation/hypnosis</td><td>Tolerance possible; sleep-driving (rare); dependence risk</td></tr>
+          <tr><td><strong>Ramelteon (Rozerem)</strong></td><td>Melatonin receptor agonist</td><td>MT1/MT2 agonist → mimics darkness/melatonin → shifts circadian phase → sleep onset</td><td>No abuse potential; ideal for circadian disorders; no dependence</td></tr>
+          <tr><td><strong>Eszopiclone (Lunesta)</strong></td><td>Non-benzodiazepine GABA-A modulator</td><td>Same as zolpidem but longer T½; binds α2,3 subunits → less tolerance</td><td>Metallic taste; approved for longer use than zolpidem</td></tr>
+          <tr><td><strong>Diphenhydramine (Benadryl)</strong></td><td>H1 antihistamine</td><td>H1 antagonism → sedation</td><td>Tolerance develops rapidly (days); anticholinergic → avoid elderly; worsens cognitive function</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /sleep -->
+
+<!-- ============================================================ -->
+<!-- SECTION 7: EATING DISORDERS -->
+<!-- ============================================================ -->
+<div data-section="eating">
+<div class="sec-hdr">
+  <div class="sec-num">07</div>
+  <div class="sec-info">
+    <div class="sec-title">Eating Disorders</div>
+    <div class="sec-sub">Anorexia · Bulimia · BED · ARFID · Refeeding Syndrome</div>
+  </div>
+</div>
+<div class="sec-rule"></div>
+
+<!-- Q21 -->
+<div class="qcard" id="q21">
+  <div class="qstem" onclick="toggleQ(21)">
+    <span class="qtag qtag-mgmt">Next Step</span>
+    <div class="qtext">A 16-year-old girl with anorexia nervosa (restricting subtype) has a BMI of 14.5 (expected 20). She has been restricting food intake for 10 months. She is admitted to an inpatient unit and a meal plan is initiated. On day 3, labs show phosphate 1.8 mg/dL (normal 2.5–4.5), potassium 2.9 mEq/L, and magnesium 1.4 mg/dL. Blood glucose is 118. <strong>What is occurring and what is the most important management step?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(21,&#39;A&#39;)"><span class="opt-letter">A</span>Expected lab changes in anorexia; continue current meal plan</button>
+    <button class="opt" onclick="answer(21,&#39;B&#39;)"><span class="opt-letter">B</span>Refeeding syndrome; slow the rate of caloric increase, aggressively replace phosphate, potassium, magnesium, and IV thiamine</button>
+    <button class="opt" onclick="answer(21,&#39;C&#39;)"><span class="opt-letter">C</span>Hyperglycemia from refeeding; start insulin</button>
+    <button class="opt" onclick="answer(21,&#39;D&#39;)"><span class="opt-letter">D</span>Hypokalemia from purging; add fluoxetine</button>
+  </div>
+  <div class="explanation" id="exp21">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Refeeding Syndrome — Hypophosphatemia is the Danger</div>
+      <div class="exp-body">
+        <strong>Refeeding Syndrome</strong> occurs when carbohydrates are reintroduced after prolonged starvation → insulin surge → massive intracellular uptake of phosphate, potassium, and magnesium → life-threatening electrolyte shifts.
+        <div class="box-r"><strong>Critical Electrolytes in Refeeding:</strong> ↓ Phosphate (most dangerous — causes cardiac arrhythmia, rhabdomyolysis, respiratory failure, hemolysis) · ↓ Potassium · ↓ Magnesium · ↓ Thiamine (B1) → Wernicke's · ↑ Blood glucose (insulin response). The hypophosphatemia here (1.8) is the red flag.</div>
+        <div class="box-g"><strong>Management:</strong> SLOW caloric introduction (start at 10–20 kcal/kg/day, increase gradually over days). Aggressive electrolyte monitoring and replacement. IV thiamine (B1) before initiating feeding. Target: phosphate &gt;2.0 before advancing calories. Cardiac monitoring.</div>
+        <div class="trap"><strong>⚠ Anorexia treatment:</strong> Family-Based Treatment (FBT/Maudsley) is gold standard in adolescents. Avoid bupropion (↑ seizure threshold in malnourished patients) and TCAs. Olanzapine (off-label) may be used for weight gain in severe cases. No FDA-approved medication for anorexia nervosa. 5.6% mortality per decade — highest of any psychiatric illness.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q22 -->
+<div class="qcard" id="q22">
+  <div class="qstem" onclick="toggleQ(22)">
+    <span class="qtag qtag-diff">Differentiator</span>
+    <div class="qtext">A 22-year-old woman presents after her college roommate expressed concern. She reports eating large amounts of food in secret, feeling out of control during these episodes, followed by self-induced vomiting. She is at normal weight. Exam reveals dental enamel erosion and calluses on her knuckles. A 28-year-old man separately presents with similar binge eating episodes and marked distress, but he does NOT purge, does NOT use laxatives, and is obese. <strong>What is the diagnosis for each patient?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(22,&#39;A&#39;)"><span class="opt-letter">A</span>Both have Binge Eating Disorder</button>
+    <button class="opt" onclick="answer(22,&#39;B&#39;)"><span class="opt-letter">B</span>First patient: Bulimia Nervosa; Second patient: Binge Eating Disorder (BED)</button>
+    <button class="opt" onclick="answer(22,&#39;C&#39;)"><span class="opt-letter">C</span>First patient: Anorexia, Binge-Purge subtype; Second patient: Bulimia Nervosa</button>
+    <button class="opt" onclick="answer(22,&#39;D&#39;)"><span class="opt-letter">D</span>First patient: Bulimia Nervosa; Second patient: Obesity</button>
+  </div>
+  <div class="explanation" id="exp22">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Bulimia vs BED — The Purging Distinction</div>
+      <div class="exp-body">
+        <strong>Key differentiator:</strong> Compensatory behaviors. Bulimia Nervosa requires <em>recurrent inappropriate compensatory behaviors</em> (purging, laxatives, excessive exercise, fasting). BED does not have compensatory behaviors.
+        <div class="c2">
+          <div class="cb2"><div class="cbt" style="color:#3a7ca5">Bulimia Nervosa</div><ul><li>Binge + compensatory behavior (purging)</li><li>Normal or above-normal weight</li><li>Russell's sign (knuckle calluses)</li><li>Dental enamel erosion, parotid gland hypertrophy</li><li>Tx: CBT (1st line) + Fluoxetine (only FDA-approved drug; effective even without mood disorder)</li></ul></div>
+          <div class="cb2"><div class="cbt" style="color:#c8991a">Binge Eating Disorder</div><ul><li>Binge + NO compensatory behavior</li><li>Most common eating disorder in US</li><li>Associated obesity</li><li>CYFIP2 gene association</li><li>Tx: CBT, DBT, IPT; Lisdexamfetamine (Vyvanse) = ONLY FDA-approved drug; topiramate off-label</li></ul></div>
+        </div>
+        <div class="trap"><strong>⚠ Anorexia Binge-Purge subtype:</strong> Must have LOW body weight. Patient 1 has normal weight → rules out anorexia. Russell's sign (calluses from teeth-induced vomiting) is pathognomonic for bulimia.</div>
+        <div class="trap"><strong>⚠ Fluoxetine in Bulimia:</strong> FDA-approved at 60 mg (higher than depression dose of 20 mg). Reduces binging and purging independent of its antidepressant effect. Avoid bupropion (↑ seizure risk in eating disorders — lowers seizure threshold).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /eating -->
+
+<!-- ============================================================ -->
+<!-- SECTION 8: SOMATIC & FACTITIOUS -->
+<!-- ============================================================ -->
+<div data-section="somatic">
+<div class="sec-hdr">
+  <div class="sec-num">08</div>
+  <div class="sec-info">
+    <div class="sec-title">Somatic, Factitious &amp; Malingering</div>
+    <div class="sec-sub">Conversion · Illness Anxiety · Factitious · Malingering · Hoover's Sign</div>
+  </div>
+</div>
+<div class="sec-rule"></div>
+
+<!-- Q23 -->
+<div class="qcard" id="q23">
+  <div class="qstem" onclick="toggleQ(23)">
+    <span class="qtag qtag-dx">Most Likely Diagnosis</span>
+    <div class="qtext">A 32-year-old woman presents with sudden onset left leg paralysis after witnessing a traumatic accident. Neurological exam: no reflexes or sensation changes. When asked to raise her left leg, hip extension is absent in that limb — but when the examiner places a hand under her right heel and asks her to press down, strong downward force is felt. MRI brain and spine are normal. She seems surprisingly calm about her paralysis. <strong>What is the diagnosis and what clinical signs support it?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(23,&#39;A&#39;)"><span class="opt-letter">A</span>Malingering; she is faking for financial gain</button>
+    <button class="opt" onclick="answer(23,&#39;B&#39;)"><span class="opt-letter">B</span>Conversion Disorder (Functional Neurological Symptom Disorder); positive Hoover's sign and La Belle Indifférence support this diagnosis</button>
+    <button class="opt" onclick="answer(23,&#39;C&#39;)"><span class="opt-letter">C</span>Factitious Disorder; she is consciously inducing symptoms for psychological gain</button>
+    <button class="opt" onclick="answer(23,&#39;D&#39;)"><span class="opt-letter">D</span>Somatic Symptom Disorder; she has excessive thoughts about her medical condition</button>
+  </div>
+  <div class="explanation" id="exp23">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Conversion Disorder — Hoover's Sign + La Belle Indifférence</div>
+      <div class="exp-body">
+        <strong>Conversion Disorder (FND):</strong> ≥1 symptom of altered voluntary motor or sensory function, with clinical evidence of incompatibility between the symptom and known neurological disease. Normal neuroimaging confirms no structural cause.
+        <div class="box-b"><strong>Hoover's Sign (Positive = Functional Weakness):</strong> When the patient voluntarily tries to raise the weak leg, the contralateral hip extension (involuntary) should fire reflexively. If it does NOT fire voluntarily but DOES fire when the examiner tests the contralateral leg → "inconsistency" = functional weakness. The leg that "can't move" suddenly cooperates when the patient's attention is diverted.</div>
+        <div class="box-gold"><strong>La Belle Indifférence:</strong> Surprising lack of emotional concern about a potentially devastating neurological symptom. While not pathognomonic (some MS and CVA patients also show it), combined with Hoover's sign and normal imaging, it strongly suggests FND.</div>
+        <div class="trap"><strong>⚠ Conversion vs Malingering:</strong> Conversion = UNCONSCIOUS. Patient is not "faking" — symptoms are real to them. Malingering = CONSCIOUS faking for external gain. Confrontation is never appropriate in conversion disorder — it damages the therapeutic relationship and worsens outcomes. Treat with PT/OT, CBT, and avoiding reinforcement of the sick role.</div>
+        <div class="trap"><strong>⚠ Conversion vs Factitious:</strong> Factitious = conscious symptom production for internal psychological gain (attention, sick role). No external incentive (no money/legal benefit). Conversion = unconscious.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /somatic -->
+
+<!-- ============================================================ -->
+<!-- SECTION 9: NEUROCOGNITIVE / DELIRIUM -->
+<!-- ============================================================ -->
+<div data-section="neuro">
+<div class="sec-hdr">
+  <div class="sec-num">09</div>
+  <div class="sec-info">
+    <div class="sec-title">Delirium &amp; Neurocognitive Disorders</div>
+    <div class="sec-sub">Delirium · Alzheimer's · Lewy Body · Vascular · FTD · NPH · Medications</div>
+  </div>
+</div>
+<div class="sec-rule"></div>
+
+<!-- Q24 -->
+<div class="qcard" id="q24">
+  <div class="qstem" onclick="toggleQ(24)">
+    <span class="qtag qtag-diff">Differentiator</span>
+    <div class="qtext">A 78-year-old man is hospitalized after a hip fracture. His family reports that over the past day he has become intermittently confused, agitated, and is "seeing bugs on the wall." His baseline is intact orientation. He is on several medications including diphenhydramine (Benadryl) for sleep. A 74-year-old woman is separately evaluated for a 2-year history of gradually worsening memory, word-finding difficulty, and getting lost in her neighborhood. <strong>What is the diagnosis for each patient?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(24,&#39;A&#39;)"><span class="opt-letter">A</span>Both have dementia</button>
+    <button class="opt" onclick="answer(24,&#39;B&#39;)"><span class="opt-letter">B</span>First patient: Dementia; Second patient: Delirium</button>
+    <button class="opt" onclick="answer(24,&#39;C&#39;)"><span class="opt-letter">C</span>First patient: Delirium (likely anticholinergic-induced); Second patient: Major Neurocognitive Disorder (likely Alzheimer's) — treat underlying causes for delirium first, then workup dementia</button>
+    <button class="opt" onclick="answer(24,&#39;D&#39;)"><span class="opt-letter">D</span>Both have delirium</button>
+  </div>
+  <div class="explanation" id="exp24">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: C</div>
+      <div class="exp-title">Delirium vs Dementia — Acute vs Insidious + Anticholinergic Cause</div>
+      <div class="exp-body">
+        <table class="t">
+          <tbody><tr><th></th><th>Patient 1 (Delirium)</th><th>Patient 2 (Dementia)</th></tr>
+          <tr><td>Onset</td><td>Acute (1 day in hospital)</td><td>Insidious (2 years)</td></tr>
+          <tr><td>Course</td><td>Fluctuating (intermittent)</td><td>Gradual progressive decline</td></tr>
+          <tr><td>Consciousness</td><td>Reduced/altered</td><td>Clear (early stages)</td></tr>
+          <tr><td>Cause</td><td>Diphenhydramine (anticholinergic)</td><td>Likely Alzheimer's (episodic memory + navigation)</td></tr>
+        </tbody></table>
+        <div class="box-r"><strong>Diphenhydramine (Benadryl) = Anticholinergic = Major Delirium Cause.</strong> Anticholinergics account for 20–40% of hospital deliria. Classic toxidrome: "Blind as a bat (mydriasis), hot as a hare (hyperthermia), red as a beet (flushing), dry as a bone (dry mouth/skin), mad as a hatter (confusion)." → STOP diphenhydramine, replace with ramelteon or melatonin for sleep.</div>
+        <div class="box-b"><strong>Alzheimer's Workup Next Steps:</strong> MoCA/MMSE → Labs (TSH, B12, RPR, CBC, CMP — rule out reversible causes) → MRI brain (hippocampal/medial temporal atrophy, rule out NPH/SDH/tumor) → Neuropsychological testing → Consider amyloid PET or CSF biomarkers (Aβ42, p-tau) for definitive diagnosis.</div>
+        <div class="trap"><strong>⚠ Delirium in dementia patients:</strong> Patients with underlying dementia are the MOST VULNERABLE to delirium. The exam classic: elderly hospitalized patient with underlying dementia who acutely worsens → always think delirium first. "Delirium until proven otherwise."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q25 Lewy Body -->
+<div class="qcard" id="q25">
+  <div class="qstem" onclick="toggleQ(25)">
+    <span class="qtag qtag-dx">Most Likely Diagnosis + Drug Danger</span>
+    <div class="qtext">A 70-year-old man has a 1-year history of vivid visual hallucinations (he describes "small children in colorful clothes"), fluctuating cognition ("some days he's sharp, some days he's confused"), and a mild resting tremor. His family notes he has been acting out his dreams — kicking and shouting while asleep for years before the cognitive changes began. His DaTscan shows reduced dopamine transporter uptake. His PCP prescribed haloperidol for the hallucinations. <strong>What is the diagnosis and what is the critical drug error?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(25,&#39;A&#39;)"><span class="opt-letter">A</span>Alzheimer's Disease; haloperidol is appropriate for behavioral symptoms</button>
+    <button class="opt" onclick="answer(25,&#39;B&#39;)"><span class="opt-letter">B</span>Lewy Body Dementia (DLB); haloperidol is CONTRAINDICATED — severe antipsychotic sensitivity reaction can be fatal; use rivastigmine instead</button>
+    <button class="opt" onclick="answer(25,&#39;C&#39;)"><span class="opt-letter">C</span>Parkinson's Disease Dementia; haloperidol is appropriate at low doses</button>
+    <button class="opt" onclick="answer(25,&#39;D&#39;)"><span class="opt-letter">D</span>Frontotemporal Dementia; AChE inhibitors are first-line</button>
+  </div>
+  <div class="explanation" id="exp25">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Lewy Body Dementia — AVOID Antipsychotics (Life-Threatening Sensitivity)</div>
+      <div class="exp-body">
+        <strong>DLB Core Features:</strong> (1) Fluctuating cognition, (2) Recurrent vivid <em>visual hallucinations</em>, (3) Spontaneous parkinsonism, (4) REM sleep behavior disorder (acting out dreams — often precedes cognitive symptoms by years). DaTscan shows ↓ dopamine transporter = confirms dopaminergic deficit.
+        <div class="box-r"><strong>CRITICAL: Antipsychotics in DLB = potentially fatal.</strong> Up to 50% of DLB patients have severe neuroleptic sensitivity reactions: profound extrapyramidal rigidity, ↓ consciousness, autonomic instability, rapid decline, death. This applies to ALL typical antipsychotics AND most atypicals. <em>Even low-dose haloperidol can be fatal.</em></div>
+        <div class="box-g"><strong>DLB Treatment:</strong> Rivastigmine (AChE inhibitor — FDA-approved for DLB/PDD; improves cognition AND hallucinations). If antipsychotic absolutely necessary: quetiapine or clozapine (lowest sensitivity risk). Levodopa for motor symptoms. Avoid anticholinergics (worsens cognition).</div>
+        <div class="box-b"><strong>DLB vs Parkinson's Dementia:</strong> Timing rule: DLB = cognitive/psychiatric symptoms within 1 year of parkinsonism onset. PDD = parkinsonism well established (&gt;1 year, usually years) BEFORE dementia. Both have Lewy bodies.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /neuro -->
+
+<!-- ============================================================ -->
+<!-- SECTION 10: CHILD / DEVELOPMENTAL -->
+<!-- ============================================================ -->
+<div data-section="child">
+<div class="sec-hdr">
+  <div class="sec-num">10</div>
+  <div class="sec-info">
+    <div class="sec-title">Child &amp; Developmental Psychiatry</div>
+    <div class="sec-sub">ADHD · ASD · RAD · DSED · Attachment · Development</div>
+  </div>
+</div>
+<div class="sec-rule"></div>
+
+<!-- Q26 -->
+<div class="qcard" id="q26">
+  <div class="qstem" onclick="toggleQ(26)">
+    <span class="qtag qtag-moa">Drug MOA</span>
+    <div class="qtext">A 10-year-old boy with ADHD is prescribed methylphenidate (Ritalin). His parents ask how it helps him focus. A pediatric neurologist explains the mechanism. <strong>Which of the following correctly describes methylphenidate's mechanism and the neurobiological basis of ADHD?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(26,&#39;A&#39;)"><span class="opt-letter">A</span>Methylphenidate increases GABA to calm an overactive cortex</button>
+    <button class="opt" onclick="answer(26,&#39;B&#39;)"><span class="opt-letter">B</span>Methylphenidate blocks dopamine and norepinephrine reuptake transporters (DAT and NET) → ↑ synaptic DA and NE in the prefrontal cortex → improved motivation (DA) and concentration/impulse control (NE)</button>
+    <button class="opt" onclick="answer(26,&#39;C&#39;)"><span class="opt-letter">C</span>Methylphenidate is a serotonin reuptake inhibitor; ADHD results from serotonin deficiency</button>
+    <button class="opt" onclick="answer(26,&#39;D&#39;)"><span class="opt-letter">D</span>Methylphenidate directly stimulates postsynaptic dopamine D2 receptors</button>
+  </div>
+  <div class="explanation" id="exp26">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Methylphenidate MOA — DAT + NET Blockade</div>
+      <div class="exp-body">
+        <strong>Methylphenidate (Ritalin) MOA:</strong> Blocks <em>dopamine reuptake transporter (DAT)</em> and <em>norepinephrine reuptake transporter (NET)</em> → ↑ synaptic DA and NE in the prefrontal cortex.
+        <div class="c2">
+          <div class="cb2"><div class="cbt">Team M — Methylphenidate</div><ul><li>Ritalin, Concerta, Focalin (d-methylphenidate)</li><li>DAT + NET reuptake inhibitor</li><li>Increases DA (motivation) and NE (concentration)</li><li>Does NOT cause vesicular DA release</li></ul></div>
+          <div class="cb2"><div class="cbt">Team A — Amphetamines</div><ul><li>Adderall, Vyvanse (lisdexamfetamine — prodrug)</li><li>Blocks DAT + NET AND reverses transporter (release DA/NE from vesicles)</li><li>More potent DA release than methylphenidate</li><li>~44% of patients respond better to one class</li></ul></div>
+        </div>
+        <div class="box-b"><strong>ADHD Neurobiology:</strong> Cortical immaturity — structural MRI shows ↓ PFC volume, delayed cortical maturation. NE in PFC = "signal-to-noise" ratio — strengthens relevant signals. DA = motivation/reward prediction. Both deficient in ADHD PFC circuitry.</div>
+        <div class="trap"><strong>⚠ Non-stimulant options:</strong> Atomoxetine (Strattera) = selective NE reuptake inhibitor (SNRI) — 1st choice if stimulants contraindicated, tic disorders, substance abuse risk. Guanfacine/Clonidine (α2 agonists) — adjuncts for hyperactivity/tics. Bupropion (off-label).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q27 RAD vs DSED -->
+<div class="qcard" id="q27">
+  <div class="qstem" onclick="toggleQ(27)">
+    <span class="qtag qtag-diff">Differentiator</span>
+    <div class="qtext">Two 4-year-old children adopted from the same orphanage are evaluated. Child A was adopted 1 year ago and still rarely seeks comfort from her adoptive parents when upset, shows minimal emotional responses, and seems emotionally flat. Child B was adopted 1 year ago and will readily walk away with any stranger in the waiting room, hugging them immediately and wanting to go home with them, despite having caring adoptive parents. <strong>What is the diagnosis for each child, and which child's symptoms are expected to persist longer?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(27,&#39;A&#39;)"><span class="opt-letter">A</span>Both have RAD; Child A will persist longer</button>
+    <button class="opt" onclick="answer(27,&#39;B&#39;)"><span class="opt-letter">B</span>Child A: RAD (inhibited); Child B: DSED (disinhibited); Child B (DSED) is less responsive to improved caregiving and may persist even after adoption</button>
+    <button class="opt" onclick="answer(27,&#39;C&#39;)"><span class="opt-letter">C</span>Child A: DSED; Child B: RAD</button>
+    <button class="opt" onclick="answer(27,&#39;D&#39;)"><span class="opt-letter">D</span>Both have DSED; symptoms will resolve with good caregiving</button>
+  </div>
+  <div class="explanation" id="exp27">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">RAD (inhibited) vs DSED (disinhibited) — The Post-Adoption Difference</div>
+      <div class="exp-body">
+        Both disorders require: documented neglect/insufficient care + developmental age ≥9 months. Both arise from the same cause (early neglect/deprivation) but manifest oppositely.
+        <div class="c2">
+          <div class="cb2"><div class="cbt" style="color:#d4622a">RAD — Inhibited</div><ul><li>Withdraws from caregivers</li><li>Rarely seeks/accepts comfort</li><li>Emotionally restricted</li><li>Related to CONCURRENT caregiving quality</li><li>NOT present after adoption into stable home</li><li>Responsive to improved caregiving</li></ul></div>
+          <div class="cb2"><div class="cbt" style="color:#3a7ca5">DSED — Disinhibited</div><ul><li>Indiscriminate friendliness with strangers</li><li>Overly familiar behavior, boundary violations</li><li>Willingness to leave with strangers</li><li>Can PERSIST AFTER adoption</li><li>NOT related to concurrent caregiver quality</li><li>Less responsive to improved caregiving</li></ul></div>
+        </div>
+        <div class="trap"><strong>⚠ Exam Critical Point:</strong> RAD resolves with good caregiving. DSED persists even in a stable, loving adoptive home — this is the key differentiator. DSED may persist into adolescence.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /child -->
+
+<!-- ============================================================ -->
+<!-- SECTION 11: REPRODUCTIVE & SEXUAL -->
+<!-- ============================================================ -->
+<div data-section="repro">
+<div class="sec-hdr">
+  <div class="sec-num">11</div>
+  <div class="sec-info">
+    <div class="sec-title">Reproductive &amp; Sexual Psychiatry</div>
+    <div class="sec-sub">Postpartum · PMDD · Meds in Pregnancy · Sexual Dysfunction</div>
+  </div>
+</div>
+<div class="sec-rule"></div>
+
+<!-- Q28 Postpartum Psychosis -->
+<div class="qcard" id="q28">
+  <div class="qstem" onclick="toggleQ(28)">
+    <span class="qtag qtag-mgmt">Next Step — Emergency</span>
+    <div class="qtext">A 26-year-old woman is brought to the ED 5 days after delivering her first child. She has not slept in 3 days, believes the infant is possessed, and was found holding a knife near the baby "to protect him." She has no prior psychiatric history. <strong>What is the diagnosis and the most appropriate immediate management?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(28,&#39;A&#39;)"><span class="opt-letter">A</span>Postpartum Depression; start sertraline as outpatient</button>
+    <button class="opt" onclick="answer(28,&#39;B&#39;)"><span class="opt-letter">B</span>Baby Blues; reassure family and discharge home</button>
+    <button class="opt" onclick="answer(28,&#39;C&#39;)"><span class="opt-letter">C</span>Postpartum Psychosis — psychiatric emergency; immediate inpatient admission; ensure infant safety; initiate benzodiazepine at bedtime × 3 days → antipsychotic day 4 → lithium after 2 weeks</button>
+    <button class="opt" onclick="answer(28,&#39;D&#39;)"><span class="opt-letter">D</span>Postpartum Psychosis; start fluoxetine immediately</button>
+  </div>
+  <div class="explanation" id="exp28">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: C</div>
+      <div class="exp-title">Postpartum Psychosis — Psychiatric Emergency, 70–90% Recurrence</div>
+      <div class="exp-body">
+        <strong>Postpartum Psychosis:</strong> ALWAYS within 8 weeks of delivery (usually within the first 1–2 weeks). Prevalence 1–2/1000. Features: confusion, delusions (often involving the infant), hallucinations, disorganized behavior, sleep disruption. Infanticide and suicide risk are REAL — this is a psychiatric emergency.
+        <div class="box-r"><strong>Postpartum Spectrum Distinctions:</strong>
+          Baby Blues: days 1–14, mild, self-limited, no impairment, no Tx needed. 
+          PPD: meets MDE criteria, within 4 weeks (or any time in 1st year), Tx: SSRI + therapy, brexanolone/zuranolone.
+          Postpartum Psychosis: ALWAYS within 8 weeks, psychotic features, EMERGENCY.
+        </div>
+        <div class="box-gold"><strong>Postpartum Psychosis Treatment Protocol:</strong> Inpatient admission → infant separation (safety) → Benzo at bedtime × 3 days (for sleep, calming) → Antipsychotic added Day 4 → Lithium added after 2 weeks (reduces recurrence). Counsel family: 70–90% risk of recurrence with next pregnancy → prophylactic lithium starting at delivery recommended.</div>
+        <div class="trap"><strong>⚠ Never give just an SSRI for postpartum psychosis</strong> — this is psychosis requiring antipsychotics, not depression requiring antidepressants. Do not confuse with PPD.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q29 Meds in Pregnancy -->
+<div class="qcard" id="q29">
+  <div class="qstem" onclick="toggleQ(29)">
+    <span class="qtag qtag-moa">Drug Safety in Pregnancy</span>
+    <div class="qtext">A 28-year-old woman with bipolar disorder becomes pregnant. She is currently stable on valproic acid. Her obstetrician and psychiatrist discuss medication options. <strong>Which statement most accurately describes the risk profile of valproic acid in pregnancy?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(29,&#39;A&#39;)"><span class="opt-letter">A</span>Valproic acid is safe in pregnancy as it does not cross the placenta</button>
+    <button class="opt" onclick="answer(29,&#39;B&#39;)"><span class="opt-letter">B</span>Valproic acid causes mild sedation in the neonate but no structural defects</button>
+    <button class="opt" onclick="answer(29,&#39;C&#39;)"><span class="opt-letter">C</span>Valproic acid is associated with severe neural tube defects (spina bifida), craniofacial abnormalities, and long-term neurodevelopmental impairment in the child; it should be avoided — switch to atypical antipsychotic (quetiapine preferred) with folate supplementation</button>
+    <button class="opt" onclick="answer(29,&#39;D&#39;)"><span class="opt-letter">D</span>Valproic acid causes Ebstein's anomaly</button>
+  </div>
+  <div class="explanation" id="exp29">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: C</div>
+      <div class="exp-title">Valproic Acid — Most Teratogenic Mood Stabilizer</div>
+      <div class="exp-body">
+        <strong>Valproic acid is the most teratogenic psychotropic medication.</strong> Risks include: neural tube defects (spina bifida — 1–2%), craniofacial anomalies, cardiac defects, limb abnormalities, and cognitive/neurodevelopmental impairment (↓ IQ, autism spectrum features in exposed children). The neural tube closes at <em>week 6</em> — often before the woman knows she is pregnant.
+        <div class="box-r"><strong>Mood Stabilizer Teratogenicity:</strong>
+          Valproic acid = AVOID (neural tube defects + neurodevelopmental impairment).
+          Carbamazepine = neural tube defects (less severe than valproate).
+          Lamotrigine = oral clefts (low absolute risk; better choice than valproate).
+          Lithium = Ebstein's anomaly (tricuspid valve — risk much lower than originally thought; may be acceptable in some cases with fetal echocardiogram monitoring).
+        </div>
+        <div class="box-g"><strong>Preferred Approach:</strong> For bipolar in pregnancy: atypical antipsychotics preferred (quetiapine = lowest placental transfer). Lamotrigine if mood stabilizer needed. High-dose folate supplementation. Monthly fetal ultrasound. Postpartum: resume effective pre-pregnancy regimen.</div>
+        <div class="trap"><strong>⚠ Ebstein's anomaly (tricuspid valve displacement)</strong> = Lithium, not Valproate. The exam classically tests this distinction. Valproate → neural tube. Lithium → Ebstein's (risk is lower than originally reported but still counseled).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /repro -->
+
+<!-- ============================================================ -->
+<!-- SECTION 12: PERSONALITY DISORDERS -->
+<!-- ============================================================ -->
+<div data-section="personality">
+<div class="sec-hdr">
+  <div class="sec-num">12</div>
+  <div class="sec-info">
+    <div class="sec-title">Personality Disorders</div>
+    <div class="sec-sub">Cluster A · B · C — All 10 PDs + BPD Deep Dive</div>
+  </div>
+</div>
+<div class="sec-rule"></div>
+
+<!-- Q30 -->
+<div class="qcard" id="q30">
+  <div class="qstem" onclick="toggleQ(30)">
+    <span class="qtag qtag-dx">Most Likely Diagnosis</span>
+    <div class="qtext">A 29-year-old woman is referred for evaluation. She reports a pattern of intense, unstable relationships (alternately idealizing and devaluing her partners), impulsive spending and sexual behavior, recurrent self-cutting when "overwhelmed," intense fear of being abandoned, and a "chronic emptiness." She has had three hospitalizations for overdoses after breakups. She is currently stable. Which of the following is the most likely diagnosis and the evidence-based first-line treatment?</div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(30,&#39;A&#39;)"><span class="opt-letter">A</span>Bipolar II Disorder; mood stabilizer</button>
+    <button class="opt" onclick="answer(30,&#39;B&#39;)"><span class="opt-letter">B</span>Borderline Personality Disorder; Dialectical Behavioral Therapy (DBT) as first-line</button>
+    <button class="opt" onclick="answer(30,&#39;C&#39;)"><span class="opt-letter">C</span>PTSD; Prolonged Exposure therapy</button>
+    <button class="opt" onclick="answer(30,&#39;D&#39;)"><span class="opt-letter">D</span>MDD with suicidal behavior; SSRIs</button>
+  </div>
+  <div class="explanation" id="exp30">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Borderline Personality Disorder — DBT is Gold Standard</div>
+      <div class="exp-body">
+        <strong>BPD Criteria (≥5 of 9):</strong> (1) Frantic efforts to avoid abandonment, (2) Unstable/intense relationships (idealization/devaluation = splitting), (3) Identity disturbance, (4) Impulsivity, (5) Recurrent suicidal behavior/self-harm, (6) Affective instability, (7) Chronic emptiness, (8) Inappropriate intense anger, (9) Dissociation/paranoid ideation under stress.
+        <div class="box-g"><strong>BPD Treatment (psychotherapy first):</strong> DBT (Dialectical Behavioral Therapy) = 1st line — mindfulness, distress tolerance, interpersonal effectiveness, emotion regulation. Also: Good Psychiatric Management (GPM), Mentalization-Based Therapy (MBT), Schema-Focused Therapy, Transference-Focused Therapy. Medications = ADJUNCTIVE only (not curative): SSRIs for depression/impulsivity, mood stabilizers for mood lability, low-dose atypical antipsychotics for paranoia/dissociation.</div>
+        <div class="trap"><strong>⚠ BPD vs Bipolar:</strong> BPD mood shifts are triggered by INTERPERSONAL events and last minutes-hours. Bipolar mood episodes are sustained (days-weeks), less reactive to interpersonal events. BPD = splitting and identity disturbance; Bipolar = sustained elevated or depressed mood cycles. The key exam question: "What triggers the mood change?" — stressor → BPD; cycling without clear external trigger → Bipolar.</div>
+        <div class="box-b"><strong>BPD Neurobiology:</strong> ↑ amygdala activation to emotional stimuli (limbic hyperactivation — explains emotional dysregulation) · ↓ frontal lobe activity (hypometabolic regulatory areas — explains poor impulse control) · ↓ hippocampal volume · High heritability for interpersonal hypersensitivity.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q31 Cluster A/C -->
+<div class="qcard" id="q31">
+  <div class="qstem" onclick="toggleQ(31)">
+    <span class="qtag qtag-diff">Differentiator</span>
+    <div class="qtext">Three patients are described: (1) A 40-year-old man who believes his neighbor has been sending him coded messages through license plate numbers; he has held this belief for years and functions at work, but has never had hallucinations. (2) A 35-year-old woman who has almost no close relationships, prefers solitary activities, and seems indifferent to praise or criticism — she is not distressed by her lifestyle. (3) A 45-year-old man who is preoccupied with perfectionism, lists, and rules; he is so focused on detail that he rarely finishes projects; he is in control at home and believes everyone else is too sloppy. <strong>What are the three diagnoses, in order?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(31,&#39;A&#39;)"><span class="opt-letter">A</span>Paranoid PD; Avoidant PD; Obsessive-Compulsive PD</button>
+    <button class="opt" onclick="answer(31,&#39;B&#39;)"><span class="opt-letter">B</span>Delusional Disorder; Schizoid PD; Obsessive-Compulsive PD (OCPD)</button>
+    <button class="opt" onclick="answer(31,&#39;C&#39;)"><span class="opt-letter">C</span>Schizotypal PD; Schizoid PD; Paranoid PD</button>
+    <button class="opt" onclick="answer(31,&#39;D&#39;)"><span class="opt-letter">D</span>Paranoid PD; Schizotypal PD; OCPD</button>
+  </div>
+  <div class="explanation" id="exp31">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Delusional Disorder vs Cluster A vs OCPD</div>
+      <div class="exp-body">
+        <div class="c2">
+          <div class="cb2"><div class="cbt">Patient 1: Delusional Disorder</div><ul><li>≥1 delusion for ≥1 month</li><li>Does NOT meet schizophrenia criteria</li><li>Functioning NOT impaired outside delusion</li><li>No hallucinations (key differentiator from schizophrenia)</li><li>Persecutory or referential type common</li></ul></div>
+          <div class="cb2"><div class="cbt">Patient 2: Schizoid PD (Cluster A)</div><ul><li>Detachment from social relationships</li><li>Restricted range of emotion</li><li>Does NOT desire relationships (unlike Avoidant)</li><li>Indifferent to praise/criticism</li><li>Not distressed by their isolation</li></ul></div>
+        </div>
+        <div class="box-gold"><strong>Patient 3: OCPD (Cluster C)</strong> — Preoccupied with orderliness, perfectionism, and control. EGO-SYNTONIC (feels right to patient). ≥4 of 8 criteria. Different from OCD: no obsessions or compulsions; no ego-dystonia. Often cannot delegate; hoards; inflexible moral standards; workaholic.</div>
+        <div class="trap"><strong>⚠ Schizoid vs Avoidant PD:</strong> Both appear socially isolated, but: Schizoid = does NOT want relationships and is not distressed. Avoidant = desperately WANTS relationships but is too afraid of rejection to pursue them. The internal experience is opposite.</div>
+        <div class="trap"><strong>⚠ All 3 Clusters:</strong> A = "Weird" (Paranoid, Schizoid, Schizotypal — odd/eccentric). B = "Wild" (Antisocial, Borderline, Histrionic, Narcissistic — dramatic/emotional). C = "Worried" (Avoidant, Dependent, OCPD — anxious/fearful).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /personality -->
+
+<!-- ============================================================ -->
+<!-- SECTION 13: THERAPY TYPES -->
+<!-- ============================================================ -->
+<div data-section="therapy">
+<div class="sec-hdr">
+  <div class="sec-num">13</div>
+  <div class="sec-info">
+    <div class="sec-title">Psychotherapy &amp; Conditioning</div>
+    <div class="sec-sub">CBT · DBT · Psychodynamic · MI · Classical/Operant Conditioning</div>
+  </div>
+</div>
+<div class="sec-rule"></div>
+
+<!-- Q32 -->
+<div class="qcard" id="q32">
+  <div class="qstem" onclick="toggleQ(32)">
+    <span class="qtag qtag-diff">Differentiator</span>
+    <div class="qtext">A behavioral psychologist is designing a token economy for a child with ASD who engages in self-injurious behavior. The child earns tokens (which can be exchanged for screen time) for every 30-minute interval without self-injury. A parent separately mentions that the child started hitting his sister after seeing it on TV, and the parent used to shout at the dog to make it stop barking — the dog now cowers when the parent raises their voice, even without shouting. <strong>Which conditioning principles are illustrated, in order?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(32,&#39;A&#39;)"><span class="opt-letter">A</span>Token economy = classical conditioning; TV hitting = operant conditioning; dog cowering = classical conditioning</button>
+    <button class="opt" onclick="answer(32,&#39;B&#39;)"><span class="opt-letter">B</span>Token economy = positive reinforcement (operant); TV hitting = observational/social learning (Bandura); dog cowering = classical conditioning (Pavlov)</button>
+    <button class="opt" onclick="answer(32,&#39;C&#39;)"><span class="opt-letter">C</span>All three are classical conditioning</button>
+    <button class="opt" onclick="answer(32,&#39;D&#39;)"><span class="opt-letter">D</span>Token economy = negative reinforcement; TV hitting = classical; dog cowering = operant</button>
+  </div>
+  <div class="explanation" id="exp32">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Learning Theory — Three Conditioning Principles</div>
+      <div class="exp-body">
+        <div class="c2">
+          <div class="cb2"><div class="cbt">Token Economy</div><ul><li>Positive reinforcement (operant/Skinner)</li><li>ADD a reward (token → screen time) → ↑ desired behavior (no self-injury)</li><li>NOT negative reinforcement (nothing aversive is removed)</li></ul></div>
+          <div class="cb2"><div class="cbt">Dog Cowering</div><ul><li>Classical conditioning (Pavlov)</li><li>Neutral stimulus (raised voice) → paired with UCS (shouting) → UCR (fear)</li><li>Raised voice alone (CS) now → conditioned fear response (CR)</li><li>Involuntary, reflexive response</li></ul></div>
+        </div>
+        <div class="box-p"><strong>Observational Learning (Bandura):</strong> Learning by watching others — social cognitive learning theory. Bobo doll experiment: children imitated adult violence. No direct reinforcement required. Important for ARFID (food avoidance by watching parent's disgust) and substance use (modeling by peers).</div>
+        <div class="box-r"><strong>Negative Reinforcement ≠ Punishment (Exam Trap):</strong> Negative reinforcement = REMOVE an aversive stimulus → ↑ behavior. Example: taking ibuprofen removes headache → ↑ ibuprofen use. Positive punishment = ADD aversive stimulus → ↓ behavior. Negative punishment = REMOVE reward → ↓ behavior.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q33 Motivational Interviewing -->
+<div class="qcard" id="q33">
+  <div class="qstem" onclick="toggleQ(33)">
+    <span class="qtag qtag-mgmt">Next Step — Therapeutic Approach</span>
+    <div class="qtext">A 38-year-old man with alcohol use disorder comes for a follow-up visit. He says: "I know I drink too much, but alcohol helps me cope with stress. I'm not ready to quit — my job is too stressful right now." His physician is considering how to respond. <strong>Which response BEST exemplifies motivational interviewing principles?</strong></div>
+  </div>
+  <div class="options">
+    <button class="opt" onclick="answer(33,&#39;A&#39;)"><span class="opt-letter">A</span>"You need to stop drinking — it will kill you. I'll prescribe naltrexone today."</button>
+    <button class="opt" onclick="answer(33,&#39;B&#39;)"><span class="opt-letter">B</span>"It sounds like you see alcohol as helpful for stress, even though part of you recognizes the amount is a concern. What would need to change for you to feel ready to cut back?"</button>
+    <button class="opt" onclick="answer(33,&#39;C&#39;)"><span class="opt-letter">C</span>"I understand. We'll discuss this when you're ready."</button>
+    <button class="opt" onclick="answer(33,&#39;D&#39;)"><span class="opt-letter">D</span>"Most people in your situation just need to decide to stop."</button>
+  </div>
+  <div class="explanation" id="exp33">
+    <div class="exp-inner">
+      <div class="exp-verdict exp-correct">✓ Correct Answer: B</div>
+      <div class="exp-title">Motivational Interviewing — OARS + Rolling with Resistance</div>
+      <div class="exp-body">
+        The patient is in the <strong>Contemplation stage</strong> (aware of problem, ambivalent about change). MI principles: OARS — Open questions, Affirmations, Reflective listening, Summaries.
+        <div class="box-g"><strong>MI Principles (REDS):</strong> Resist the righting reflex (don't lecture). Explore motivations. Develop discrepancy (help patient see gap between values and behavior). Support self-efficacy. "Change happens when the patient is conscious of their OWN desire to change."</div>
+        <div class="box-b"><strong>5 Stages of Change:</strong> Precontemplation (not aware/denying problem) → Contemplation (aware, ambivalent — this patient) → Preparation (making plans) → Action (making changes) → Maintenance (sustaining). Relapse is normal — go back to contemplation.</div>
+        <div class="trap"><strong>⚠ Choice A</strong> = confrontational, triggers resistance (righting reflex), violates MI principles. <strong>Choice C</strong> = too passive, misses the therapeutic moment. <strong>Choice D</strong> = blames patient, not empathic. MI is about rolling with resistance and evoking the patient's own change talk.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /therapy -->
+
+<!-- ============================================================ -->
+<!-- HIGH YIELD SECTION -->
+<!-- ============================================================ -->
+<div data-section="hy">
+<div class="sec-hdr">
+  <div class="sec-num">⭐</div>
+  <div class="sec-info">
+    <div class="sec-title">High-Yield: Common Mistakes &amp; Deep Dives</div>
+    <div class="sec-sub">The areas where exams are won or lost</div>
+  </div>
+</div>
+<div class="sec-rule"></div>
+
+<div class="hy-card" id="hy1">
+  <div class="hy-head" onclick="toggleHY(1)">
+    <span class="hy-icon">🎯</span>
+    <div><div class="hy-label">Most Likely Diagnosis — Common Traps</div><div class="hy-sub">Where students most often pick the wrong dx</div></div>
+    <span class="hy-chev">▼</span>
+  </div>
+  <div class="hy-body">
+    <div class="sl">The Bipolar Trap</div>
+    <div class="box-r"><strong>THE #1 MISTAKE:</strong> Diagnosing MDD without asking about prior hypomanic/manic episodes. The question will give you a patient with depression and bury the clue of a prior elevated period ("she had a 3-day period where she barely slept but felt fantastic and started many projects"). Always screen for bipolar before diagnosing MDD. If ANY prior manic/hypomanic episode exists → it's Bipolar, not MDD. SSRIs alone in Bipolar = can trigger mania.</div>
+    <div class="box-gold"><strong>Bipolar I vs II:</strong> Students confuse these constantly. I = full manic episode (≥7 days OR hospitalized OR psychotic features). II = hypomanic only (≥4 days, never hospitalized, never psychotic). Bipolar II is NOT milder — equal depression burden, higher suicide risk. A patient who has had hypomania + now has a manic episode requiring hospitalization = upgraded to Bipolar I.</div>
+    <div class="sl">Delusional Disorder vs Schizophrenia</div>
+    <div class="box-b">Delusional Disorder: fixed delusion ≥1 month, functioning INTACT outside the delusion, NO hallucinations (or brief/minor if present), does NOT meet schizophrenia criteria. Schizophrenia: hallucinations + delusions + disorganized speech/behavior + social/occupational dysfunction + ≥6 months. The key: Delusional Disorder patients can hold a job and have a family despite their delusion.</div>
+    <div class="sl">Schizoaffective vs Schizophrenia vs Mood Disorder w/ Psychosis</div>
+    <div class="box-p">Draw a timeline. Count: (1) Total illness duration, (2) How long mood episodes lasted, (3) How long psychosis existed WITHOUT mood symptoms. Schizoaffective: psychosis ≥2 weeks without mood AND mood episode present for majority of total illness. Schizophrenia: mood episodes minimal. Mood disorder with psychosis: psychosis ONLY during mood episodes, never independent.</div>
+    <div class="sl">ASD vs PTSD vs Adjustment Disorder — Time Matters</div>
+    <div class="box-gold">After trauma: &lt;3 days = normal stress response (Adjustment). 3 days–1 month = ASD. &gt;1 month = PTSD. Adjustment disorder does NOT have the specific PTSD symptom clusters (intrusive memories, dissociation, specific avoidance patterns). Adjustment = distress proportional to stressor but doesn't meet another Dx criteria.</div>
+  </div>
+</div>
+
+<div class="hy-card" id="hy2">
+  <div class="hy-head" onclick="toggleHY(2)">
+    <span class="hy-icon">💊</span>
+    <div><div class="hy-label">Drug MOA — Every Drug, Every Mechanism</div><div class="hy-sub">The complete MOA guide — no shortcuts</div></div>
+    <span class="hy-chev">▼</span>
+  </div>
+  <div class="hy-body">
+    <div class="sl">Antidepressants — Complete MOA List</div>
+    <table class="t">
+      <tbody><tr><th>Drug/Class</th><th>MOA</th><th>High-Yield Fact</th></tr>
+      <tr><td><strong>SSRIs</strong> (fluoxetine, sertraline, paroxetine, fluvoxamine, citalopram, escitalopram)</td><td>Block SERT (serotonin reuptake transporter) → ↑ synaptic 5HT</td><td>Delayed onset (4–6 wks) due to 5HT1A autoreceptor desensitization. Fluoxetine = longest T½ (avoid breastfeeding). Sertraline = safest in pregnancy + PTSD. Paroxetine = strongest discontinuation syndrome + most anticholinergic SSRI. Fluvoxamine = OCD 1st line.</td></tr>
+      <tr><td><strong>SNRIs</strong> (venlafaxine, duloxetine, desvenlafaxine, levomilnacipran)</td><td>Block SERT + NET → ↑ 5HT + NE</td><td>BP elevation from ↑ NE. Cannot stop abruptly (discontinuation syndrome: dizziness, "brain zaps," chills). Can't use within 2 weeks of MAOI. Duloxetine = neuropathic pain. Venlafaxine = GAD 1st line + PTSD (VA guideline).</td></tr>
+      <tr><td><strong>TCAs</strong> (amitriptyline, imipramine, nortriptyline, desipramine, clomipramine)</td><td>Block SERT + NET + muscarinic + H1 + α1 + Na+ channels</td><td>Desipramine = most NE-selective. Amitriptyline = most sedating (most anticholinergic). Clomipramine = most 5HT-selective → OCD. Lethal in OD (QRS widening → arrhythmia). NE ranking: Desipramine &gt; Imipramine &gt; Nortriptyline &gt; Amitriptyline.</td></tr>
+      <tr><td><strong>MAOIs</strong> (phenelzine, tranylcypromine, selegiline)</td><td>Irreversibly inhibit MAO-A + MAO-B → ↑ 5HT, NE, DA, tyramine</td><td>Tyramine + MAOI = HTN crisis. SSRI + MAOI = serotonin syndrome. Wait ≥2 wks (5 wks for fluoxetine) before switching. Selegiline patch = selective MAO-B inhibitor at low doses; fewer dietary restrictions.</td></tr>
+      <tr><td><strong>Bupropion</strong></td><td>NE + DA reuptake inhibitor (NDRI); no serotonin activity</td><td>No sexual side effects. Smoking cessation (Zyban). Avoid in eating disorders (↓ seizure threshold). Avoid in alcohol withdrawal. No weight gain. Used to augment SSRIs for sexual dysfunction.</td></tr>
+      <tr><td><strong>Mirtazapine</strong></td><td>α2 antagonist (↑ NE + 5HT release) + H1 antagonist + 5HT2/5HT3 antagonist</td><td>Sedating + appetite-stimulating (H1 block). Good for elderly with insomnia/weight loss. "NaSSA" = noradrenergic/specific serotonergic antidepressant. No sexual side effects.</td></tr>
+      <tr><td><strong>Trazodone</strong></td><td>5HT2 antagonist + weak SERT inhibitor</td><td>Very sedating → often used off-label for insomnia. Priapism (rare but important). Low doses for sleep, higher doses needed for antidepressant effect.</td></tr>
+      <tr><td><strong>Esketamine (Spravato)</strong></td><td>NMDA glutamate receptor antagonist (nasal spray)</td><td>Rapid onset (hours–days). FDA-approved for treatment-resistant MDD. Must be administered in-office (REMS). Dissociative effects.</td></tr>
+      <tr><td><strong>Brexanolone (Zulresso)</strong></td><td>GABA-A receptor positive allosteric modulator (neurosteroid allopregnanolone analog)</td><td>IV infusion × 60 hours. FDA-approved for Postpartum Depression. Must be monitored for sedation/loss of consciousness. Rapid (2–3 day) response.</td></tr>
+      <tr><td><strong>Zuranolone (Zurzuvae)</strong></td><td>Same as brexanolone (GABA-A modulator/neuroactive steroid)</td><td>First ORAL PPD medication. 14-day course. Take with fatty food. Driving restriction (sedating). Rapid response.</td></tr>
+    </tbody></table>
+    <div class="sl">Antipsychotics — Complete MOA List</div>
+    <table class="t">
+      <tbody><tr><th>Drug</th><th>Type/MOA</th><th>Key Fact</th></tr>
+      <tr><td><strong>Haloperidol</strong></td><td>Typical (1st gen) high-potency D2 antagonist</td><td>Most EPS. Most studied in pregnancy. Useful in delirium (few anticholinergic/hypotensive effects). QTc prolongation at high doses.</td></tr>
+      <tr><td><strong>Chlorpromazine / Thioridazine</strong></td><td>Typical low-potency; D2 + strong anticholinergic + H1 + α1 block</td><td>More sedating, more anticholinergic, less EPS than haloperidol. Chlorpromazine = 1st antipsychotic (1952). Thioridazine = retinal pigmentation (avoid).</td></tr>
+      <tr><td><strong>Clozapine</strong></td><td>Atypical; D2 + 5HT2A + muscarinic + H1 + α antagonism; "fast-off" D2</td><td>No TD, no ↑ prolactin. Greatest efficacy for negative Sx + suicidality. Agranulocytosis (REMS). Weight gain (Metformin co-prescribed). Seizures. Reserved for treatment-resistant.</td></tr>
+      <tr><td><strong>Risperidone</strong></td><td>Atypical; D2 + 5HT2A antagonist (high D2 affinity)</td><td>Most EPS of atypicals (highest D2 affinity). Most prolactin elevation of atypicals. Available as LAI (Risperdal Consta).</td></tr>
+      <tr><td><strong>Olanzapine</strong></td><td>Atypical; D2 + 5HT2A + H1 + muscarinic</td><td>Most weight gain + metabolic syndrome of atypicals. Low EPS. Sedating. ↑ gestational diabetes risk in pregnancy.</td></tr>
+      <tr><td><strong>Quetiapine</strong></td><td>Atypical; D2 + 5HT2A + H1 + α1 antagonist</td><td>Lowest D2 affinity → least EPS, lowest prolactin. Sedating (H1). Lowest placental transfer in pregnancy. Widely used for bipolar depression (FDA-approved).</td></tr>
+      <tr><td><strong>Aripiprazole</strong></td><td>Atypical; D2 PARTIAL agonist + 5HT2A antagonist + 5HT1A partial agonist</td><td>"Goldilocks" — activates D2 just enough to prevent upregulation without full blockade. Minimal weight gain, EPS, prolactin, sedation. Adjunct for depression. Used with clozapine.</td></tr>
+      <tr><td><strong>Ziprasidone</strong></td><td>Atypical; D2 + 5HT2A + 5HT reuptake inhibitor</td><td>Must take WITH FOOD (bioavailability). Most QTc prolongation of atypicals. Lowest weight gain of atypicals. Avoided in cardiac patients.</td></tr>
+      <tr><td><strong>Lurasidone</strong></td><td>Atypical; D2 + 5HT2A + 5HT7 antagonist</td><td>Must take with ≥350 cal meal. Minimal metabolic effects. FDA-approved for bipolar depression + schizophrenia.</td></tr>
+      <tr><td><strong>Cobenfy (Xanomeline + Trospium)</strong></td><td>M1/M4 muscarinic agonist (xanomeline, CNS) + peripheral M1 antagonist (trospium, prevents GI side effects)</td><td>1st antipsychotic targeting muscarinic acetylcholine pathway instead of dopamine. No EPS, no ↑ prolactin, no metabolic effects. Newest FDA-approved (2024).</td></tr>
+    </tbody></table>
+    <div class="sl">Mood Stabilizers</div>
+    <table class="t">
+      <tbody><tr><th>Drug</th><th>MOA</th><th>Teratogenicity / Key Fact</th></tr>
+      <tr><td><strong>Lithium</strong></td><td>Inhibits inositol monophosphatase + GSK-3β → ↓ PI signaling; neuroprotective via BDNF</td><td>Ebstein's anomaly (lithium, low absolute risk). Narrow TI. ↓ suicide risk. TSH + renal monitoring. NSAIDs raise levels → toxicity. Must withhold 48h before delivery.</td></tr>
+      <tr><td><strong>Valproate (Depakote)</strong></td><td>Blocks Na+ channels + ↑ GABA synthesis; inhibits GABA transaminase</td><td><strong>MOST teratogenic</strong> — neural tube defects + neurodevelopmental impairment. Avoid in pregnancy. Hepatotoxicity. Pancreatitis. Thrombocytopenia. Weight gain. PCOS.</td></tr>
+      <tr><td><strong>Lamotrigine (Lamictal)</strong></td><td>Blocks Na+ channels → ↓ glutamate release</td><td>Oral clefts in pregnancy. Must titrate slowly (2 wks) — SJS/TEN risk. Enzyme inducers (carbamazepine) ↓ lamotrigine levels. OCP ↓ lamotrigine levels. Best for bipolar depression maintenance.</td></tr>
+      <tr><td><strong>Carbamazepine</strong></td><td>Na+ channel blockade (use-dependent)</td><td>Neural tube defects. Agranulocytosis (rare). SIADH. Many CYP450 interactions (induces CYP3A4). Stevens-Johnson (Asian HLA-B*15:02 allele → screen).</td></tr>
+    </tbody></table>
+    <div class="sl">Addiction &amp; Opioid Medications</div>
+    <table class="t">
+      <tbody><tr><th>Drug</th><th>MOA</th><th>Use</th></tr>
+      <tr><td><strong>Naltrexone</strong></td><td>Pure competitive μ-opioid receptor antagonist</td><td>OUD + AUD. No abuse potential. Monthly Vivitrol. Must be opioid-free ≥7–10 days first.</td></tr>
+      <tr><td><strong>Buprenorphine</strong></td><td>Partial μ-agonist + κ-antagonist; high affinity, slow dissociation; ceiling on respiratory depression</td><td>OUD. Suboxone = bup + naloxone (prevents IV misuse). Precipitated withdrawal if given too early.</td></tr>
+      <tr><td><strong>Methadone</strong></td><td>Full μ-opioid agonist (also weak NMDA antagonist)</td><td>OUD — clinic only. Long T½ (24–36h). QTc risk. CYP3A4 metabolized.</td></tr>
+      <tr><td><strong>Disulfiram</strong></td><td>Inhibits aldehyde dehydrogenase → acetaldehyde accumulates → nausea/flushing/vomiting/hypotension</td><td>AUD aversion therapy. Patient must understand — avoid all alcohol (including cough syrups, mouthwash).</td></tr>
+      <tr><td><strong>Acamprosate</strong></td><td>NMDA glutamate receptor modulator → normalizes glutamate hyperactivity after alcohol cessation → ↓ craving</td><td>AUD (abstinence maintenance). Most common SE: diarrhea. No liver toxicity (unlike disulfiram). Renal dosing needed.</td></tr>
+      <tr><td><strong>Naloxone (Narcan)</strong></td><td>Pure competitive μ-opioid antagonist (fast onset, short T½)</td><td>Opioid OD reversal. May need repeat doses for long-acting opioids. Does not precipitate acute withdrawal if patient is not opioid-dependent.</td></tr>
+    </tbody></table>
+    <div class="sl">Sleep Medications MOA</div>
+    <table class="t">
+      <tbody><tr><th>Drug</th><th>MOA</th><th>Note</th></tr>
+      <tr><td>Suvorexant, Lemborexant</td><td>Dual orexin receptor antagonist (OX1R + OX2R)</td><td>Blocks wake-promoting orexin. No dependence. Novel mechanism.</td></tr>
+      <tr><td>Zolpidem, Eszopiclone, Zaleplon</td><td>Non-benzo GABA-A modulator (Z-drugs); selective α1 subunit binding</td><td>Zolpidem: short T½, sleep-driving (rare). Eszopiclone: longer T½, metallic taste. Dependence possible.</td></tr>
+      <tr><td>Ramelteon</td><td>MT1/MT2 melatonin receptor agonist (SCN)</td><td>No dependence. Best for sleep onset/circadian disorders. Safe in elderly.</td></tr>
+      <tr><td>Benzodiazepines (temazepam, triazolam, flurazepam)</td><td>GABA-A allosteric modulator (↑ Cl⁻ channel opening frequency)</td><td>Dependence, tolerance, rebound insomnia. Dangerous in elderly (falls). LETHAL in withdrawal.</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<div class="hy-card" id="hy3">
+  <div class="hy-head" onclick="toggleHY(3)">
+    <span class="hy-icon">🧠</span>
+    <div><div class="hy-label">Neuroimaging — Every Disorder Mapped</div><div class="hy-sub">What shows up on MRI, PET, DaTscan, fMRI for each condition</div></div>
+    <span class="hy-chev">▼</span>
+  </div>
+  <div class="hy-body">
+    <table class="t">
+      <tbody><tr><th>Disorder</th><th>Modality</th><th>Finding</th><th>Mechanism</th></tr>
+      <tr><td><strong>Schizophrenia</strong></td><td>MRI</td><td>↑ Lateral ventricle size · ↓ Grey matter (PFC, temporal, hippocampus, thalamus)</td><td>Neurodevelopmental cortical thinning. Hypofrontality on fMRI (cognitive tasks).</td></tr>
+      <tr><td><strong>MDD</strong></td><td>MRI / fMRI</td><td>↓ Hippocampal volume · ↓ PFC activity · ↑ Habenula activity · ↓ Amygdala-PFC connectivity</td><td>HPA cortisol excess → ↓ BDNF → ↓ neurogenesis. Habenula = anti-reward center (encodes disappointment).</td></tr>
+      <tr><td><strong>Bipolar Disorder</strong></td><td>MRI</td><td>White matter hyperintensities · ↑ Amygdala volume (active) · ↓ PFC volume · Fronto-limbic abnormalities</td><td>CLOCK gene mutations disrupt circadian entrainment → mood cycling.</td></tr>
+      <tr><td><strong>PTSD</strong></td><td>fMRI</td><td>↑ Amygdala activation · ↓ Medial PFC/ACC activity · ↓ Hippocampal volume</td><td>HPA dysregulation → low cortisol paradox → excess CRH + glucocorticoid receptor hypersensitivity.</td></tr>
+      <tr><td><strong>OCD</strong></td><td>PET / fMRI</td><td>↑ OFC (orbitofrontal cortex) activity · ↑ Caudate nucleus activity</td><td>CSTC (cortico-striato-thalamo-cortical) circuit hyperactivation. ERP + SSRIs → ↓ caudate activity.</td></tr>
+      <tr><td><strong>Panic Disorder</strong></td><td>fMRI</td><td>↑ Amygdala sensitivity · ↑ Insula activation</td><td>Heightened interoceptive awareness + overactive threat detection.</td></tr>
+      <tr><td><strong>BPD</strong></td><td>fMRI</td><td>↑ Amygdala reactivity · ↓ PFC/frontal activity · ↓ Hippocampal volume</td><td>Limbic hyperactivation + failed top-down regulatory control.</td></tr>
+      <tr><td><strong>ADHD</strong></td><td>Structural MRI</td><td>↓ PFC volume · ↓ Caudate/basal ganglia · Delayed cortical maturation</td><td>Hypo-dopaminergic/hypo-noradrenergic PFC → impaired executive function, working memory.</td></tr>
+      <tr><td><strong>Alzheimer's</strong></td><td>MRI + PET</td><td>Hippocampal + medial temporal atrophy · Parieto-temporal hypometabolism (FDG-PET) · Amyloid plaques (amyloid PET)</td><td>Aβ plaques + tau tangles → neuronal death. APOE ε4 = risk allele. APP/PSEN1/2 = familial.</td></tr>
+      <tr><td><strong>Lewy Body Dementia</strong></td><td>DaTscan + MRI</td><td>↓ DAT uptake in striatum (DaTscan) · Relatively preserved hippocampus (vs. AD)</td><td>α-synuclein Lewy bodies in cortex + limbic. Dopaminergic neuron loss.</td></tr>
+      <tr><td><strong>Vascular Dementia</strong></td><td>MRI</td><td>White matter hyperintensities (periventricular) · Cortical/subcortical infarcts</td><td>CVD → small vessel ischemia → stepwise cognitive decline.</td></tr>
+      <tr><td><strong>FTD</strong></td><td>MRI</td><td>Frontal + anterior temporal atrophy ("knife-blade" gyri)</td><td>Tau (Pick's disease) or TDP-43 inclusions in frontotemporal neurons.</td></tr>
+      <tr><td><strong>NPH</strong></td><td>MRI/CT</td><td>Dilated ventricles (ventriculomegaly) out of proportion to sulcal atrophy</td><td>Impaired CSF absorption → pressure on frontal tracts → Wet (incontinence) + Wobbly (gait) + Wacky (dementia). Reversible with shunt!</td></tr>
+      <tr><td><strong>Anorexia Nervosa</strong></td><td>MRI</td><td>Global ↓ grey + white matter volume (reversible with weight restoration)</td><td>Malnutrition → ↓ brain volume. Cortisol excess + IGF-1 deficiency contribute.</td></tr>
+    </tbody></table>
+    <div class="box-r"><strong>Exam Shortcut — Common Confusion:</strong> Enlarged ventricles = Schizophrenia (or NPH — but NPH has the Wet/Wobbly/Wacky triad). White matter hyperintensities = Vascular Dementia OR Bipolar. ↓ Hippocampus = MDD + PTSD + Alzheimer's. ↑ Caudate = OCD. ↑ Amygdala = MDD, PTSD, BPD, Anxiety. ↓ PFC = nearly everything.</div>
+  </div>
+</div>
+
+<div class="hy-card" id="hy4">
+  <div class="hy-head" onclick="toggleHY(4)">
+    <span class="hy-icon">⚡</span>
+    <div><div class="hy-label">Next Step After Diagnosis — Master Algorithm</div><div class="hy-sub">The exam asks "what do you do next?" — here are all the answers</div></div>
+    <span class="hy-chev">▼</span>
+  </div>
+  <div class="hy-body">
+    <div class="sl">Emergency/Urgent Steps</div>
+    <div class="box-r"><strong>Postpartum Psychosis:</strong> Inpatient admission immediately (psychiatric emergency) → Ensure infant safety → Benzo × 3 nights → Antipsychotic day 4 → Lithium at 2 weeks. Counsel: 70–90% recurrence with next pregnancy → prophylactic lithium at delivery.</div>
+    <div class="box-r"><strong>NMS:</strong> STOP antipsychotic immediately → Aggressive hydration + cooling + ICU → Bromocriptine (DA agonist) + Dantrolene (muscle relaxant, ryanodine receptor blocker) → No antipsychotics for ≥2 weeks.</div>
+    <div class="box-r"><strong>Serotonin Syndrome:</strong> STOP all serotonergic agents → Cyproheptadine (5HT2A antagonist — antidote) → Supportive care (cooling, benzos for agitation) → ICU if severe.</div>
+    <div class="box-r"><strong>Delirium Tremens:</strong> Thiamine IV FIRST → CIWA protocol → Benzos (lorazepam, diazepam) → Treat underlying cause → No haloperidol as sole agent (benzos required for withdrawal).</div>
+    <div class="box-r"><strong>Suicidal patient with plan/intent/means:</strong> Do not leave alone → Remove means → Inpatient admission → Risk assessment → Address underlying Dx after stabilization.</div>
+    <div class="sl">Standard Treatment Sequences</div>
+    <table class="t">
+      <tbody><tr><th>Diagnosis</th><th>1st Line</th><th>2nd Line</th><th>Refractory</th></tr>
+      <tr><td>MDD</td><td>SSRI + CBT</td><td>Optimize dose → Switch SSRI or augment (bupropion, buspirone, atypical AP)</td><td>ECT (fastest response for severe/suicidal); Esketamine; MAOIs</td></tr>
+      <tr><td>Bipolar I (acute mania)</td><td>Stop SSRI → Lithium or Valproate + atypical AP (olanzapine, aripiprazole, quetiapine)</td><td>Combination mood stabilizer</td><td>ECT; clozapine</td></tr>
+      <tr><td>Bipolar II</td><td>Stop SSRI → Lamotrigine (depression); lithium; quetiapine</td><td>Combination; add atypical AP</td><td>MAOIs (atypical depression pattern)</td></tr>
+      <tr><td>Schizophrenia (1st episode)</td><td>Low-dose atypical AP (risperidone, aripiprazole, olanzapine)</td><td>Optimize dose; try different atypical</td><td>Clozapine (after 2 failed adequate trials)</td></tr>
+      <tr><td>PTSD</td><td>Trauma-focused CBT (PE, CPT, EMDR)</td><td>Add SSRI (sertraline, paroxetine) or SNRI (venlafaxine)</td><td>Prazosin for nightmares; augmentation strategies. NEVER benzos.</td></tr>
+      <tr><td>OCD</td><td>CBT with ERP</td><td>Add SSRI (high dose — fluvoxamine, sertraline)</td><td>Clomipramine (most serotonin-selective TCA); augment with low-dose atypical AP; DBS</td></tr>
+      <tr><td>Panic Disorder</td><td>SSRI + CBT (exposure)</td><td>SNRI</td><td>TCA; MAOI; benzos as rescue (not monotherapy)</td></tr>
+      <tr><td>GAD</td><td>SSRI or SNRI × 12 months + CBT</td><td>Buspirone; pregabalin</td><td>TCA; benzodiazepines (short-term only)</td></tr>
+      <tr><td>Bulimia Nervosa</td><td>CBT (gold standard)</td><td>Fluoxetine 60 mg (FDA-approved, reduces binge/purge)</td><td>IPT; higher-dose SSRIs; add nutritional counseling</td></tr>
+      <tr><td>BED</td><td>CBT + DBT + IPT</td><td>Lisdexamfetamine (Vyvanse) — only FDA-approved</td><td>Topiramate (off-label); weight management concurrent</td></tr>
+      <tr><td>Anorexia (adolescent)</td><td>FBT (Maudsley) — gold standard for adolescents</td><td>Enhanced CBT (CBT-E) for adults</td><td>Inpatient if &lt;75–80% expected body weight; olanzapine off-label</td></tr>
+      <tr><td>AUD</td><td>Naltrexone + psychosocial (CBT, MI)</td><td>Acamprosate; disulfiram (if motivated)</td><td>Combined pharmacotherapy; intensive outpatient; residential</td></tr>
+      <tr><td>OUD</td><td>Buprenorphine (office-based, preferred outpatient)</td><td>Methadone (OTP clinic, more supervised)</td><td>Naltrexone (if opioid-free ≥7–10 days; monthly injection)</td></tr>
+    </tbody></table>
+    <div class="sl">Post-Diagnosis Workup Steps</div>
+    <div class="box-b"><strong>First-Episode Psychosis workup:</strong> CBC + CMP + TSH + B12 + folate + urine drug screen + RPR (syphilis) + HIV → MRI brain (rule out structural causes) → Consider anti-NMDA receptor Ab (autoimmune encephalitis if rapid onset + young woman) → LP if encephalitis suspected.</div>
+    <div class="box-b"><strong>New dementia workup:</strong> Cognitive testing (MoCA preferred) → Labs: TSH, B12, folate, CBC, CMP, RPR, HIV (reversible causes = VITAMIN D: Vascular, Infectious, Toxic, Autoimmune, Metabolic, Intracranial, Normal pressure hydrocephalus, Depression/pseudodementia) → MRI brain → Neuropsychological testing → Amyloid PET or CSF biomarkers (Aβ42, p-tau) for definitive AD diagnosis.</div>
+    <div class="box-gold"><strong>Reversible Dementia Causes — VITAMIN D:</strong> Vascular · Infectious (neurosyphilis, HIV, fungal) · Toxic (alcohol, heavy metals, medications) · Autoimmune (lupus, anti-NMDA) · Metabolic (hypothyroid, B12, folate, niacin, thiamine) · Intracranial mass (SDH, tumor) · Normal pressure hydrocephalus · Depression (pseudodementia — depressed patients can appear demented; treat depression first).</div>
+  </div>
+</div>
+
+<div class="hy-card" id="hy5">
+  <div class="hy-head" onclick="toggleHY(5)">
+    <span class="hy-icon">🔑</span>
+    <div><div class="hy-label">Differentiators — The Cousin Disorders</div><div class="hy-sub">Cold knowledge of what separates close diagnoses</div></div>
+    <span class="hy-chev">▼</span>
+  </div>
+  <div class="hy-body">
+    <div class="sl">Mood Disorder Cousins</div>
+    <table class="t">
+      <tbody><tr><th>Pair</th><th>What Separates Them</th></tr>
+      <tr><td>MDD vs Bipolar Depression</td><td>History of ANY hypomanic/manic episode → Bipolar. Also: earlier onset, more episodes, psychotic features, family Hx, antidepressant-induced hypomania.</td></tr>
+      <tr><td>Bipolar I vs Bipolar II</td><td>Bipolar I = FULL manic episode (≥7 days OR hospitalized OR psychotic features). Bipolar II = HYPOMANIC only (4–6 days, NO hospitalization, NO psychosis). Having a manic episode "upgrades" Bipolar II to Bipolar I — can only go one direction.</td></tr>
+      <tr><td>Dysthymia vs MDD</td><td>Dysthymia (PDD) = depressed mood most of the day, most days, for ≥2 YEARS. MDD = full criteria ≥2 WEEKS. "Double depression" = MDD superimposed on PDD.</td></tr>
+      <tr><td>Cyclothymia vs Bipolar II</td><td>Cyclothymia = hypomanic Sx + depressive Sx for ≥2 years that do NOT meet full criteria for hypomanic episode or MDE. Bipolar II = full hypomanic + full MDE.</td></tr>
+    </tbody></table>
+    <div class="sl">Psychosis Cousins</div>
+    <table class="t">
+      <tbody><tr><th>Pair</th><th>What Separates Them</th></tr>
+      <tr><td>Schizophrenia vs Schizophreniform vs Brief Psychotic</td><td>Duration: Brief = 1 day–1 month (often stress-triggered, good prognosis). Schizophreniform = 1–6 months. Schizophrenia = ≥6 months with social/occupational dysfunction.</td></tr>
+      <tr><td>Schizophrenia vs Schizoaffective</td><td>Schizoaffective: (1) Psychosis ≥2 wks WITHOUT mood episode, AND (2) Mood episode for MAJORITY of illness duration. Timeline analysis required.</td></tr>
+      <tr><td>Delusional Disorder vs Schizophrenia</td><td>Delusional: intact functioning outside delusion, NO hallucinations (or very brief/minor), ≥1 month non-bizarre delusion. Schizophrenia: hallucinations + disorganized Sx + occupational dysfunction.</td></tr>
+    </tbody></table>
+    <div class="sl">Anxiety Cousins</div>
+    <table class="t">
+      <tbody><tr><th>Pair</th><th>What Separates Them</th></tr>
+      <tr><td>OCD vs OCPD</td><td>OCD = ego-DYSTONIC (patient suffers from/wants to stop obsessions). OCPD = ego-SYNTONIC (patient thinks their perfectionism is correct, others are the problem). OCD has true obsessions + compulsions; OCPD does not.</td></tr>
+      <tr><td>GAD vs MDD</td><td>GAD core = excessive WORRY ≥6 months. MDD core = depressed mood/anhedonia ≥2 weeks. Can coexist. Distinguish by what came first and which is dominant.</td></tr>
+      <tr><td>Social Anxiety vs Avoidant PD</td><td>Social Anxiety Disorder = anxiety in specific social situations → functional impairment. Avoidant PD = pervasive pattern across all contexts, present since early adulthood, affects identity. Many consider them on a spectrum.</td></tr>
+    </tbody></table>
+    <div class="sl">Trauma Cousins</div>
+    <table class="t">
+      <tbody><tr><th>Pair</th><th>What Separates Them</th></tr>
+      <tr><td>ASD vs PTSD</td><td>ASD = 3 days–1 month. PTSD = &gt;1 month. Same symptom clusters (plus ASD requires dissociative symptoms more prominently).</td></tr>
+      <tr><td>Conversion Disorder vs Malingering vs Factitious</td><td>Conversion = UNCONSCIOUS (patient is not faking). Factitious = CONSCIOUS, internal gain (attention/sick role, no external benefit). Malingering = CONSCIOUS, EXTERNAL gain (money, disability, avoid jail). "Real → Factitious → Malingering" = unconscious → conscious internal → conscious external.</td></tr>
+    </tbody></table>
+    <div class="sl">Dementia Cousins</div>
+    <table class="t">
+      <tbody><tr><th>Pair</th><th>What Separates Them</th></tr>
+      <tr><td>Alzheimer's vs Lewy Body</td><td>AD: gradual memory loss first. MRI: hippocampal atrophy. LBD: fluctuating cognition + vivid visual hallucinations + parkinsonism + REM behavior disorder. DaTscan abnormal in LBD. Critical: AVOID antipsychotics in LBD.</td></tr>
+      <tr><td>Lewy Body vs Parkinson's Dementia</td><td>Timing: LBD = cognitive/psych Sx within 1 year of parkinsonism. PDD = parkinsonism established ≥1 year before dementia. Both have Lewy bodies, both treated with rivastigmine.</td></tr>
+      <tr><td>FTD vs Alzheimer's</td><td>FTD: PERSONALITY/BEHAVIORAL change first (disinhibition, apathy) before memory. Younger onset (50s–60s). MRI: frontal atrophy. AD: MEMORY first, older onset. AChE inhibitors NOT helpful in FTD (may worsen behavioral symptoms).</td></tr>
+      <tr><td>Delirium vs Dementia</td><td>Delirium: ACUTE onset, FLUCTUATING course, ↓ consciousness/attention. Dementia: INSIDIOUS onset, STABLE day-to-day (early), consciousness preserved. Delirium until proven otherwise. Patients with dementia are highest risk for delirium.</td></tr>
+      <tr><td>Major NCD vs Minor NCD</td><td>Major: SIGNIFICANT decline, INTERFERES with INDEPENDENCE (needs help with ADLs). Minor: MODEST decline, DOES NOT interfere with independence (can compensate).</td></tr>
+    </tbody></table>
+    <div class="sl">Substance Cousins — Critical Withdrawal Facts</div>
+    <div class="box-r"><strong>LETHAL Withdrawal:</strong> Alcohol · Benzodiazepines · Barbiturates. These must be treated aggressively with cross-tolerant agents (benzos).</div>
+    <div class="box-gold"><strong>Miserable but NOT Lethal:</strong> Opioids (unless neonate/severely debilitated). Cannabis. Stimulants. Hallucinogens.</div>
+    <div class="box-r"><strong>Highest Suicide Risk in Withdrawal:</strong> Stimulants (cocaine, meth "crash"). Opioids also carry some risk. Never dismiss SI during substance withdrawal as "just the drugs."</div>
+    <div class="sl">Postpartum Spectrum — Know All Three</div>
+    <table class="t">
+      <tbody><tr><th></th><th>Baby Blues</th><th>PPD</th><th>Postpartum Psychosis</th></tr>
+      <tr><td>Timing</td><td>Days 1–14</td><td>Within 4 wks (or any time in yr 1)</td><td><strong>ALWAYS within 8 wks</strong></td></tr>
+      <tr><td>Severity</td><td>Mild, self-limited</td><td>Full MDE criteria</td><td>Psychotic features — EMERGENCY</td></tr>
+      <tr><td>Treatment</td><td>None (resolves)</td><td>SSRI + CBT; brexanolone/zuranolone</td><td>Inpatient → Benzo × 3d → AP day 4 → Li at 2 wks</td></tr>
+      <tr><td>Recurrence</td><td>None significant</td><td>25–50% next pregnancy</td><td><strong>70–90% next pregnancy</strong></td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<div class="hy-card" id="hy6">
+  <div class="hy-head" onclick="toggleHY(6)">
+    <span class="hy-icon">⚠️</span>
+    <div><div class="hy-label">The "Never Do" List — Exam Gotchas</div><div class="hy-sub">Actions that are always wrong and commonly tested</div></div>
+    <span class="hy-chev">▼</span>
+  </div>
+  <div class="hy-body">
+    <div class="sl">Drug Combinations That Are Lethal or Contraindicated</div>
+    <div class="box-r"><strong>SSRI + MAOI = Serotonin Syndrome.</strong> Wait ≥2 weeks between. Wait ≥5 weeks after fluoxetine (long T½). Symptoms: hyperthermia, muscle rigidity (clonus), tachycardia, AMS, diarrhea. Tx: cyproheptadine + cooling + benzos + stop both drugs.</div>
+    <div class="box-r"><strong>MAOI + Tyramine foods = Hypertensive Crisis.</strong> Aged cheese, wine, beer, fermented foods, processed meats. Mechanism: tyramine normally metabolized by MAO in gut/liver → with MAOI inhibition → tyramine absorbed → triggers NE release → severe HTN.</div>
+    <div class="box-r"><strong>PDE-5 inhibitors (sildenafil, tadalafil) + Nitrates = Severe Hypotension.</strong> Both cause vasodilation — combined effect can be fatal. Absolute contraindication.</div>
+    <div class="box-r"><strong>Buprenorphine given too early in OUD = Precipitated Withdrawal.</strong> Must wait until COWS ≥8–12 (sufficient spontaneous withdrawal = most receptors occupied by own opioid, not exogenous). Buprenorphine's high affinity displaces full agonist → partial activation = net withdrawal.</div>
+    <div class="box-r"><strong>Antipsychotics in Lewy Body Dementia = potentially fatal.</strong> Severe neuroleptic sensitivity reaction. Use only quetiapine or clozapine if absolutely needed, with extreme caution.</div>
+    <div class="box-r"><strong>Bupropion in eating disorders (especially AN/bulimia) = ↑ seizure risk.</strong> Bupropion lowers seizure threshold. Electrolyte abnormalities from purging further increase seizure risk.</div>
+    <div class="box-r"><strong>Glucose before Thiamine in alcoholic patient = Wernicke's precipitated.</strong> ALWAYS give IV thiamine FIRST in any patient with known or suspected alcohol use disorder before any glucose-containing fluids.</div>
+    <div class="box-r"><strong>Benzos for PTSD = VA STRONG AGAINST.</strong> Interfere with fear extinction. Worsen dissociation. Worsen depression. Create dependence in trauma population. Never use as monotherapy or routine treatment for PTSD.</div>
+    <div class="box-r"><strong>Valproate in pregnancy = neural tube defects + neurodevelopmental impairment.</strong> This is the most teratogenic psychotropic. Switch to atypical antipsychotic or lamotrigine before conception if possible. Neural tube closes at week 6 — damage may occur before pregnancy is known.</div>
+    <div class="box-r"><strong>SSRI monotherapy for Bipolar Depression = risk of triggering mania/rapid cycling.</strong> Always pair with a mood stabilizer. Better options for bipolar depression: quetiapine, lurasidone (FDA-approved for bipolar depression), lamotrigine, or lithium.</div>
+    <div class="sl">Critical Safety Rules</div>
+    <div class="box-gold"><strong>Order of operations for alcohol withdrawal:</strong> IV thiamine → CIWA-guided benzos → Electrolytes → Fluids. NOT Haloperidol alone. NOT disulfiram. NOT naltrexone. Benzos are the treatment.</div>
+    <div class="box-gold"><strong>When to always hospitalize:</strong> Suicidal ideation with plan + means + intent. Postpartum psychosis. Active manic episode with danger to self/others. Anorexia &lt;75–80% expected body weight. Active delirium with unsafe behavior. NMS.</div>
+  </div>
+</div>
+
+</div><!-- /hy -->
+
+</div><!-- main -->
+
+<script>
+// ============================================
+// SCORING LOGIC
+// ============================================
+const correctAnswers = {
+  1:'B', 2:'B', 3:'B', 4:'B', 5:'B', 6:'B',
+  7:'C', 8:'B', 9:'B', 10:'C',
+  11:'B', 12:'B', 13:'B',
+  14:'B', 15:'B',
+  16:'B', 17:'B', 18:'C',
+  19:'B', 20:'B',
+  21:'B', 22:'B',
+  23:'B',
+  24:'C', 25:'B',
+  26:'B', 27:'B',
+  28:'C', 29:'C',
+  30:'B', 31:'B',
+  32:'B', 33:'B'
+};
+
+let totalAnswered = 0;
+let totalCorrect = 0;
+
+function answer(qNum, choice) {
+  const card = document.getElementById('q' + qNum);
+  if (card.classList.contains('answered')) return;
+  card.classList.add('answered');
+
+  const opts = card.querySelectorAll('.opt');
+  const letters = ['A','B','C','D'];
+  const correct = correctAnswers[qNum];
+  let isCorrect = (choice === correct);
+
+  opts.forEach((opt, i) => {
+    opt.classList.add('locked');
+    if (letters[i] === correct) opt.classList.add('correct');
+    if (letters[i] === choice && !isCorrect) opt.classList.add('wrong');
+  });
+
+  if (isCorrect) {
+    card.classList.add('answered-correct');
+    totalCorrect++;
+  } else {
+    card.classList.add('answered-wrong');
+  }
+  totalAnswered++;
+
+  // Show explanation
+  const exp = document.getElementById('exp' + qNum);
+  if (exp) {
+    exp.classList.add('show');
+    const verdict = exp.querySelector('.exp-verdict');
+    if (!isCorrect && verdict) {
+      verdict.textContent = '✗ Incorrect — Correct Answer: ' + correct;
+      verdict.classList.remove('exp-correct');
+      verdict.classList.add('exp-wrong');
+    }
+  }
+
+  updateScore();
+}
+
+function updateScore() {
+  const val = document.getElementById('score-val');
+  const pct = document.getElementById('score-pct');
+  const fill = document.getElementById('prog-fill');
+  const total = Object.keys(correctAnswers).length;
+  val.textContent = totalCorrect + '/' + totalAnswered;
+  pct.textContent = totalAnswered > 0 ? Math.round(totalCorrect / totalAnswered * 100) + '%' : '–%';
+  fill.style.width = (totalAnswered / total * 100) + '%';
+}
+
+function toggleQ(n) {
+  // No-op for stem area clicks — questions open on answer selection
+  // This is called from onclick on stem — we can use it to expand the explanation if already answered
+  const card = document.getElementById('q' + n);
+  if (card.classList.contains('answered')) {
+    const exp = document.getElementById('exp' + n);
+    if (exp) exp.classList.toggle('show');
+  }
+}
+
+// ============================================
+// HIGH YIELD TOGGLES
+// ============================================
+function toggleHY(n) {
+  const card = document.getElementById('hy' + n);
+  card.classList.toggle('open');
+}
+
+// ============================================
+// SECTION FILTER
+// ============================================
+function filterSection(tag, btn) {
+  document.querySelectorAll('.nb').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  
+  // sections: mood psychosis anxiety trauma substance sleep eating somatic neuro child repro personality therapy hy
+  const allSections = document.querySelectorAll('[data-section]');
+  allSections.forEach(section => {
+    const st = section.getAttribute('data-section');
+    if (tag === 'all' || st === tag) {
+      section.classList.remove('hidden');
+    } else {
+      section.classList.add('hidden');
+    }
+  });
+  
+  // Also handle sec-hdr orphan elements
+  const secs = document.querySelectorAll('.sec-hdr, .sec-rule');
+  // Already inside data-section divs, so handled above
+}
+
+// Auto-open first HY card
+document.addEventListener('DOMContentLoaded', () => {
+  // Don't auto-open anything
+});
+</script>
+
+
+
+</body></html>
